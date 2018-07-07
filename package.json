@@ -1,0 +1,26 @@
+{
+    "name": "gm",
+    "displayName": "gm",
+    "description": "GM support for Visual Studio Code",
+    "version": "0.0.1",
+    "publisher": "giacomo",
+    "engines": {
+        "vscode": "^1.25.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "gm",
+            "aliases": ["GM", "gm"],
+            "extensions": [".gm","gm"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "gm",
+            "scopeName": "source.gm",
+            "path": "./syntaxes/gm.tmLanguage.json"
+        }]
+    }
+}
