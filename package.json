@@ -1,6 +1,6 @@
 {
     "name": "gm",
-    "displayName": "gm",
+    "displayName": "GM",
     "description": "GM support for Visual Studio Code",
     "version": "0.0.1",
     "publisher": "giacomo",
@@ -10,6 +10,11 @@
     "categories": [
         "Programming Languages"
     ],
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/GiacomoZheng/vscode-gm.git"
+    },
+	"icon": "icon.png",
     "contributes": {
         "languages": [{
             "id": "gm",
@@ -21,6 +26,17 @@
             "language": "gm",
             "scopeName": "source.gm",
             "path": "./syntaxes/gm.tmLanguage.json"
-        }]
+        }],
+		"snippets": [
+			{
+				"language": "gm",
+				"path": "./snippets/gm.json"
+			}
+		],
+		"configurationDefaults": {
+			"[gm]": {
+				"editor.insertSpaces": false
+			}
+		}
     }
 }

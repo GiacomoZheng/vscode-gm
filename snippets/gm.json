@@ -1,0 +1,66 @@
+{
+	"∈": {
+		"prefix": "belong",
+		"body" : [
+			"∈ ${1:class/collection},$0"
+		]
+	},
+	"⊆": {
+		"prefix": "includes",
+		"body" : [
+			"⊆ ${1:class/collection},$0"
+		]
+	},
+	"∀": {
+		"prefix": "for_every",
+		"body": [
+			"∀${1:variable_name}:$0"
+		]
+	},
+	"∃": {
+		"prefix": "there_exist",
+		"body": [
+			"∃${1:variable_name}:$0"
+		]
+	},
+	"≥": {
+		"prefix": "bigger_or_equal_to",
+		"body": ["≥"]
+	},
+	"≤": {
+		"prefix": "smaller_or_equal_to",
+		"body": ["≤"]
+	},
+	"⇒": {
+		"prefix": "then",
+		"body": ["⇒"]
+	},
+	"⇐": {
+		"prefix": "only_if",
+		"body": ["⇐"]
+	},
+	"⇔": {
+		"prefix": "if_and_only_if",
+		"body": ["⇔"]
+	},
+	"∅": {
+		"prefix": "empty_set",
+		"body": ["∅"]
+	},
+	"∞": {
+		"preix": "infinity",
+		"body": ["∞"]
+	},
+	"∪": {
+		"prefix": "union",
+		"body": ["∪"]
+	},
+	"∩": {
+		"prefix": "intersection",
+		"body": ["∩"]
+	},
+	"■": {
+		"prefix": "terminator",
+		"body": ["■"]
+	}
+}
