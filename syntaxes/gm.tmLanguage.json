@@ -8,10 +8,10 @@
 			"include": "#packages"
 		},
 		{
-			"include": "#gmlang"
+			"include": "#brackets"
 		},
 		{
-			"include": "#brackets"
+			"include": "#gmlang"
 		}
 	],
 
@@ -52,6 +52,9 @@
 				},
 				{
 					"include": "#keywords"
+				},
+				{
+					"include": "#functions"
 				},
 				{
 					"include": "#variables"
@@ -104,27 +107,36 @@
 				}
 			]
 		},
-		"numeric": {
+		"functions": {
 			"patterns": [
 				{
-					"name": "constant.numeric.gm",
-					"match": "\\b(?![\\.])(?:0|π)\\b"
+					"include": "#logical-functions"
+				}
+			]
+		},
+		"logical-functions": {
+			"begin": "([∀∃!])\\s*(\\()",
+			"beginCaptures": {
+				"1": {
+					"name": "support.function.logical.gm"
 				},
-				{
-					"name": "constant.numeric.dec.gm",
-					"match": "\\b[\\-\\+]?(?:[Dd][Ee][Cc]\\.)?[1-9][0-9]*(?:\\.(?:e|[0-9]+))?\\b"
+				"2": {
+					"name": "meta.structure.sequence.gm punctuation.definition.sequence.begin.gm"
+				}
+			},
+			"end": "(\\))\\s*(,)",
+			"endCaptures": {
+				"1": {
+					"name": "meta.structure.sequence.gm punctuation.definition.sequence.begin.gm"
 				},
+				"2": {
+					"name": "punctuation.separator.gm"
+				}
+			},
+			"contentName": "meta.structure.sequence.gm",
+			"patterns": [
 				{
-					"name": "constant.numeric.bin.gm",
-					"match": "\\b[\\-\\+]?[Bb][Ii][Nn]\\.1[01]*(?:\\.(?:e|[01]+))?\\b"
-				},
-				{
-					"name": "constant.numeric.oct.gm",
-					"match": "\\b[\\-\\+]?[Oo][Cc][Tt]\\.[1-7][0-7]*(?:\\.(?:e|[0-7]+))?\\b"
-				},
-				{
-					"name": "constant.numeric.hex.gm",
-					"match": "\\b[\\-\\+]?[Hh][Ee][Xx]\\.[1-9a-fA-F][0-9a-fA-F]*(?:\\.(?:e|[0-9a-fA-F]+))?\\b"
+					"include": "#brackets"
 				}
 			]
 		},
@@ -144,10 +156,6 @@
 			"name": "meta.structure.sequence.gm",
 			"patterns": [
 				{
-					"name": "punctuation.separator.seqence.gm",
-					"match": ","
-				},
-				{
 					"include": "#brackets"
 				}
 			]
@@ -157,10 +165,6 @@
 			"end": "\\]",
 			"name": "meta.structure.subscript.gm",
 			"patterns": [
-				{
-					"name": "punctuation.separator.subscript.gm",
-					"match": ","
-				},
 				{
 					"include": "#brackets"
 				}
@@ -182,11 +186,31 @@
 			"name": "meta.structure.set.gm",
 			"patterns": [
 				{
-					"name": "punctuation.separator.set.gm",
-					"match": ","
+					"include": "#brackets"
+				}
+			]
+		},
+		"numeric": {
+			"patterns": [
+				{
+					"name": "constant.numeric.gm",
+					"match": "\\b(?![\\.])(?:0|π)\\b"
 				},
 				{
-					"include": "#brackets"
+					"name": "constant.numeric.dec.gm",
+					"match": "\\b[\\-\\+]?(?:[Dd][Ee][Cc]\\.)?[1-9][0-9]*(?:\\.(?:e|[0-9]+))?\\b"
+				},
+				{
+					"name": "constant.numeric.bin.gm",
+					"match": "\\b[\\-\\+]?[Bb][Ii][Nn]\\.1[01]*(?:\\.(?:e|[01]+))?\\b"
+				},
+				{
+					"name": "constant.numeric.oct.gm",
+					"match": "\\b[\\-\\+]?[Oo][Cc][Tt]\\.[1-7][0-7]*(?:\\.(?:e|[0-7]+))?\\b"
+				},
+				{
+					"name": "constant.numeric.hex.gm",
+					"match": "\\b[\\-\\+]?[Hh][Ee][Xx]\\.[1-9a-fA-F][0-9a-fA-F]*(?:\\.(?:e|[0-9a-fA-F]+))?\\b"
 				}
 			]
 		},
