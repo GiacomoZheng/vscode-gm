@@ -1,20 +1,214 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "GM",
+
+	"scopeName": "source.gm",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#packages"
 		},
 		{
-			"include": "#strings"
+			"include": "#gmlang"
+		},
+		{
+			"include": "#brackets"
 		}
 	],
+
 	"repository": {
+		"packages": {
+			"begin": "\\b([^,:]+)(:)",
+			"beginCaptures": {
+				"1": {
+					"name": "constant.gm"
+				},
+				"2": {
+					"name": "keyword.control.define.gm"
+				}
+			},
+			"end": ",",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.separator.gm"
+				}
+			},
+			"contentName": "package.gm",
+			"patterns": [
+				{
+					"include": "#gmlang"
+				},
+				{
+					"include": "#brackets"
+				}
+			]
+		},
+		"gmlang": {
+			"patterns": [
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#comments"
+				},
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#variables"
+				},
+				{
+					"include": "#constants"
+				}
+			]
+		},
+		"brackets": {
+			"patterns": [
+				{
+					"include": "#gmlang"
+				},
+				{
+					"include": "#round-bracket"
+				},
+				{
+					"include": "#square-bracket"
+				},
+				{
+					"include": "#curly-bracket"
+				}
+			]
+		},
+		"variables": {
+			"begin": "∀|∃|!|%[^://s]+%",
+			"beginCaptures": {
+				"0": {
+					"name": "keyword.quantifier.gm"
+				}
+			},
+			"end": ":",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.control.define.gm"
+				}
+			},
+			"contentName": "variable.gm",
+			"patterns": [
+				{
+					"include": "#brackets"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"include": "#numeric"
+				}
+			]
+		},
+		"numeric": {
+			"patterns": [
+				{
+					"name": "constant.numeric.gm",
+					"match": "\\b(?![\\.])(?:0|π)\\b"
+				},
+				{
+					"name": "constant.numeric.dec.gm",
+					"match": "\\b[\\-\\+]?(?:[Dd][Ee][Cc]\\.)?[1-9][0-9]*(?:\\.(?:e|[0-9]+))?\\b"
+				},
+				{
+					"name": "constant.numeric.bin.gm",
+					"match": "\\b[\\-\\+]?[Bb][Ii][Nn]\\.1[01]*(?:\\.(?:e|[01]+))?\\b"
+				},
+				{
+					"name": "constant.numeric.oct.gm",
+					"match": "\\b[\\-\\+]?[Oo][Cc][Tt]\\.[1-7][0-7]*(?:\\.(?:e|[0-7]+))?\\b"
+				},
+				{
+					"name": "constant.numeric.hex.gm",
+					"match": "\\b[\\-\\+]?[Hh][Ee][Xx]\\.[1-9a-fA-F][0-9a-fA-F]*(?:\\.(?:e|[0-9a-fA-F]+))?\\b"
+				}
+			]
+		},
+		"round-bracket": {
+			"begin": "\\(",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.sequence.begin.gm"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.sequence.end.gm"
+				}
+			},
+			"name": "meta.structure.sequence.gm",
+			"patterns": [
+				{
+					"name": "punctuation.separator.seqence.gm",
+					"match": ","
+				},
+				{
+					"include": "#brackets"
+				}
+			]
+		},
+		"square-bracket": {
+			"begin": "\\[",
+			"end": "\\]",
+			"name": "meta.structure.subscript.gm",
+			"patterns": [
+				{
+					"name": "punctuation.separator.subscript.gm",
+					"match": ","
+				},
+				{
+					"include": "#brackets"
+				}
+			]
+		},
+		"curly-bracket": {
+			"begin": "\\{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.definition.set.begin.gm"
+				}
+			},
+			"end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.set.end.gm"
+				}
+			},
+			"name": "meta.structure.set.gm",
+			"patterns": [
+				{
+					"name": "punctuation.separator.set.gm",
+					"match": ","
+				},
+				{
+					"include": "#brackets"
+				}
+			]
+		},
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.gm",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.define.gm",
+					"match": ":"
+				},
+				{
+					"name": "punctuation.separator.gm",
+					"match": ","
+				},
+				{
+					"name": "keyword.control.flow.gm",
+					"match": "⇒|⇔|⇐"
+				},
+				{
+					"name": "keyword.control.locator.gm",
+					"match": "@(?=\\b)"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.gm",
@@ -26,7 +220,19 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"begin": "\\[(?:\"|')",
+					"end": "(?:\"|')\\]",
+					"name": "comment.block.gm"
+				},
+				{
+					"match": ";.*",
+					"name": "comment.line.gm"
+				}
+			]
 		}
-	},
-	"scopeName": "source.gm"
+	}
 }
