@@ -16,7 +16,9 @@
 		{ "open": "(", "close": ")", "notIn": [ "comment", ] },
 		{ "open": "%", "close": "%", "notIn": [ "comment", "string", ] }, // for special symbols
 		{ "open": "&", "close": "&", "notIn": [ "comment", "string", ] }, // to unpackage the symbols
-		{ "open": "\"", "close": "\"", "notIn": [ "string", ] }
+		{ "open": "\"", "close": "\"", "notIn": [ "string", ] },
+		{ "open": "p\"", "close": "\"", "notIn": ["string", "comment"] },
+		{ "open": "s\"", "close": "\"", "notIn": ["string", "comment"] }
 	],
 	"surroundingPairs": [
 		["{", "}"],
@@ -25,5 +27,5 @@
 		["%", "%"],
 		["&", "&"],
 		["\"", "\""]
-    ]
+	]
 }

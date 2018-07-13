@@ -16,8 +16,30 @@
 	],
 
 	"repository": {
+		"gmlang": {
+			"patterns": [
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#comments"
+				},
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#constants"
+				},
+				{
+					"include": "#variables"
+				},
+				{
+					"include": "#invalids"
+				}
+			]
+		},
 		"packages": {
-			"begin": "\\b([^,:]+)(:)",
+			"begin": "\\b([^\\s,;:]+)(:)",
 			"beginCaptures": {
 				"1": {
 					"name": "constant.gm"
@@ -39,28 +61,6 @@
 				},
 				{
 					"include": "#brackets"
-				}
-			]
-		},
-		"gmlang": {
-			"patterns": [
-				{
-					"include": "#strings"
-				},
-				{
-					"include": "#comments"
-				},
-				{
-					"include": "#keywords"
-				},
-				{
-					"include": "#functions"
-				},
-				{
-					"include": "#variables"
-				},
-				{
-					"include": "#constants"
 				}
 			]
 		},
@@ -104,89 +104,9 @@
 			"patterns": [
 				{
 					"include": "#numeric"
-				}
-			]
-		},
-		"functions": {
-			"patterns": [
-				{
-					"include": "#logical-functions"
-				}
-			]
-		},
-		"logical-functions": {
-			"begin": "([∀∃!])\\s*(\\()",
-			"beginCaptures": {
-				"1": {
-					"name": "support.function.logical.gm"
 				},
-				"2": {
-					"name": "meta.structure.sequence.gm punctuation.definition.sequence.begin.gm"
-				}
-			},
-			"end": "(\\))\\s*(,)",
-			"endCaptures": {
-				"1": {
-					"name": "meta.structure.sequence.gm punctuation.definition.sequence.begin.gm"
-				},
-				"2": {
-					"name": "punctuation.separator.gm"
-				}
-			},
-			"contentName": "meta.structure.sequence.gm",
-			"patterns": [
 				{
-					"include": "#brackets"
-				}
-			]
-		},
-		"round-bracket": {
-			"begin": "\\(",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.definition.sequence.begin.gm"
-				}
-			},
-			"end": "\\)",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.definition.sequence.end.gm"
-				}
-			},
-			"name": "meta.structure.sequence.gm",
-			"patterns": [
-				{
-					"include": "#brackets"
-				}
-			]
-		},
-		"square-bracket": {
-			"begin": "\\[",
-			"end": "\\]",
-			"name": "meta.structure.subscript.gm",
-			"patterns": [
-				{
-					"include": "#brackets"
-				}
-			]
-		},
-		"curly-bracket": {
-			"begin": "\\{",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.definition.set.begin.gm"
-				}
-			},
-			"end": "\\}",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.definition.set.end.gm"
-				}
-			},
-			"name": "meta.structure.set.gm",
-			"patterns": [
-				{
-					"include": "#brackets"
+					"include": "#functions"
 				}
 			]
 		},
@@ -214,12 +134,91 @@
 				}
 			]
 		},
-		"keywords": {
+		"functions": {
 			"patterns": [
 				{
-					"name": "keyword.control.define.gm",
-					"match": ":"
+					"include": "#logical-functions"
+				}
+			]
+		},
+		"logical-functions": {
+			"begin": "([∀∃!])\\s*(\\()",
+			"beginCaptures": {
+				"1": {
+					"name": "support.function.logical.gm"
 				},
+				"2": {
+					"name": "meta.structure.sequence.gm punctuation.define.sequence.begin.gm"
+				}
+			},
+			"end": "(\\))\\s*(,)",
+			"endCaptures": {
+				"1": {
+					"name": "meta.structure.sequence.gm punctuation.define.sequence.begin.gm"
+				},
+				"2": {
+					"name": "punctuation.separator.gm"
+				}
+			},
+			"contentName": "meta.structure.sequence.gm",
+			"patterns": [
+				{
+					"include": "#brackets"
+				}
+			]
+		},
+		"round-bracket": {
+			"begin": "\\(",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.define.sequence.begin.gm"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.define.sequence.end.gm"
+				}
+			},
+			"name": "meta.structure.sequence.gm",
+			"patterns": [
+				{
+					"include": "#brackets"
+				}
+			]
+		},
+		"square-bracket": {
+			"begin": "\\[",
+			"end": "\\]",
+			"name": "meta.structure.subscript.gm",
+			"patterns": [
+				{
+					"include": "#brackets"
+				}
+			]
+		},
+		"curly-bracket": {
+			"begin": "\\{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.define.set.begin.gm"
+				}
+			},
+			"end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.define.set.end.gm"
+				}
+			},
+			"name": "meta.structure.set.gm",
+			"patterns": [
+				{
+					"include": "#brackets"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
 				{
 					"name": "punctuation.separator.gm",
 					"match": ","
@@ -255,6 +254,14 @@
 				{
 					"match": ";.*",
 					"name": "comment.line.gm"
+				}
+			]
+		},
+		"invalids": {
+			"patterns": [
+				{
+					"name": "invalid.illegal.define.gm",
+					"match": "\\s:"
 				}
 			]
 		}
