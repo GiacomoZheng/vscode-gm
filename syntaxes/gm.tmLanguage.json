@@ -5,17 +5,40 @@
 	"scopeName": "source.gm",
 	"patterns": [
 		{
-			"include": "#packages"
+			"match": "(?=^):",
+			"name": "keyword.control.define.gm"
 		},
 		{
-			"include": "#brackets"
-		},
-		{
-			"include": "#gmlang"
+			"include": "#whole-pages"
 		}
 	],
 
 	"repository": {
+		"whole-pages": {
+			"begin": "^(?!:)",
+			"end": "$",
+			"patterns": [
+				{
+					"include": "#brackets"
+				}
+			]
+		},
+		"brackets": {
+			"patterns": [
+				{
+					"include": "#gmlang"
+				},
+				{
+					"include": "#round-bracket"
+				},
+				{
+					"include": "#square-bracket"
+				},
+				{
+					"include": "#curly-bracket"
+				}
+			]
+		},
 		"gmlang": {
 			"patterns": [
 				{
@@ -57,31 +80,72 @@
 			"contentName": "package.gm",
 			"patterns": [
 				{
-					"include": "#gmlang"
-				},
+					"include": "#brackets"
+				}
+			]
+		},
+		"round-bracket": {
+			"begin": "\\(",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.define.sequence.begin.gm"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.define.sequence.end.gm"
+				}
+			},
+			"name": "meta.structure.sequence.gm",
+			"patterns": [
 				{
 					"include": "#brackets"
 				}
 			]
 		},
-		"brackets": {
+		"square-bracket": {
+			"begin": "\\[",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.define.subscript.begin.gm"
+				}
+			},
+			"end": "\\]",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.define.subscript.end.gm"
+				}
+			},
+			"name": "meta.structure.subscript.gm",
 			"patterns": [
 				{
-					"include": "#gmlang"
-				},
+					"include": "#brackets"
+				}
+			]
+		},
+		"curly-bracket": {
+			"begin": "\\{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.define.set.begin.gm"
+				}
+			},
+			"end": "\\}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.define.set.end.gm"
+				}
+			},
+			"name": "meta.structure.set.gm",
+			"patterns": [
 				{
-					"include": "#round-bracket"
-				},
-				{
-					"include": "#square-bracket"
-				},
-				{
-					"include": "#curly-bracket"
+					"include": "#brackets"
 				}
 			]
 		},
 		"variables": {
-			"begin": "∀|∃|!|%[^://s]+%",
+			"begin": "∀|∃|!",
 			"beginCaptures": {
 				"0": {
 					"name": "keyword.quantifier.gm"
@@ -107,6 +171,11 @@
 				},
 				{
 					"include": "#functions"
+				},
+				{
+					"name": "constant.other.color.gm",
+					"comment": "colors",
+					"match": "#(?:(?:[0-9a-fA-F]{3}){1,2}|(?:[0-9a-fA-F]{4}){1,2})\\b"
 				}
 			]
 		},
@@ -151,7 +220,7 @@
 					"name": "meta.structure.sequence.gm punctuation.define.sequence.begin.gm"
 				}
 			},
-			"end": "(\\))\\s*(,)",
+			"end": "(\\))\\s*(,?)",
 			"endCaptures": {
 				"1": {
 					"name": "meta.structure.sequence.gm punctuation.define.sequence.begin.gm"
@@ -161,56 +230,6 @@
 				}
 			},
 			"contentName": "meta.structure.sequence.gm",
-			"patterns": [
-				{
-					"include": "#brackets"
-				}
-			]
-		},
-		"round-bracket": {
-			"begin": "\\(",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.define.sequence.begin.gm"
-				}
-			},
-			"end": "\\)",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.define.sequence.end.gm"
-				}
-			},
-			"name": "meta.structure.sequence.gm",
-			"patterns": [
-				{
-					"include": "#brackets"
-				}
-			]
-		},
-		"square-bracket": {
-			"begin": "\\[",
-			"end": "\\]",
-			"name": "meta.structure.subscript.gm",
-			"patterns": [
-				{
-					"include": "#brackets"
-				}
-			]
-		},
-		"curly-bracket": {
-			"begin": "\\{",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.define.set.begin.gm"
-				}
-			},
-			"end": "\\}",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.define.set.end.gm"
-				}
-			},
-			"name": "meta.structure.set.gm",
 			"patterns": [
 				{
 					"include": "#brackets"
@@ -261,7 +280,7 @@
 			"patterns": [
 				{
 					"name": "invalid.illegal.define.gm",
-					"match": "\\s:"
+					"match": "(?=^|\\s):"
 				}
 			]
 		}
