@@ -16,17 +16,31 @@
     },
 	"icon": "icon.png",
     "contributes": {
-        "languages": [{
-            "id": "gm",
-            "aliases": ["GM", "gm"],
-            "extensions": [".gm","gm"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "gm",
-            "scopeName": "source.gm",
-            "path": "./syntaxes/gm.tmLanguage.json"
-        }],
+        "languages": [
+            {
+                "id": "gm",
+                "aliases": ["GM", "gm"],
+                "extensions": [".gm","gm"],
+                "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "pstree",
+                "aliases": ["PStree"],
+                "extensions": [".pstree"]
+            }
+        ],
+        "grammars": [
+            {
+                "language": "gm",
+                "scopeName": "source.gm",
+                "path": "./syntaxes/gm.tmLanguage.json"
+            },
+            {
+                "language": "pstree",
+                "scopeName": "source.pstree",
+                "path": "./syntaxes/pstree.tmLanguage.json"
+            }
+        ],
 		"snippets": [
 			{
 				"language": "gm",
@@ -36,7 +50,7 @@
 		"configurationDefaults": {
 			"[gm]": {
 				"editor.insertSpaces": false
-			}
+            }
 		}
     }
 }

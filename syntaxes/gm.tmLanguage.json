@@ -1,12 +1,18 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	
 	"name": "GM",
-
 	"scopeName": "source.gm",
 	"patterns": [
 		{
 			"match": "(?=^):",
 			"name": "keyword.control.define.gm"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
 		},
 		{
 			"include": "#whole-pages"
