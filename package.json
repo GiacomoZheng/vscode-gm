@@ -50,6 +50,9 @@
 		"configurationDefaults": {
 			"[gm]": {
 				"editor.insertSpaces": false
+            },
+            "[pstree]": {
+                "files.encoding": "utf16le"
             }
 		}
     }
