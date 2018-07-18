@@ -8,7 +8,7 @@
 			"name": "comment.pstree"
 		},
 		{
-			"match": "^((?:│  )*\\s*[├└]─)(.+)\\b",
+			"match": "^((?:│ *)*\\s*[├└]─)(.+)\\b",
 			"captures": {
 				"1": {
 					"name": "keyword.brunch.pstree"

@@ -37,10 +37,12 @@ Return
 +>^4::Send,⇔
 
 >^5::Send,∈
+; :*:\!∈\::∉
 
 >^+5::Send,∋
 
 >^6::Send,⊆
+; ⊈
 
 +>^6::Send,⊂
 
@@ -50,27 +52,23 @@ Return
 
 >^8::Send,∞
 
++>^8::Send,•
+
 >^0::Send,∅
 
 >^+,::Send,≤
 
+:*:\!=::≠
+
++>^=::Send,≌
+
+>^-::Send,¯
+
 >^.::Send,…
 
->^+.::Send,≥
++>^.::Send,≥
 
-; ↢↣
->^!right::Send,↦
-
->^!left::Send,↤
-
->^right::Send,→
-
->^left::Send,←
-
-+>^left::Send,⇐
-
-+>^right::Send,⇒
-
+;
 >^a::Send,∀
 
 >^e::Send,∃
@@ -89,11 +87,18 @@ Return
 
 >^x::Send,×
 
->^=::Send,≠
+; ↢↣
+>^!right::Send,↦
 
-+>^=::Send,≌
+>^!left::Send,↤
 
->^-::Send,¯
+>^right::Send,→
+
+>^left::Send,←
+
++>^left::Send,⇐
+
++>^right::Send,⇒
 
 ; changing some letter to be capital will change the output to be capital
 
@@ -149,7 +154,6 @@ Return
 
 :*:\aleph::א ; 亦写作
 :*:\alef::א
-
 
 
 ; 手写体 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&

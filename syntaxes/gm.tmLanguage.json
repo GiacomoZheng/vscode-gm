@@ -12,9 +12,6 @@
 			"include": "#comments"
 		},
 		{
-			"include": "#strings"
-		},
-		{
 			"include": "#whole-pages"
 		}
 	],
@@ -26,6 +23,9 @@
 			"patterns": [
 				{
 					"include": "#brackets"
+				},
+				{
+					"include": "#gmlang"
 				}
 			]
 		},
@@ -189,11 +189,11 @@
 			"patterns": [
 				{
 					"name": "constant.numeric.gm",
-					"match": "\\b(?![\\.])(?:0|π)\\b"
+					"match": "\\b(?!\\.)(?:0|π)\\b(?!:)"
 				},
 				{
 					"name": "constant.numeric.dec.gm",
-					"match": "\\b[\\-\\+]?(?:[Dd][Ee][Cc]\\.)?[1-9][0-9]*(?:\\.(?:e|[0-9]+))?\\b"
+					"match": "\\b[\\-\\+]?(?:[Dd][Ee][Cc]\\.)?[1-9][0-9]*(?:\\.(?:e|[0-9]+))?\\b(?!:)"
 				},
 				{
 					"name": "constant.numeric.bin.gm",
@@ -286,7 +286,11 @@
 			"patterns": [
 				{
 					"name": "invalid.illegal.define.gm",
-					"match": "(?=^|\\s):"
+					"match": "(?=\\s):"
+				},
+				{
+					"name": "invalid.illegal.define.gm",
+					"match": "(?=^):"
 				}
 			]
 		}
