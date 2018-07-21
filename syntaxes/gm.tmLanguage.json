@@ -9,26 +9,14 @@
 			"name": "keyword.control.define.gm"
 		},
 		{
-			"include": "#comments"
+			"include": "#brackets"
 		},
 		{
-			"include": "#whole-pages"
+			"include": "#gmlang"
 		}
 	],
 
 	"repository": {
-		"whole-pages": {
-			"begin": "^(?!:)",
-			"end": "$",
-			"patterns": [
-				{
-					"include": "#brackets"
-				},
-				{
-					"include": "#gmlang"
-				}
-			]
-		},
 		"brackets": {
 			"patterns": [
 				{
@@ -266,15 +254,16 @@
 				{
 					"name": "constant.character.escape.gm",
 					"match": "\\\\."
+				},
+				{
+					"include": "#quoted"
 				}
 			]
 		},
 		"comments": {
 			"patterns": [
 				{
-					"begin": "\\[(?:\"|')",
-					"end": "(?:\"|')\\]",
-					"name": "comment.block.gm"
+					"include": "#block-comments"
 				},
 				{
 					"match": ";.*",
@@ -291,6 +280,28 @@
 				{
 					"name": "invalid.illegal.define.gm",
 					"match": "(?=^):"
+				}
+			]
+		},
+		"block-comments": {
+			"begin": "\\[(?:\"|')",
+			"end": "(?:\"|')\\]",
+			"name": "comment.block.gm",
+			"patterns": [
+				{
+					"include": "#quoted"
+				}
+			]
+		},
+		"quoted": {
+			"begin": "```(?=\\n)",
+			"end": "```",
+			"patterns": [
+				{
+					"include": "#gmlang"
+				},
+				{
+					"include": "#brackets"
 				}
 			]
 		}

@@ -52,7 +52,9 @@
 				"editor.insertSpaces": false
             },
             "[pstree]": {
-                "files.encoding": "utf16le"
+                "files.encoding": "utf16le",
+                "editor.insertSpaces": true,
+                "editor.tabSize": 2
             }
 		}
     }
