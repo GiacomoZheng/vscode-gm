@@ -4,11 +4,15 @@
     "description": "GM support for Visual Studio Code",
     "version": "0.0.1",
     "publisher": "giacomo",
+    "main": "./out/gmMain",
     "engines": {
         "vscode": "^1.25.0"
     },
     "categories": [
         "Programming Languages"
+    ],
+    "activationEvents": [
+        "*"
     ],
     "repository": {
 		"type": "git",

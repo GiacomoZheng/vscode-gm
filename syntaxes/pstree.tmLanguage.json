@@ -1,6 +1,9 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "PStree",
+    "foldingStartMarker": "(\\(\\s*$|\\{\\s*$)",
+	"foldingStopMarker": "(^\\s*\\)|^\\s*\\})",
+	
 	"scopeName": "source.pstree",
 	"patterns": [
 		{
@@ -14,7 +17,7 @@
 					"name": "keyword.brunch.pstree"
 				},
 				"2": {
-					"name": "meta.object.pstree"
+					"name": "markup.underline.link.pstree"
 				}
 			}
 		}

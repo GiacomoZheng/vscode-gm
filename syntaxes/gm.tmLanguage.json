@@ -1,13 +1,13 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"$schema": "../tmlanguage.json",
 	
 	"name": "GM",
+    "foldingStartMarker": "(\\(\\s*$|\\{\\s*$)",
+	"foldingStopMarker": "(^\\s*\\)|^\\s*\\})",
+
+	"firstLineMatch": ":\\s*.+",
 	"scopeName": "source.gm",
 	"patterns": [
-		{
-			"match": "(?=^):",
-			"name": "keyword.control.define.gm"
-		},
 		{
 			"include": "#brackets"
 		},
@@ -275,7 +275,7 @@
 			"patterns": [
 				{
 					"name": "invalid.illegal.define.gm",
-					"match": "(?=\\s):"
+					"match": "\\s:"
 				},
 				{
 					"name": "invalid.illegal.define.gm",
@@ -296,6 +296,7 @@
 		"quoted": {
 			"begin": "```(?=\\n)",
 			"end": "```",
+			"name": "string.quoted.triple.gm",
 			"patterns": [
 				{
 					"include": "#gmlang"
