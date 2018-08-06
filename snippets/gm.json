@@ -12,7 +12,7 @@
 		]
 	},
 	"∀": {
-		"prefix": "for_every",
+		"prefix": "for_all",
 		"body": [
 			"∀${1:variable_name}:$0"
 		]
@@ -43,14 +43,6 @@
 		"prefix": "if_and_only_if",
 		"body": ["⇔"]
 	},
-	"∅": {
-		"prefix": "empty_set",
-		"body": ["∅"]
-	},
-	"∞": {
-		"preix": "infinity",
-		"body": ["∞"]
-	},
 	"∪": {
 		"prefix": "union",
 		"body": ["∪"]
@@ -62,5 +54,43 @@
 	"■": {
 		"prefix": "terminator",
 		"body": ["■"]
+	},
+
+	"locator to giacomo's headers": {
+		"prefix": "@giacomo.h",
+		"body": [
+			"@giacomo.h.$1,",
+			"$0",
+			"■"
+		]
+	},
+
+	"∅": {
+		"prefix": "empty_set",
+		"body": ["∅"]
+	},
+	"∋": {
+		"prefix": "contain",
+		"body" : [
+			"∈ ${1:class/collection},$0"
+		]
+	},
+	"⊇": {
+		"prefix": "included",
+		"body" : [
+			"⊇ ${1:class/collection},$0"
+		]
+	},
+	"⊃": {
+		"prefix": "properly_includes",
+		"body" : [
+			"⊃ ${1:class/collection},$0"
+		]
+	},
+	"⊂": {
+		"prefix": "properly_included",
+		"body" : [
+			"⊂ ${1:class/collection},$0"
+		]
 	}
 }

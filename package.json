@@ -4,7 +4,7 @@
     "description": "GM support for Visual Studio Code",
     "version": "0.0.1",
     
-	"icon": "icon.png",
+	"icon": "images/icon.png",
     "engines": {
         "vscode": "^1.25.0"
     },

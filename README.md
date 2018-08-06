@@ -1,6 +1,10 @@
-# gm README
+# gm
 
-This is the README for your extension "gm". After writing up a brief description, we recommend including the following sections.
+This is the gm exttension written for VS code.
+
+author:  Giacomo Zheng
+
+作者：郑仁鹏
 
 ## Features
 
@@ -8,7 +12,7 @@ Describe specific features of your extension including screenshots of your exten
 
 For example if there is an image subfolder under your extension project workspace:
 
-\!\[feature X\]\(images/feature-x.png\)
+![gm](images/icon.png)
 
 > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
