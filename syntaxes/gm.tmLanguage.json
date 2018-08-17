@@ -2,7 +2,7 @@
 	"$schema": "../tmlanguage.json",
 	
 	"name": "GM",
-    "foldingStartMarker": "(\\(\\s*$|\\{\\s*$)",
+	"foldingStartMarker": "(\\(\\s*$|\\{\\s*$)",
 	"foldingStopMarker": "(^\\s*\\)|^\\s*\\})",
 
 	"firstLineMatch": ":\\s*.+",
@@ -10,9 +10,6 @@
 	"patterns": [
 		{
 			"include": "#brackets"
-		},
-		{
-			"include": "#gmlang"
 		}
 	],
 
@@ -39,10 +36,10 @@
 		"gmlang": {
 			"patterns": [
 				{
-					"include": "#strings"
+					"include": "#comments"
 				},
 				{
-					"include": "#comments"
+					"include": "#strings"
 				},
 				{
 					"include": "#keywords"
@@ -79,7 +76,7 @@
 			]
 		},
 		"square-bracket": {
-			"begin": "\\[",
+			"begin": "(?<!^|\\s|,)\\[",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.define.subscript.begin.gm"
@@ -239,7 +236,7 @@
 			]
 		},
 		"logical-functions": {
-			"begin": "([∀∃!])\\s*(\\()",
+			"begin": "([∀∃!?])\\s*(\\()",
 			"beginCaptures": {
 				"1": {
 					"name": "support.function.logical.gm"
@@ -277,13 +274,9 @@
 			]
 		},
 		"strings": {
-			"name": "string.quoted.double.gm",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.gm",
-					"match": "\\\\."
+					"include": "#double-strings"
 				},
 				{
 					"include": "#quoted"
@@ -305,21 +298,28 @@
 			"patterns": [
 				{
 					"name": "invalid.illegal.define.gm",
-					"match": "(?<=[\\s:]):"
-				},
-				{
-					"name": "invalid.illegal.define.gm",
-					"match": "(?=^):"
+					"match": "(?<=^|\\s|:):"
 				}
 			]
 		},
 		"block-comments": {
-			"begin": "\\[[\"']",
-			"end": "[\"']\\]",
+			"begin": "(?<=^|,)\\s*\\[",
+			"end": "\\]",
 			"name": "comment.block.gm",
 			"patterns": [
 				{
-					"include": "#quoted"
+					"include": "#strings"
+				}
+			]
+		},
+		"double-strings": {
+			"name": "string.quoted.double.gm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.gm",
+					"match": "\\\\."
 				}
 			]
 		},
@@ -328,9 +328,6 @@
 			"end": "```",
 			"name": "string.quoted.triple.gm",
 			"patterns": [
-				{
-					"include": "#gmlang"
-				},
 				{
 					"include": "#brackets"
 				}
