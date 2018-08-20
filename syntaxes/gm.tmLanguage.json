@@ -42,6 +42,9 @@
 					"include": "#strings"
 				},
 				{
+					"include": "#invalids"
+				},
+				{
 					"include": "#keywords"
 				},
 				{
@@ -49,9 +52,6 @@
 				},
 				{
 					"include": "#variables"
-				},
-				{
-					"include": "#invalids"
 				}
 			]
 		},
@@ -175,35 +175,6 @@
 				}
 			]
 		},
-		"custom": {
-			"patterns": [
-				{
-					"match": "(?<![∀∃!])\\b([\\s,;:]+)(\\[.*\\])*(\\(.*\\))*(:)(?!:)",
-					"captures": {
-						"1": {
-							"name": "constant.quantity.gm"
-						},
-						"2": {
-							"patterns": [
-								{
-									"include": "#bracket"
-								}
-							]
-						},
-						"3": {
-							"patterns": [
-								{
-									"include": "#bracket"
-								}
-							]
-						},
-						"4": {
-							"name": "keyword.control.define.gm"
-						}
-					}
-				}
-			]
-		},
 		"numeric": {
 			"patterns": [
 				{
@@ -236,30 +207,16 @@
 			]
 		},
 		"logical-functions": {
-			"begin": "([∀∃!?])\\s*(\\()",
-			"beginCaptures": {
+			"match": "([∀∃!?])([^\\[\\(:])?(?![^:]*:)",
+			"captures": {
 				"1": {
 					"name": "support.function.logical.gm"
 				},
 				"2": {
-					"name": "meta.structure.sequence.gm punctuation.define.sequence.begin.gm"
+					"name": "invalid.illegal.logical.gm"
 				}
 			},
-			"end": "(\\))\\s*(,?)",
-			"endCaptures": {
-				"1": {
-					"name": "meta.structure.sequence.gm punctuation.define.sequence.begin.gm"
-				},
-				"2": {
-					"name": "punctuation.separator.gm"
-				}
-			},
-			"contentName": "meta.structure.sequence.gm",
-			"patterns": [
-				{
-					"include": "#brackets"
-				}
-			]
+			"patterns": []
 		},
 		"keywords": {
 			"patterns": [
@@ -270,6 +227,10 @@
 				{
 					"name": "keyword.control.flow.gm",
 					"match": "⇒|⇔|⇐"
+				},
+				{
+					"match": ":",
+					"name": "keyword.control.define.gm"
 				}
 			]
 		},
@@ -299,6 +260,14 @@
 				{
 					"name": "invalid.illegal.define.gm",
 					"match": "(?<=^|\\s|:):"
+				},
+				{
+					"match": "[^\\s\\{\\[\\(,%&]([∀∃!])",
+					"captures": {
+						"1": {
+							"name": "invalid.illegal.quantifier.gm"
+						}
+					}
 				}
 			]
 		},
