@@ -56,10 +56,10 @@
 		"body": ["■"]
 	},
 
-	"locator to giacomo's headers": {
-		"prefix": "@giacomo.h",
+	"locator to the headers": {
+		"prefix": "@gm.h",
 		"body": [
-			"@giacomo.h.$1,",
+			"@gm.h.$1,",
 			"$0",
 			"■"
 		]

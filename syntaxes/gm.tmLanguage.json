@@ -169,6 +169,9 @@
 					"include": "#functions"
 				},
 				{
+					"include": "#special-name"
+				},
+				{
 					"name": "constant.other.color.gm",
 					"comment": "colors",
 					"match": "#(?:(?:[0-9a-fA-F]{3}){1,2}|(?:[0-9a-fA-F]{4}){1,2})\\b"
@@ -206,6 +209,18 @@
 				}
 			]
 		},
+		"special-name": {
+			"match": "%(.+)%",
+			"captures": {
+				"0": {
+					"name": "constant.name.gm"
+				},
+				"1": {
+					"name": "string.name.gm"
+				}
+			},
+			"patterns": []
+		},
 		"logical-functions": {
 			"match": "([∀∃!?])([^\\[\\(:])?(?![^:]*:)",
 			"captures": {
@@ -220,6 +235,10 @@
 		},
 		"keywords": {
 			"patterns": [
+				{
+					"name": "punctuation.delimiter.gm",
+					"match": "\\s"
+				},
 				{
 					"name": "punctuation.separator.gm",
 					"match": ","
