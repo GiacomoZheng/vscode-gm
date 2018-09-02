@@ -20,13 +20,16 @@
 					"include": "#gmlang"
 				},
 				{
-					"include": "#round-bracket"
+					"include": "#round-brackets"
 				},
 				{
-					"include": "#square-bracket"
+					"include": "#square-brackets"
 				},
 				{
-					"include": "#curly-bracket"
+					"include": "#curly-brackets"
+				},
+				{
+					"include": "#lock-symbols"
 				},
 				{
 					"include": "#write-out"
@@ -55,7 +58,7 @@
 				}
 			]
 		},
-		"round-bracket": {
+		"round-brackets": {
 			"begin": "\\(",
 			"beginCaptures": {
 				"0": {
@@ -75,7 +78,7 @@
 				}
 			]
 		},
-		"square-bracket": {
+		"square-brackets": {
 			"begin": "(?<!^|\\s|,)\\[",
 			"beginCaptures": {
 				"0": {
@@ -95,7 +98,7 @@
 				}
 			]
 		},
-		"curly-bracket": {
+		"curly-brackets": {
 			"begin": "\\{",
 			"beginCaptures": {
 				"0": {
@@ -109,6 +112,30 @@
 				}
 			},
 			"name": "meta.structure.set.gm",
+			"patterns": [
+				{
+					"include": "#brackets"
+				},
+				{
+					"comment": "I don't know whether I will use this symbol later",
+					"match": "\\|",
+					"name": "punctuation.separator.gm"
+				}
+			]
+		},
+		"lock-symbols": {
+			"begin": "&",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.lock.symbol.begin.gm"
+				}
+			},
+			"end": "&",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.lock.symbol.end.gm"
+				}
+			},
 			"patterns": [
 				{
 					"include": "#brackets"
@@ -222,16 +249,12 @@
 			"patterns": []
 		},
 		"logical-functions": {
-			"match": "([∀∃!?])([^\\[\\(:])?(?![^:]*:)",
-			"captures": {
-				"1": {
+			"patterns": [
+				{
+					"match": "[∀∃!](?![^:]*:)",
 					"name": "support.function.logical.gm"
-				},
-				"2": {
-					"name": "invalid.illegal.logical.gm"
 				}
-			},
-			"patterns": []
+			]
 		},
 		"keywords": {
 			"patterns": [
@@ -257,9 +280,6 @@
 			"patterns": [
 				{
 					"include": "#double-strings"
-				},
-				{
-					"include": "#quoted"
 				}
 			]
 		},
@@ -281,18 +301,33 @@
 					"match": "(?<=^|\\s|:):"
 				},
 				{
-					"match": "\\w+[∀∃!]",
-					"name": "invalid.illegal.quantifier.gm"
+					"name": "invalid.illegal.quantifier.gm",
+					"match": "\\w+[∀∃!]"
+				},
+				{
+					"name": "invalid.illegal.gm",
+					"match": "```",
+					"comment": "it can be only used in the comments"
 				}
 			]
 		},
 		"block-comments": {
-			"begin": "(?<=^|,)\\s*\\[",
+			"begin": "(?<=^|[,\\(\\{])\\s*\\[",
 			"end": "\\]",
 			"name": "comment.block.gm",
 			"patterns": [
 				{
 					"include": "#strings"
+				},
+				{
+					"begin": "```",
+					"end": "```",
+					"name": "string.quoted.triple.gm",
+					"patterns": [
+						{
+							"include": "#brackets"
+						}
+					]
 				}
 			]
 		},
@@ -304,16 +339,6 @@
 				{
 					"name": "constant.character.escape.gm",
 					"match": "\\\\."
-				}
-			]
-		},
-		"quoted": {
-			"begin": "```",
-			"end": "```",
-			"name": "string.quoted.triple.gm",
-			"patterns": [
-				{
-					"include": "#brackets"
 				}
 			]
 		}

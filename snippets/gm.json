@@ -35,10 +35,6 @@
 		"prefix": "then",
 		"body": ["⇒"]
 	},
-	"⇐": {
-		"prefix": "only_if",
-		"body": ["⇐"]
-	},
 	"⇔": {
 		"prefix": "if_and_only_if",
 		"body": ["⇔"]
@@ -64,10 +60,38 @@
 			"■"
 		]
 	},
+	"variable with ∀": {
+		"prefix": "∀",
+		"body": [
+			"∀${1:variable_name}:$0"
+		]
+	},
+	"variable with ∃": {
+		"prefix": "∃",
+		"body": [
+			"∃${1:variable_name}:$0"
+		]
+	},
+	"variable with !": {
+		"prefix": "!",
+		"body": [
+			"!${1:variable_name}:$0"
+		]
+	},
+	"absolute value": {
+		"prefix": "|",
+		"body": [
+			"|$1|$0"
+		]
+	},
 
 	"∅": {
 		"prefix": "empty_set",
 		"body": ["∅"]
+	},
+	"⇐": {
+		"prefix": "only_if",
+		"body": ["⇐"]
 	},
 	"∋": {
 		"prefix": "contain",
