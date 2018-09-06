@@ -58,7 +58,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 	>^+,::Send,≤
 
-	:*:\!=::≠
+	:*:!=	::≠
 
 	+>^=::Send,≌
 
@@ -101,58 +101,58 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	+>^right::Send,⇒
 
 ; changing some letter to be capital will change the output to be capital
-	:*:\alpha::α
+	:*:alpha	::α
 
-	:*:\beta::β
+	:*:beta	::β
 
-	:*:\gamma::γ
+	:*:gamma	::γ
 
-	:*:\delta::δ
+	:*:delta	::δ
 
-	:*:\epsilon::ε
+	:*:epsilon	::ε
 
-	:*:\zeta::ζ
+	:*:zeta	::ζ
 
-	:*:\eta::η
+	:*:eta	::η
 
-	:*:\theta::θ
+	:*:theta	::θ
 
-	:*:\iota::ι
+	:*:iota	::ι
 
-	:*:\kappa::κ
+	:*:kappa	::κ
 
-	:*:\lambda::λ
+	:*:lambda	::λ
 
-	:*:\mu::μ
+	:*:mu	::μ
 
-	:*:\nu::ν
+	:*:nu	::ν
 
-	:*:\xi::ξ
+	:*:xi	::ξ
 
-	:*:\omicron::ο
+	:*:omicron	::ο
 
-	:*:\pi::π
+	:*:pi	::π
 
-	:*:\rho::ρ
+	:*:rho	::ρ
 
-	:*:\sigma::σ
+	:*:sigma	::σ
 
-	:*:\tau::τ
+	:*:tau	::τ
 
-	:*:\upsilon::υ
+	:*:upsilon	::υ
 
-	:*:\phi::φ
+	:*:phi	::φ
 
-	:*:\chi::χ
+	:*:chi	::χ
 
-	:*:\psi::ψ
+	:*:psi	::ψ
 
-	:*:\omega::ω
+	:*:omega	::ω
 
 ; 希伯来文 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
-:*:\aleph::א ; 亦写作
-:*:\alef::א
+:*:aleph	::א ; 亦写作
+:*:alef	::א
 
 
 ; 手写体 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&

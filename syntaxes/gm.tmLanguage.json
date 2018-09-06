@@ -251,6 +251,7 @@
 		"logical-functions": {
 			"patterns": [
 				{
+					"comment": "I cannot find a perfect way to deal with this question up to now",
 					"match": "[∀∃!](?![^:]*:)",
 					"name": "support.function.logical.gm"
 				}

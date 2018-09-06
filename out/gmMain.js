@@ -3,14 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const vscode = require('vscode');
 
 function activate(context) {
-    context.subscriptions.push(vscode.languages.registerCompletionItemProvider('gm', {provideCompletionItems: attribution_method}, '.'));
+    // context.subscriptions.push(vscode.languages.registerCompletionItemProvider('gm', {provideCompletionItems: attribution_method}, '.'));
 }
 exports.activate = activate;
 
 const identifierFinder = /(?:(?:\\[".+"\\]|;.*|"(?:\\"|[^"])*")|[,.\s\(\)\[\]{}])+/g;
 
 function attribution_method(document, position, token) {
-    return;
 	const words = document.getText().split(identifierFinder);
 	// console.log(words);
 	let attributes = new Array();
