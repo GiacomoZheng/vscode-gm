@@ -7,7 +7,11 @@ Prism.languages.gm = {
 			greedy: true
 		},
 		{
-			pattern: /(^\s*|[,\(\{]\s*)\[[\s\S]*?(?:\]|$)/,
+			pattern: /(^\s*|[,\(\{]\s*)\[[^\]]*```[\s\S]*?(?:```[^\[]*\]|$)/, // the [ ```
+			lookbehind: true
+		},
+		{
+			pattern: /(^\s*|[,\(\{]\s*)\[(?![^\]]*?```)[^\]]*(?:\]|$)/,
 			lookbehind: true
 		}
 	],

@@ -19,7 +19,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 		GetKeyState, Caps_state, CapsLock, T
 	Return
 
-	~Shift::
+	~ShIft::
 	KeyWait, CapsLock
 		GetKeyState, Caps_state, CapsLock, T
 	Return
@@ -340,7 +340,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; 花体 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 	>!a::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔄
 	Else
 		Send,𝔞
@@ -354,7 +354,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!b::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔅
 	Else
 		Send,𝔟
@@ -368,7 +368,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!c::
-	if Caps_state = D
+	If Caps_state = D
 		Send,ℭ
 	Else
 		Send,𝔠
@@ -382,7 +382,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!d::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔇
 	Else
 		Send,𝔡
@@ -396,7 +396,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!e::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔈
 	Else
 		Send,𝔢
@@ -410,7 +410,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!f::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔉
 	Else
 		Send,𝔣
@@ -424,7 +424,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!g::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔊
 	Else
 		Send,𝔤
@@ -438,7 +438,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!h::
-	if Caps_state = D
+	If Caps_state = D
 		Send,ℌ
 	Else
 		Send,𝔥
@@ -452,7 +452,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!i::
-	if Caps_state = D
+	If Caps_state = D
 		Send,ℑ
 	Else
 		Send,𝔦
@@ -466,7 +466,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!j::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔍
 	Else
 		Send,𝔧
@@ -480,7 +480,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!k::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔎
 	Else
 		Send,𝔨
@@ -494,7 +494,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!l::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔏
 	Else
 		Send,𝔩
@@ -508,7 +508,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!m::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔐
 	Else
 		Send,𝔪
@@ -522,7 +522,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!n::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔑
 	Else
 		Send,𝔫
@@ -536,7 +536,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!o::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔒
 	Else
 		Send,𝔬
@@ -550,7 +550,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!p::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔓
 	Else
 		Send,𝔭
@@ -564,7 +564,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!q::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔔
 	Else
 		Send,𝔮
@@ -578,7 +578,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!r::
-	if Caps_state = D
+	If Caps_state = D
 		Send,ℜ
 	Else
 		Send,𝔯
@@ -592,7 +592,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!s::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔖
 	Else
 		Send,𝔰
@@ -606,7 +606,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!t::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔗
 	Else
 		Send,𝔱
@@ -620,7 +620,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!u::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔘
 	Else
 		Send,𝔲
@@ -634,7 +634,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!v::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔙
 	Else
 		Send,𝔳
@@ -648,7 +648,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!w::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔚
 	Else
 		Send,𝔴
@@ -662,7 +662,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!x::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔛
 	Else
 		Send,𝔵
@@ -676,7 +676,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!y::
-	if Caps_state = D
+	If Caps_state = D
 		Send,𝔜
 	Else
 		Send,𝔶
@@ -690,7 +690,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 	>!z::
-	if Caps_state = D
+	If Caps_state = D
 		Send,ℨ
 	Else
 		Send,𝔷
