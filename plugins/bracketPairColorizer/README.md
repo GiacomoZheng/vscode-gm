@@ -20,7 +20,7 @@ run the [copy.exe](bracketPairColorizer/copy.exe) for windows
 
 run the [?]() for Mac OS
 
-path: `.vscode\extensions\coenraads.bracket-pair-colorizer-1.0.59\node_modules\prismjs\`
+path: `.vscode\extensions\coenraads.bracket-pair-colorizer-1.0.59\node_modules\prismjs\components\`
 
 # step 2:
 

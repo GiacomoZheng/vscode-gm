@@ -23,13 +23,21 @@
         {
             "label": "update-grammar",
             "type": "shell",
-            "command": "cd C:\\Users\\admin\\Documents\\GitHub\\vscode-gm; cp -r -Force out C:\\Users\\admin\\.vscode\\extensions\\vscode-gm; cp -r -Force snippets C:\\Users\\admin\\.vscode\\extensions\\vscode-gm; cp -r -Force syntaxes C:\\Users\\admin\\.vscode\\extensions\\vscode-gm; cp -Force language-configuration.json C:\\Users\\admin\\.vscode\\extensions\\vscode-gm; cp -Force package.json C:\\Users\\admin\\.vscode\\extensions\\vscode-gm; cp -Force README.md C:\\Users\\admin\\.vscode\\extensions\\vscode-gm; cd plugins\\bracketPairColorizer; cp -Force prism-gm.js C:\\Users\\admin\\.vscode\\extensions\\coenraads.bracket-pair-colorizer-1.0.59\\node_modules\\prismjs\\;  cp -Force prism-gm.min.js C:\\Users\\admin\\.vscode\\extensions\\coenraads.bracket-pair-colorizer-1.0.59\\node_modules\\prismjs\\;",
+            "command": "cd C:\\Users\\admin\\Documents\\GitHub\\vscode-gm; cp -r -Force out C:\\Users\\admin\\.vscode\\extensions\\vscode-gm; cp -r -Force snippets C:\\Users\\admin\\.vscode\\extensions\\vscode-gm; cp -r -Force syntaxes C:\\Users\\admin\\.vscode\\extensions\\vscode-gm; cp -Force language-configuration.json C:\\Users\\admin\\.vscode\\extensions\\vscode-gm; cp -Force package.json C:\\Users\\admin\\.vscode\\extensions\\vscode-gm; cp -Force README.md C:\\Users\\admin\\.vscode\\extensions\\vscode-gm;",
             "group": "build",
             "presentation": {
-                // Reveal the output only if unrecognized errors occur.
                 "reveal": "silent"
             },
-            // Use the standard MS compiler pattern to detect errors, warnings and infos
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "update-extension-bracketPairColorizer",
+            "type": "shell",
+            "command": "cd plugins\\bracketPairColorizer; cp -Force prism-gm.js C:\\Users\\admin\\.vscode\\extensions\\coenraads.bracket-pair-colorizer-1.0.59\\node_modules\\prismjs\\components\\;  cp -Force prism-gm.min.js C:\\Users\\admin\\.vscode\\extensions\\coenraads.bracket-pair-colorizer-1.0.59\\node_modules\\prismjs\\components\\;",
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
             "problemMatcher": "$msCompile"
         }
 	]

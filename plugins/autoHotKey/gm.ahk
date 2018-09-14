@@ -24,25 +24,15 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 		GetKeyState, Caps_state, CapsLock, T
 	Return
 
-	; >^Del up::
-	; Send,{RCtrl down}
-	; Return
-
-	; RCtrl::
-	; Send,{RCtrl up}
-	; Return
-
 	>^4::Send,↔
 
 	+>^4::Send,⇔
 
 	>^5::Send,∈
-	; :*:\!∈\::∉
 
 	>^+5::Send,∋
 
 	>^6::Send,⊆
-	; ⊈
 
 	+>^6::Send,⊂
 
@@ -58,15 +48,16 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 	>^+,::Send,≤
 
-	:*:!=	::≠
-
-	+>^=::Send,≌
-
 	>^-::Send,¯
 
 	>^.::Send,…
 
 	+>^.::Send,≥
+
+	;
+	:*:!=	::≠
+
+	:*:~=	::≌
 
 	;
 	>^a::Send,∀
