@@ -12,12 +12,14 @@
         "Programming Languages"
     ],
     
-    "main": "./out/gmMain",
-    "activationEvents": [
-        "*"
-    ],
+    "_uncompleted": {
+        "main": "./out/gmMain",
+        "activationEvents": [
+            "*"
+        ]
+    },
 
-    "publisher": "giacomo",
+    "publisher": "giacomozheng",
     "repository": {
 		"type": "git",
 		"url": "https://github.com/GiacomoZheng/vscode-gm.git"

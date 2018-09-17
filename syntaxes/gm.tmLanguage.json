@@ -5,7 +5,6 @@
 	"foldingStartMarker": "(\\(\\s*$|\\{\\s*$)",
 	"foldingStopMarker": "(^\\s*\\)|^\\s*\\})",
 
-	"firstLineMatch": ":\\s*.+",
 	"scopeName": "source.gm",
 	"patterns": [
 		{
@@ -168,9 +167,9 @@
 			]
 		},
 		"variables": {
-			"begin": "[∀∃!](?![:\\s])",
+			"begin": "([∀∃!])(?![:\\s])",
 			"beginCaptures": {
-				"0": {
+				"1": {
 					"name": "keyword.quantifier.gm"
 				}
 			},
