@@ -43,15 +43,13 @@ go to [Changelog](CHANGELOG.md) for details.
 
 ### 1.0.0
 
-Initial release of 2018.9.14
+Initial release in 2018.9.14
 
 ### 1.0.1
 
-<!-- ### 1.0.1
+First update 2018.10.4
 
-Fixed issue #.
-
-### 1.1.0
+<!-- ### 1.1.0
 
 Added features X, Y, and Z. -->
 
