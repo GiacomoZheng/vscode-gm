@@ -2,9 +2,13 @@
 
 This is the gm exttension written for VS code.
 
-author:  Giacomo Zheng
+author: Giacomo Zheng
 
 作者：郑仁鹏
+
+email: giacomo821@outlook.com
+
+github username: [GiacomoZheng](https://github.com/GiacomoZheng/vscode-gm.git)
 
 ## Features
 
@@ -17,10 +21,13 @@ which looks like this one. (with the extension better-comment)
 
 It is much more like mathemtics than a programming lauguage indeed.
 
-
 ## Requirements
 
 None
+
+If it is possible, the Windows' users can try to learn something about autoHotKey, which helps a lot.
+
+For the Mac's and Linus' users, I'm sorry but you can try other hotkey apps.
 
 ## Extension Settings
 
@@ -32,9 +39,13 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## Release Notes
 
+go to [Changelog](CHANGELOG.md) for details.
+
 ### 1.0.0
 
 Initial release of 2018.9.14
+
+### 1.0.1
 
 <!-- ### 1.0.1
 

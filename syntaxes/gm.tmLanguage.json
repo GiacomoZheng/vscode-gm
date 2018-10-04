@@ -1,5 +1,7 @@
 {
-	"$schema": "../tmlanguage.json",
+	"_": {
+		"$schema": "../tmlanguage.json"
+	},
 	
 	"name": "GM",
 	"foldingStartMarker": "(\\(\\s*$|\\{\\s*$)",
@@ -280,6 +282,9 @@
 			"patterns": [
 				{
 					"include": "#double-strings"
+				},
+				{
+					"include": "#single-strings"
 				}
 			]
 		},
@@ -320,12 +325,16 @@
 					"include": "#strings"
 				},
 				{
-					"begin": "```",
-					"end": "```",
+					"begin": "(?<!`)```(?!`)",
+					"end": "(?<!`)```(?!`)",
 					"name": "string.quoted.triple.gm",
 					"patterns": [
 						{
 							"include": "#brackets"
+						},
+						{
+							"match": "````",
+							"name": "invalid.illegal.gm"
 						}
 					]
 				}
@@ -335,6 +344,17 @@
 			"name": "string.quoted.double.gm",
 			"begin": "\"",
 			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.gm",
+					"match": "\\\\."
+				}
+			]
+		},
+		"single-strings": {
+			"name": "string.quoted.single.gm",
+			"begin": "`(?!``)",
+			"end": "`(?!``)",
 			"patterns": [
 				{
 					"name": "constant.character.escape.gm",

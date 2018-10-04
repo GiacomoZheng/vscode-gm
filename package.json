@@ -6,7 +6,7 @@
     
 	"icon": "images/icon.png",
     "engines": {
-        "vscode": "^1.25.0"
+        "vscode": "^1.24.0"
     },
     "categories": [
         "Programming Languages"
@@ -31,13 +31,7 @@
                 "id": "gm",
                 "aliases": ["GM", "gm"],
                 "extensions": [".gm"],
-                "filenames": ["gm"],
                 "configuration": "./language-configuration.json"
-            },
-            {
-                "id": "pstree",
-                "aliases": ["PStree"],
-                "extensions": [".pstree"]
             }
         ],
         "grammars": [
@@ -45,11 +39,6 @@
                 "language": "gm",
                 "scopeName": "source.gm",
                 "path": "./syntaxes/gm.tmLanguage.json"
-            },
-            {
-                "language": "pstree",
-                "scopeName": "source.pstree",
-                "path": "./syntaxes/pstree.tmLanguage.json"
             }
         ],
 		"snippets": [
@@ -58,28 +47,12 @@
 				"path": "./snippets/gm.json"
 			}
         ],
-        "commands": [
-            {
-                "command": "pstree.showPreview",
-                "title": "%pstree.preview%",
-                "category": "Pstree"
-            }
-        ],
-        "keybindings":[
-            {
-                "key": "ctrl+shift+v",
-                "command": "pstree.showPreview",
-                "when": "editorLangId == 'pstree'"
-            }
-        ],
+        "commands": [],
+        "keybindings":[],
+        
 		"configurationDefaults": {
 			"[gm]": {
 				"editor.insertSpaces": false
-            },
-            "[pstree]": {
-                "files.encoding": "utf16le",
-                "editor.insertSpaces": true,
-                "editor.tabSize": 2
             }
 		}
     }

@@ -29,16 +29,6 @@
                 "reveal": "silent"
             },
             "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "update-extension-bracketPairColorizer",
-            "type": "shell",
-            "command": "cd plugins\\bracketPairColorizer; cp -Force prism-gm.js C:\\Users\\admin\\.vscode\\extensions\\coenraads.bracket-pair-colorizer-1.0.59\\node_modules\\prismjs\\components\\;  cp -Force prism-gm.min.js C:\\Users\\admin\\.vscode\\extensions\\coenraads.bracket-pair-colorizer-1.0.59\\node_modules\\prismjs\\components\\;",
-            "group": "build",
-            "presentation": {
-                "reveal": "silent"
-            },
-            "problemMatcher": "$msCompile"
         }
 	]
 }

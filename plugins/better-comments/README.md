@@ -1,5 +1,9 @@
-add gm in two files
+1. search `better-comment` in store
 
-`.vscode\extensions\aaron-bond.better-comments-1.3.0\out\parser.js` and 
+<!-- click [here]() to install it -->
 
-`.vscode\extensions\aaron-bond.better-comments-1.3.0\package.json`
+2. go to `.vscode\extensions\aaron-bond.better-comments-1.*.*\`
+	
+	add `gm` in two files below
+
+	`package.json` and `\out\parser.js` 
