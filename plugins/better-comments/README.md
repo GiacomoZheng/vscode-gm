@@ -1,3 +1,5 @@
+If you want to use this extension on `gm`, please
+
 1. search `better-comment` in store
 
 <!-- click [here]() to install it -->

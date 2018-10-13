@@ -1,7 +1,5 @@
 {
-	"_": {
-		"$schema": "../tmlanguage.json"
-	},
+	"$schema": "../tmlanguage.json",
 	
 	"name": "GM",
 
@@ -260,7 +258,11 @@
 			"patterns": [
 				{
 					"name": "punctuation.delimiter.gm",
-					"match": "\\s"
+					"match": " "
+				},
+				{
+					"name": "punctuation.delimiter.gm",
+					"match": "^\t+"
 				},
 				{
 					"name": "punctuation.separator.gm",
@@ -292,8 +294,7 @@
 					"include": "#block-comments"
 				},
 				{
-					"match": ";.*",
-					"name": "comment.line.gm"
+					"include": "#line-comments"
 				}
 			]
 		},
@@ -308,9 +309,14 @@
 					"match": "\\w+[∀∃!]"
 				},
 				{
-					"name": "invalid.illegal.gm",
+					"name": "invalid.deprecated.triple.gm",
 					"match": "```",
-					"comment": "it can be only used in the comments"
+					"comment": "it can be only used in the comments. In fact you acn define it."
+				},
+				{
+					"name": "invalid.deprecated.tab.gm",
+					"match": "[^\t\n]\t+",
+					"comment": "Tab should always at the start of new lines"
 				}
 			]
 		},
@@ -321,6 +327,9 @@
 			"patterns": [
 				{
 					"include": "#strings"
+				},
+				{
+					"include": "#special-comments"
 				},
 				{
 					"begin": "(?<!`)```(?!`)",
@@ -335,6 +344,38 @@
 							"name": "invalid.illegal.gm"
 						}
 					]
+				}
+			]
+		},
+		"line-comments": {
+			"patterns": [
+				{
+					"match": "(?i);\\s*(?!\\+|\\*|\\?|\\!|todo|note|wait|warn)[^\\s].*",
+					"name": "comment.line.pure.gm"
+				},
+				{
+					"include": "#special-comments"
+				}
+			]
+		},
+		"special-comments": {
+			"patterns": [
+				{
+					"match": "(?i);\\s*(?:\\+|todo).*",
+					"name": "comment.line.todo.gm"
+				},
+				{
+					"match": "(?i);\\s*(?:\\*|note).*",
+					"name": "comment.line.note.gm"
+				},
+				{
+					"match": "(?i);\\s*(?:\\?|wait).*",
+					"name": "comment.line.wait.gm",
+					"comment": "I didn't determined now"
+				},
+				{
+					"match": "(?i);\\s*(?:\\!|warn).*",
+					"name": "comment.line.warn.gm"
 				}
 			]
 		},

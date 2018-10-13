@@ -14,7 +14,6 @@ github username: [GiacomoZheng](https://github.com/GiacomoZheng/vscode-gm.git)
 
 gm is a language basing on my writing habits of mathematics, with lots of special symbols,
 
-<!-- ![gm](images/icon.png) -->
 ![looks](images/overall.jpg)
 
 which looks like this one. (with the extension better-comment)
@@ -25,13 +24,19 @@ It is much more like mathemtics than a programming lauguage indeed.
 
 None
 
-If it is possible, the Windows' users can try to learn something about autoHotKey, which helps a lot.
+If it is possible, the Windows' users can try to learn something about autoHotKey, which helps a lot. [Here](https://github.com/GiacomoZheng/vscode-gm/tree/master/plugins/autoHotKey) is my source file.
 
 For the Mac's and Linus' users, I'm sorry but you can try other hotkey apps.
 
+## Recommendation 
+
+[bracket-pair-colorizer-2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) is a beautiful and powerful extension and it support all languages. You can directly use it after intalling.
+
+[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) is a useful extension, but it doesn't support gm directly.
+
 ## Extension Settings
 
-none up to now.
+None up to now.
 
 <!-- ## Known Issues
 
@@ -39,19 +44,7 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## Release Notes
 
-go to [Changelog](CHANGELOG.md) for details.
-
-### 1.0.0
-
-Initial release in 2018.9.14
-
-### 1.0.1
-
-First update 2018.10.4
-
-<!-- ### 1.1.0
-
-Added features X, Y, and Z. -->
+Go to [Changelog](CHANGELOG.md) for details.
 
 -----------------------------------------------------------------------------------------------------------
 
