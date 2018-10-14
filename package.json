@@ -10,7 +10,8 @@
     },
     "categories": [
         "Programming Languages",
-        "Snippets"
+        "Snippets",
+        "Themes"
     ],
     
     "_uncompleted": {
@@ -47,6 +48,13 @@
 				"language": "gm",
 				"path": "./snippets/gm.json"
 			}
+        ],
+        "themes": [
+            {
+                "label": "gm - Dark+",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Dark_plus-color-theme.json"
+            }
         ],
         "commands": [],
         "keybindings":[],
