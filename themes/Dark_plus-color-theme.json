@@ -20,7 +20,7 @@
 		"menu.foreground": "#CCCCCC"
 	},
 	"tokenColors": [
-		
+		// addition below
 		{
 			"name": "Comment - todo",
 			"scope": [

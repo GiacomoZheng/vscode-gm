@@ -328,7 +328,7 @@
 					"include": "#strings"
 				},
 				{
-					"include": "#special-comments"
+					"include": "#better-comments"
 				},
 				{
 					"begin": "(?<!`)```(?!`)",
@@ -349,15 +349,15 @@
 		"line-comments": {
 			"patterns": [
 				{
-					"match": "(?i);\\s*(?!\\+|\\*|\\?|\\!|todo|note|wait|warn)[^\\s].*",
+					"match": "(?i);(?!\\s*(?:\\+|\\*|\\?|\\!|todo|note|wait|warn)).*",
 					"name": "comment.line.pure.gm"
 				},
 				{
-					"include": "#special-comments"
+					"include": "#better-comments"
 				}
 			]
 		},
-		"special-comments": {
+		"better-comments": {
 			"patterns": [
 				{
 					"match": "(?i);\\s*(?:\\+|todo).*",
