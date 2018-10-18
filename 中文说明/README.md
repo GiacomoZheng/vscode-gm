@@ -18,7 +18,7 @@ Github 用户名: [GiacomoZheng](https://github.com/GiacomoZheng/vscode-gm.git)
 
 `gm` 是我基于我的数学书写习惯而创造的一门语言，故而，它需要输入很多的符号。
 
-![looks](images/overall.jpg)
+![looks](../images/overall.jpg)
 
 这是该拓展运行下的样子。（使用了拓展 `Bracket Pair Colorizer 2`）
 

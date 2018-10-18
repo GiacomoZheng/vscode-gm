@@ -6,7 +6,7 @@ author: Giacomo Zheng
 
 作者：郑仁鹏
 
-[单击此处前往中文版须知](https://github.com/GiacomoZheng/vscode-gm/中文说明)
+[单击此处前往中文版须知](https://github.com/GiacomoZheng/vscode-gm/tree/master/%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E)
 
 ---
 
