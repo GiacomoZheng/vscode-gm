@@ -6,9 +6,13 @@ author: Giacomo Zheng
 
 作者：郑仁鹏
 
+[单击此处前往中文版须知](https://github.com/GiacomoZheng/vscode-gm/中文说明)
+
+---
+
 email: giacomo821@outlook.com
 
-github username: [GiacomoZheng](https://github.com/GiacomoZheng/vscode-gm.git)
+Github username: [GiacomoZheng](https://github.com/GiacomoZheng/vscode-gm.git)
 
 ## Features
 
@@ -16,7 +20,7 @@ gm is a language basing on my writing habits of mathematics, with lots of specia
 
 ![looks](images/overall.jpg)
 
-which looks like this one. (with the extension better-comment)
+which looks like this one. (with the extension `Bracket Pair Colorizer 2`)
 
 It is much more like mathemtics than a programming lauguage indeed.
 
@@ -24,7 +28,7 @@ It is much more like mathemtics than a programming lauguage indeed.
 
 None
 
-If it is possible, the Windows' users can try to learn something about autoHotKey, which helps a lot. [Here](https://github.com/GiacomoZheng/vscode-gm/tree/master/plugins/autoHotKey) is my source file.
+If it is possible, the Windows' users can try to learn something about [AutoHotKey](https://autohotkey.com/), which helps a lot. [Here](https://github.com/GiacomoZheng/vscode-gm/tree/master/plugins/AutoHotKey) is my source file.
 
 For the Mac's and Linus' users, I'm sorry but you can try other hotkey apps.
 
@@ -32,7 +36,7 @@ For the Mac's and Linus' users, I'm sorry but you can try other hotkey apps.
 
 [bracket-pair-colorizer-2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) is a beautiful and powerful extension and it support all languages. You can directly use it after intalling.
 
-[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) is a useful extension, but it doesn't support gm directly.
+[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) is a useful extension, but it doesn't support gm directly. In the latest version (`1.0.2`), I build in the function of the `better comments` into a theme, but it has only the `dark+`. I'll try to support all the themes latter.
 
 ## Extension Settings
 
