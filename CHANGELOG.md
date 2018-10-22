@@ -5,11 +5,14 @@ All notable changes to the "gm" extension will be documented in this file.
 
 ## 1.0.2 ()
 
+* Change the `overall.jpg`.
+* Add the tutorials written with both Chinese and English.
 * Congratulation, it seems that VS code has fix the bug on `wordPattern`.
 * Add `gm - Dark+` theme, for the function of the `better-comments`. I'm trying to contact with Aaron Bond, the author of `better-comments`.
 
 uncompleted:
-1. The function of `better-comments` for all theme, I'll try to deal with it.
+1. The functions of `better-comments` for all theme, I'll try to deal with it.
+2. Waitting for the permission from `Aaron Bond`.
 
 ## 1.0.1 (Oct. 4th, 2018)
 

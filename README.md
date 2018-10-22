@@ -1,14 +1,18 @@
+<!-- 更新于2018年10月22日 -->
 # gm
 
+
+[单击此处前往中文版须知](documents/中文说明/README)
+
 This is the gm exttension written for VS code.
+
+Click [here](https://github.com/GiacomoZheng/gm/wiki) to the wiki of tutorials.
+
+---
 
 author: Giacomo Zheng
 
 作者：郑仁鹏
-
-[单击此处前往中文版须知](https://github.com/GiacomoZheng/vscode-gm/tree/master/%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E)
-
----
 
 email: giacomo821@outlook.com
 
@@ -28,7 +32,7 @@ It is much more like mathemtics than a programming lauguage indeed.
 
 None
 
-If it is possible, the Windows' users can try to learn something about [AutoHotKey](https://autohotkey.com/), which helps a lot. [Here](https://github.com/GiacomoZheng/vscode-gm/tree/master/plugins/AutoHotKey) is my source file.
+If it is possible, the Windows' users can try to learn something about [AutoHotKey](https://autohotkey.com/), which helps a lot. [Here](plugins/AutoHotKey/) is my source file.
 
 For the Mac's and Linus' users, I'm sorry but you can try other hotkey apps.
 
@@ -40,7 +44,8 @@ For the Mac's and Linus' users, I'm sorry but you can try other hotkey apps.
 
 ## Extension Settings
 
-None up to now.
+It is better to change the theme into the ones start with `"gm - "`, which build in the function of `better-comments` of `aaron-bond`. I'm waitting for the permission from him/her.
+<!-- None up to now. -->
 
 <!-- ## Known Issues
 
@@ -48,7 +53,7 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## Release Notes
 
-Go to [Changelog](CHANGELOG.md) for details.
+Go to [Changelog](CHANGELOG) for details.
 
 -----------------------------------------------------------------------------------------------------------
 

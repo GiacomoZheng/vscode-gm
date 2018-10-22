@@ -2,15 +2,17 @@
 
 这是 `gm` 语言的 `Vs code` 拓展。
 
-作者：郑仁鹏
+点击[这里](https://github.com/GiacomoZheng/gm/wiki)前往教程的wiki。
 
 ---
+
+作者：郑仁鹏
 
 联系方式: giacomo821@outlook.com
 
 Github 用户名: [GiacomoZheng](https://github.com/GiacomoZheng/vscode-gm.git)
 
-更新于2018年10月18日
+更新于2018年10月22日
 
 ---
 
@@ -44,7 +46,7 @@ Github 用户名: [GiacomoZheng](https://github.com/GiacomoZheng/vscode-gm.git)
 
 ## 设置
 
-暂无
+最好是把主题改成以`gm -`开头的主题，它内置了`aaron-bond`的`better-comments`功能。我正在等待他（她）的许可。
 
 <!-- ## Known Issues
 
@@ -52,7 +54,7 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## 历史
 
-前往 [Changelog](CHANGELOG.md) 查看（不会有中文版）。
+前往 [Changelog](../CHANGELOG) 查看（不会有中文版）。
 
 -----------------------------------------------------------------------------------------------------------
 
