@@ -36,20 +36,20 @@ If it is possible, the Windows' users can try to learn something about [AutoHotK
 
 For the Mac's and Linus' users, I'm sorry but you can try other hotkey apps.
 
-## Recommendation 
-
-[bracket-pair-colorizer-2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) is a beautiful and powerful extension and it support all languages. You can directly use it after intalling.
-
-[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) is a useful extension, but it doesn't support gm directly. In the latest version (`1.0.2`), I build in the function of the `better comments` into a theme, but it has only the `dark+`. I'll try to support all the themes latter.
-
 ## Extension Settings
 
-It is better to change the theme into the ones start with `"gm - "`, which build in the function of `better-comments` of `aaron-bond`. I'm waitting for the permission from him/her.
+It is better to change the theme into the ones start with `"gm - "`, which build in the function of `better-comments` of `aaron-bond`. I have the permission from him.
 <!-- None up to now. -->
 
 <!-- ## Known Issues
 
 Calling out known issues can help limit users opening duplicate issues against your extension. -->
+
+## Recommendation 
+
+[bracket-pair-colorizer-2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) is a beautiful and powerful extension and it support all languages. You can directly use it after intalling.
+
+[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) is a useful extension, but it doesn't support gm directly. In the latest version of `gm` (`1.0.2`), I build in the function of the `better comments` into a theme, but it has only the `dark+`. I'll try to support all the themes latter.
 
 ## Release Notes
 

@@ -1,7 +1,7 @@
 This extension can be used directly on gm.
 
 Here is my settings,
-``` json
+```json
     "bracket-pair-colorizer-2.colorMode": "Independent",
     "bracket-pair-colorizer-2.colors": [
         "#ff8080",

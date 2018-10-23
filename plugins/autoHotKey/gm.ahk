@@ -19,7 +19,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 		GetKeyState, Caps_state, CapsLock, T
 	Return
 
-	~ShIft::
+	~Shift::
 	KeyWait, CapsLock
 		GetKeyState, Caps_state, CapsLock, T
 	Return

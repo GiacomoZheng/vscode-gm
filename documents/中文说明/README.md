@@ -38,19 +38,19 @@ Github 用户名: [GiacomoZheng](https://github.com/GiacomoZheng/vscode-gm.git)
 
 ---
 
+## 设置
+
+最好是把颜色主题改成以`gm -`开头的主题，它内置了`aaron-bond`的`better-comments`功能。我已经得到了他的许可。
+
+<!-- ## Known Issues
+
+Calling out known issues can help limit users opening duplicate issues against your extension. -->
+
 ## 推荐
 
 [bracket-pair-colorizer-2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) 是一个非常美丽而且有用的拓展，更重要的是，它支持全语言。你可以在直接安装它。
 
 [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)是我之前一直在用的拓展。由于它不支持`gm`，我最近把它的功能内置到了该拓展包中，通过一个名为 `gm - dark+` 的颜色主题。以后我会尝试把它推广到全主题。
-
-## 设置
-
-最好是把主题改成以`gm -`开头的主题，它内置了`aaron-bond`的`better-comments`功能。我正在等待他（她）的许可。
-
-<!-- ## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension. -->
 
 ## 历史
 

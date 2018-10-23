@@ -16,20 +16,19 @@ Here is the tutorial to use this language.
 
 `gm` 是一门基于我个人的数学书写习惯而完成的语言。
 
-在这份文件中，我用 `gm` 重新书写了一些数学定义，
+在这个库中，我用 `gm` 重新书写了一些数学定义，
 
 这是该语言的教程。
 
-
 # Basic Information 基本信息
 
-* **Everything** is immutable<pre>at least the ones in the standard part.</pre>
+* **Everything** is immutable<pre>at least the ones in the my standard part.</pre>
 * **Everything** is equal (not "=")<pre>meaning you can do some basic actions on everything you want to.</pre>
-* **Everything** is free<pre>meaning you can overwrite everything you want to rewrite, which won't break the codes you wrote.</pre>
+* **Everything** is free<pre>meaning you can overwrite everything you want to rewrite, which won't break the codes you wrote before.</pre>
 
 * Every folder's name significant and most files should be named as `".gm"`.
 
-* 
+* You can see the "class" and "function" here, but they may have sommething difference comparing with the ones in other languages.
 
 ---
 
@@ -38,6 +37,8 @@ Here is the tutorial to use this language.
 * 一切都是自由的<pre>你可以重写任何你想要修改的事物，而这不会影响此前的内容。</pre>
 
 * 所有文件夹名都是有意义的，而且如果没有特殊情况，文件名应当为 "`.gm`" 。
+
+* 你可以在这里看到“类”以及“函数”，但是它们和其他语言中的有一些区别。
 
 # Content --- 目录
 
@@ -51,6 +52,8 @@ Here is the tutorial to use this language.
 3. [location and attribution --- 位置和属性](3)
 
 4. [symbol, keyword and others --- 符号，关键词和其他](4)
+
+5. [delimiter and separator](5)
 
 注:
 * [basic actions]()
