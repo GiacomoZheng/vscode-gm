@@ -49,7 +49,7 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 [bracket-pair-colorizer-2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) is a beautiful and powerful extension and it support all languages. You can directly use it after intalling.
 
-[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) is a useful extension, but it doesn't support gm directly. In the latest version of `gm` (`1.0.2`), I build in the function of the `better comments` into a theme, but it has only the `dark+`. I'll try to support all the themes latter.
+[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) is a useful extension, but it (2.0.2) doesn't support gm directly. In the latest version of `gm` (`1.0.2`), I build in the function of the `better comments` into a theme, but it has only the `dark+`. I may try to support all the themes latter.
 
 ## Release Notes
 

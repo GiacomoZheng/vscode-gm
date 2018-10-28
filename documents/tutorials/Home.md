@@ -1,6 +1,6 @@
 <!-- path: https://github.com/GiacomoZheng/gm/wiki/ -->
 
-<!-- 编辑于18年10月20日 -->
+<!-- 编辑于18年10月23日 -->
 
 # Introduction 前言
 
@@ -26,7 +26,7 @@ Here is the tutorial to use this language.
 * **Everything** is equal (not "=")<pre>meaning you can do some basic actions on everything you want to.</pre>
 * **Everything** is free<pre>meaning you can overwrite everything you want to rewrite, which won't break the codes you wrote before.</pre>
 
-* Every folder's name significant and most files should be named as `".gm"`.
+* Every folder's name significant and except some special case, the files' name should be just`".gm"`.
 
 * You can see the "class" and "function" here, but they may have sommething difference comparing with the ones in other languages.
 
@@ -45,15 +45,17 @@ Here is the tutorial to use this language.
 0. [two-parts and three-part form --- 双段论和三段论](0)<pre>About definition and statement.
 关于表达</pre>
 
-1. [constant and temporary --- 常量和时量](1) <!-- 中文名暂定 --><pre>The only two type of the ones defined.
-定义的两种结果</pre>
-2. [class and instance --- 类和例](2)
+1. [class and instance --- 类和例](1)
 
-3. [location and attribution --- 位置和属性](3)
+2. [constant and temporary --- 常量和时量](2)<pre>Abstract instance and Special instance.
+抽象实例和具体实例
+</pre>
 
-4. [symbol, keyword and others --- 符号，关键词和其他](4)
+3. [location and pointer --- 位置和指针](3)
 
-5. [delimiter and separator](5)
+4. [keyword and symbol --- 关键词和符号](4)
+
+5. [delimiter and separator --- 定界符和分隔符](5)
 
 注:
 * [basic actions]()

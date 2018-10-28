@@ -328,7 +328,7 @@
 					"include": "#strings"
 				},
 				{
-					"include": "#better-comments"
+					"comments": "#better-comments"
 				},
 				{
 					"begin": "(?<!`)```(?!`)",

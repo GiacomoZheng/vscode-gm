@@ -3,16 +3,18 @@ All notable changes to the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
-## 1.0.2 ()
+## 1.0.2 (Oct. 27th, 2018)
 
 * Change the `overall.jpg`.
 * Add the tutorials written with both Chinese and English.
-* Congratulation, it seems that VS code has fix the bug on `wordPattern`.
-* Add `gm - Dark+` theme, for the function of the `better-comments`. I'm trying to contact with Aaron Bond, the author of `better-comments`.
+<!-- * Congratulation, it seems that VS code has fix the bug on `wordPattern`. -->
+* Add `gm - Dark+` theme, for the function of the `better-comments`. I have contacted with Aaron Bond, the author of `better-comments`.
 
 uncompleted:
 1. The functions of `better-comments` for all theme, I'll try to deal with it.
-2. Waitting for the permission from `Aaron Bond`.
+
+bug:
+* the when attach the symbol (like `|`) from a special character (like `𝒮`), the error may occur. I think it is a bug of vscode itself, about the `wordPattern` argument in `language-configuration`.
 
 ## 1.0.1 (Oct. 4th, 2018)
 
