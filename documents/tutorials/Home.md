@@ -1,6 +1,6 @@
 <!-- path: https://github.com/GiacomoZheng/gm/wiki/ -->
 
-<!-- 编辑于18年10月23日 -->
+<!-- 编辑于18年10月27日 -->
 
 # Introduction 前言
 
@@ -8,9 +8,15 @@ Welcome to my wiki!
 
 `gm` is a language created for rewriting the mathematical expression like a programming language.
 
-In this repository, I use `gm` to redefine some definitions of mathematics,
+In this repository, I use `gm` to redefine some definitions of mathematics.
 
-Here is the tutorial to use this language.
+This tutorial is the general version.
+
+> For the mathematicians, click [here]().
+
+> For the programmers, click [here]().
+
+> For the quick reference, click [here]().
 
 ---
 
@@ -18,7 +24,13 @@ Here is the tutorial to use this language.
 
 在这个库中，我用 `gm` 重新书写了一些数学定义，
 
-这是该语言的教程。
+本教程是通用版本。
+
+> 对于数学家，请点击[此处]()。
+
+> 对于程序员，请点击[此处]()。
+
+> 要快速学习，请点击[此处]()。
 
 # Basic Information 基本信息
 
@@ -53,9 +65,11 @@ Here is the tutorial to use this language.
 
 3. [location and pointer --- 位置和指针](3)
 
-4. [keyword and symbol --- 关键词和符号](4)
+4. [keyword and symbol --- 关键词和符号](4)<!-- wait -->
 
 5. [delimiter and separator --- 定界符和分隔符](5)
+
+6. [subscript and comment --- 下标和注释](6)
 
 注:
 * [basic actions]()

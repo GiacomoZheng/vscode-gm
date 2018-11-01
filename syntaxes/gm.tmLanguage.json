@@ -269,7 +269,7 @@
 				},
 				{
 					"name": "keyword.control.flow.gm",
-					"match": "⇒|⇔|⇐"
+					"match": "(?:⇒|⇔|⇐)(?!:)"
 				},
 				{
 					"match": ":",
@@ -280,10 +280,10 @@
 		"strings": {
 			"patterns": [
 				{
-					"include": "#double-strings"
+					"include": "#escape-strings"
 				},
 				{
-					"include": "#single-strings"
+					"include": "#pre-strings"
 				}
 			]
 		},
@@ -378,8 +378,8 @@
 				}
 			]
 		},
-		"double-strings": {
-			"name": "string.quoted.double.gm",
+		"escape-strings": {
+			"name": "string.quoted.escape.gm",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
@@ -389,8 +389,9 @@
 				}
 			]
 		},
-		"single-strings": {
-			"name": "string.quoted.single.gm",
+		"pre-strings": {
+			"comment": "no escape_character in it, which means it cannot includes '`'",
+			"name": "string.quoted.pre.gm",
 			"begin": "`(?!``)",
 			"end": "`(?!``)",
 			"patterns": [
