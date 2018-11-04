@@ -57,10 +57,9 @@
 	},
 
 	"locator to the headers": {
-		"prefix": "@gm.h",
+		"prefix": "@",
 		"body": [
-			"@gm.h.$1,",
-			"$0",
+			"@$0,",
 			"■"
 		]
 	},

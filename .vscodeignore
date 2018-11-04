@@ -4,3 +4,4 @@ plugins/**
 documents/**
 .gitignore
 vsc-extension-quickstart.md
+tmlanguage.json

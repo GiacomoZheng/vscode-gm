@@ -3,6 +3,10 @@ All notable changes to the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
+## 1.0.3 ()
+
+* Delete the `special-name` in syntax.
+
 ## 1.0.2 (Oct. 27th, 2018)
 
 * Change the `overall.jpg`.
@@ -14,7 +18,7 @@ uncompleted:
 1. The functions of `better-comments` for all theme, I'll try to deal with it.
 
 bug:
-* the when attach the symbol (like `|`) from a special character (like `𝒮`), the error may occur. I think it is a bug of vscode itself, about the `wordPattern` argument in `language-configuration`.
+* the writing a a special character (like `𝒮`) after the symbol (like `|`) may raise an error. I think it is a bug of vscode itself, about the `wordPattern` argument in `language-configuration`.
 
 ## 1.0.1 (Oct. 4th, 2018)
 

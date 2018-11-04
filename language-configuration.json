@@ -12,10 +12,11 @@
 		{ "open": "{", "close": "}", "notIn": [ "comment", ] },
 		{ "open": "[", "close": "]", "notIn": [ "comment", ] },
 		{ "open": "(", "close": ")", "notIn": [ "comment", ] },
-		{ "open": "%", "close": "%", "notIn": [ "comment", "string", ] }, // for special symbols
+		// { "open": "%", "close": "%", "notIn": [ "comment", "string", ] }, // for special symbols
 		{ "open": "&", "close": "&", "notIn": [ "comment", "string", ] }, // to unpackage the symbols
 		{ "open": "\"", "close": "\"", "notIn": [ "string", ] },
 		{ "open": "`", "close": "`", "notIn": [ "string", ] }, // another string
+
 		{ "open": "p\"", "close": "\"", "notIn": ["string", "comment"] }, // postulates
 		{ "open": "q\"", "close": "\"", "notIn": ["string", "comment"] }, // statement
 		{ "open": "s\"", "close": "\"", "notIn": ["string", "comment"] } // proposition
@@ -24,7 +25,7 @@
 		["{", "}"],
 		["[", "]"],
 		["(", ")"],
-		["%", "%"],
+		// ["%", "%"],
 		["&", "&"],
 		["|", "|"],
 		["\"", "\""]

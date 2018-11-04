@@ -193,9 +193,6 @@
 					"include": "#functions"
 				},
 				{
-					"include": "#special-name"
-				},
-				{
 					"name": "constant.other.color.gm",
 					"match": "#(?:(?:[0-9a-fA-F]{3}){1,2}|(?:[0-9a-fA-F]{4}){1,2})\\b"
 				}
@@ -231,18 +228,6 @@
 					"include": "#logical-functions"
 				}
 			]
-		},
-		"special-name": {
-			"match": "%(.+)%",
-			"captures": {
-				"0": {
-					"name": "constant.name.gm"
-				},
-				"1": {
-					"name": "string.name.gm"
-				}
-			},
-			"patterns": []
 		},
 		"logical-functions": {
 			"patterns": [
