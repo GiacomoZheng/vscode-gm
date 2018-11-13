@@ -29,7 +29,7 @@
 					"include": "#lock-symbols"
 				},
 				{
-					"include": "#write-out"
+					"include": "#writing-at"
 				}
 			]
 		},
@@ -127,7 +127,7 @@
 					"name": "punctuation.lock.symbol.begin.gm"
 				}
 			},
-			"end": "&",
+			"end": "&|((?<!\\\\)\\n)",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.lock.symbol.end.gm"
@@ -139,7 +139,7 @@
 				}
 			]
 		},
-		"write-out": {
+		"writing-at": {
 			"begin": "(@)\\b([^\\s,;:]+(?:\\.[^\\s,;:]+)*)(,)",
 			"beginCaptures": {
 				"1": {
@@ -265,7 +265,7 @@
 		"strings": {
 			"patterns": [
 				{
-					"include": "#escape-strings"
+					"include": "#line-strings"
 				},
 				{
 					"include": "#pre-strings"
@@ -363,10 +363,11 @@
 				}
 			]
 		},
-		"escape-strings": {
-			"name": "string.quoted.escape.gm",
+		"line-strings": {
+			"comment": "copy from the python source file",
+			"name": "string.quoted.line.gm",
 			"begin": "\"",
-			"end": "\"",
+			"end": "\"|((?<!\\\\)\\n)",
 			"patterns": [
 				{
 					"name": "constant.character.escape.gm",
@@ -379,12 +380,7 @@
 			"name": "string.quoted.pre.gm",
 			"begin": "`(?!``)",
 			"end": "`(?!``)",
-			"patterns": [
-				{
-					"name": "constant.character.escape.gm",
-					"match": "\\\\."
-				}
-			]
+			"patterns": []
 		}
 	}
 }
