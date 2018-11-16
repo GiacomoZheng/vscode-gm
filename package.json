@@ -51,9 +51,29 @@
         ],
         "themes": [
             {
-                "label": "gm - Dark+",
+                "label": "Light (Visual Studio) - gm",
+                "uiTheme": "vs",
+                "path": "./themes/gm-light_vs.json"
+            },
+            {
+                "label": "Light+ (default light) - gm",
+                "uiTheme": "vs",
+                "path": "./themes/gm-light_plus.json"
+            },
+            {
+                "label": "Dark (Visual Studio) - gm",
                 "uiTheme": "vs-dark",
-                "path": "./themes/Dark_plus-color-theme.json"
+                "path": "./themes/gm-dark_vs.json"
+            },
+            {
+                "label": "Dark+ (default dark) - gm",
+                "uiTheme": "vs-dark",
+                "path": "./themes/gm-dark_plus.json"
+            },
+            {
+                "label": "High Contrast - gm",
+                "uiTheme": "hc-black",
+                "path": "./themes/gm-hc_black.json"
             }
         ],
         "commands": [],
@@ -61,7 +81,7 @@
 
 		"configurationDefaults": {
 			"[gm]": {
-				"editor.insertSpaces": false
+                "editor.insertSpaces": false
             }
 		}
     }

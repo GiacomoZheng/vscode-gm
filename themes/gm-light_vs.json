@@ -1,0 +1,43 @@
+{
+	"$schema": "vscode://schemas/color-theme",
+	"name": "Light (Visual Studio) - gm",
+	"include": "./origin/light_vs.json",
+	"tokenColors": [
+		{
+			"name": "Comment - todo",
+			"scope": [
+				"comment.line.todo.gm"
+			],
+			"settings": {
+				"foreground": "#FF8C00",
+			}
+		},
+		{
+			"name": "Comment - note",
+			"scope": [
+				"comment.line.note.gm"
+			],
+			"settings": {
+				"foreground": "#98C379",
+			}
+		},
+		{
+			"name": "Comment - wait",
+			"scope": [
+				"comment.line.wait.gm"
+			],
+			"settings": {
+				"foreground": "#3498DB",
+			}
+		},
+		{
+			"name": "Comment - warn",
+			"scope": [
+				"comment.line.warn.gm"
+			],
+			"settings": {
+				"foreground": "#FF2D00",
+			}
+		}
+	]
+}

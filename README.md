@@ -38,7 +38,7 @@ For the Mac's and Linus' users, I'm sorry but you can try other hotkey apps.
 
 ## Extension Settings
 
-It is better to change the theme into the ones start with `"gm - "`, which build in the function of `better-comments` of `aaron-bond`. I have the permission from him.
+It is better to change the theme into the ones end with `"- gm"`, which build in the function of `better-comments` of `aaron-bond`. I have got the permission from him.
 <!-- None up to now. -->
 
 <!-- ## Known Issues
@@ -49,7 +49,7 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 [bracket-pair-colorizer-2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) is a beautiful and powerful extension and it support all languages. You can directly use it after intalling.
 
-[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) is a useful extension, but it (2.0.2) doesn't support gm directly. In the latest version of `gm` (`1.0.2`), I build in the function of the `better comments` into a theme, but it has only the `dark+`. I may try to support all the themes latter.
+[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) is a useful extension, but it (2.0.2) doesn't support gm directly. In the latest version of `gm` (`1.0.3`), I build in the function of the `better comments` into a theme, but it has only the 5 ones. I may try to support more later.
 
 ## Release Notes
 

@@ -6,6 +6,8 @@ All notable changes to the "gm" extension will be documented in this file.
 ## 1.0.3 ()
 
 * Delete the `special-name` in syntax.
+* Define the difference between `" "` and `` ` ` ``
+* Add four more theme support `better-comments`
 
 ## 1.0.2 (Oct. 27th, 2018)
 
