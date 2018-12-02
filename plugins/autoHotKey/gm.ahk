@@ -64,6 +64,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 	>^e::Send,∃
 
+	+>^a::Send,∧  ; wedge
+
 	>^u::Send,∪
 
 	>^n::Send,∩
