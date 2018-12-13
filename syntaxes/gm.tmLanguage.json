@@ -6,16 +6,33 @@
 	"scopeName": "source.gm",
 	"patterns": [
 		{
-			"include": "#brackets"
+			"include": "#gmlang"
 		}
 	],
 
 	"repository": {
-		"brackets": {
+		"gmlang": {
 			"patterns": [
 				{
-					"include": "#gmlang"
+					"comment": "first priority",
+					"include": "#comments"
 				},
+				{
+					"include": "#brackets"
+				},
+				{
+					"include": "#constants"
+				},
+				{
+					"include": "#variables"
+				},
+				{
+					"include": "#invalids"
+				}
+			]
+		},
+		"brackets": {
+			"patterns": [
 				{
 					"include": "#round-brackets"
 				},
@@ -30,28 +47,6 @@
 				},
 				{
 					"include": "#writing-at"
-				}
-			]
-		},
-		"gmlang": {
-			"patterns": [
-				{
-					"include": "#comments"
-				},
-				{
-					"include": "#strings"
-				},
-				{
-					"include": "#invalids"
-				},
-				{
-					"include": "#keywords"
-				},
-				{
-					"include": "#constants"
-				},
-				{
-					"include": "#variables"
 				}
 			]
 		},
@@ -71,7 +66,7 @@
 			"name": "meta.structure.sequence.gm",
 			"patterns": [
 				{
-					"include": "#brackets"
+					"include": "#gmlang"
 				}
 			]
 		},
@@ -91,7 +86,7 @@
 			"name": "meta.structure.subscript.gm",
 			"patterns": [
 				{
-					"include": "#brackets"
+					"include": "#gmlang"
 				}
 			]
 		},
@@ -111,7 +106,7 @@
 			"name": "meta.structure.set.gm",
 			"patterns": [
 				{
-					"include": "#brackets"
+					"include": "#gmlang"
 				},
 				{
 					"comment": "I don't know whether I will use this symbol later",
@@ -135,7 +130,7 @@
 			},
 			"patterns": [
 				{
-					"include": "#brackets"
+					"include": "#gmlang"
 				}
 			]
 		},
@@ -160,7 +155,7 @@
 			},
 			"patterns": [
 				{
-					"include": "#brackets"
+					"include": "#gmlang"
 				}
 			]
 		},
@@ -180,17 +175,23 @@
 			"contentName": "variable.gm",
 			"patterns": [
 				{
-					"include": "#brackets"
+					"include": "#gmlang"
 				}
 			]
 		},
 		"constants": {
 			"patterns": [
 				{
+					"include": "#keywords"
+				},
+				{
 					"include": "#numeric"
 				},
 				{
 					"include": "#functions"
+				},
+				{
+					"include": "#strings"
 				},
 				{
 					"name": "constant.other.color.gm",
@@ -199,6 +200,7 @@
 			]
 		},
 		"numeric": {
+			"comment": "I may delete it later",
 			"patterns": [
 				{
 					"name": "constant.numeric.gm",
@@ -234,7 +236,7 @@
 				{
 					"comment": "I cannot find a perfect way to deal with this question up to now",
 					"match": "[∀∃!](?![^:]*:)",
-					"name": "support.function.logical.gm"
+					"name": "constant.function.logical.gm"
 				}
 			]
 		},
@@ -262,26 +264,6 @@
 				}
 			]
 		},
-		"strings": {
-			"patterns": [
-				{
-					"include": "#line-strings"
-				},
-				{
-					"include": "#pre-strings"
-				}
-			]
-		},
-		"comments": {
-			"patterns": [
-				{
-					"include": "#block-comments"
-				},
-				{
-					"include": "#line-comments"
-				}
-			]
-		},
 		"invalids": {
 			"patterns": [
 				{
@@ -304,16 +286,46 @@
 				}
 			]
 		},
+		"strings": {
+			"patterns": [
+				{
+					"include": "#line-strings"
+				},
+				{
+					"include": "#pre-strings"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"include": "#block-comments"
+				},
+				{
+					"include": "#line-comments"
+				}
+			]
+		},
 		"block-comments": {
-			"begin": "(?<=^|[,\\(\\{])\\s*\\[",
-			"end": "\\]",
+			"begin": "(?<=^|[,\\(\\{])\\s*(\\[)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.comment.block.begin.gm"
+				}
+			},
+			"end": "(\\])",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.comment.block.end.gm"
+				}
+			},
 			"name": "comment.block.gm",
 			"patterns": [
 				{
 					"include": "#strings"
 				},
 				{
-					"comments": "#better-comments"
+					"include": "#better-comments"
 				},
 				{
 					"begin": "(?<!`)```(?!`)",
@@ -321,7 +333,7 @@
 					"name": "string.quoted.triple.gm",
 					"patterns": [
 						{
-							"include": "#brackets"
+							"include": "#gmlang"
 						},
 						{
 							"match": "````",
@@ -332,11 +344,15 @@
 			]
 		},
 		"line-comments": {
+			"begin": "(;)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.comment.line.gm"
+				}
+			},
+			"end": "\\n",
+			"name": "comment.line.pure.gm",
 			"patterns": [
-				{
-					"match": "(?i);(?!\\s*(?:\\+|\\*|\\?|\\!|todo|note|wait|warn)).*",
-					"name": "comment.line.pure.gm"
-				},
 				{
 					"include": "#better-comments"
 				}
@@ -345,20 +361,20 @@
 		"better-comments": {
 			"patterns": [
 				{
-					"match": "(?i);\\s*(?:\\+|todo).*",
+					"match": "(?i)(?<=;|^)\\s*(?:\\+|todo).*",
 					"name": "comment.line.todo.gm"
 				},
 				{
-					"match": "(?i);\\s*(?:\\*|note).*",
+					"match": "(?i)(?<=;|^)\\s*(?:\\*|note).*",
 					"name": "comment.line.note.gm"
 				},
 				{
-					"match": "(?i);\\s*(?:\\?|wait).*",
+					"match": "(?i)(?<=;|^)\\s*(?:\\?|wait).*",
 					"name": "comment.line.wait.gm",
 					"comment": "I didn't determined now"
 				},
 				{
-					"match": "(?i);\\s*(?:\\!|warn).*",
+					"match": "(?i)(?<=;|^)\\s*(?:\\!|warn).*",
 					"name": "comment.line.warn.gm"
 				}
 			]
@@ -367,7 +383,17 @@
 			"comment": "copy from the python source file",
 			"name": "string.quoted.line.gm",
 			"begin": "\"",
-			"end": "\"|((?<!\\\\)\\n)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.string.quoted.line.begin"
+				}
+			},
+			"end": "\"|(?:(?<!\\\\)\\n)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.string.quoted.line.end"
+				}
+			},
 			"patterns": [
 				{
 					"name": "constant.character.escape.gm",
@@ -379,7 +405,17 @@
 			"comment": "no escape_character in it, which means it cannot includes '`'",
 			"name": "string.quoted.pre.gm",
 			"begin": "`(?!``)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.string.quoted.pre.begin"
+				}
+			},
 			"end": "`(?!``)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.string.quoted.pre.end"
+				}
+			},
 			"patterns": []
 		}
 	}

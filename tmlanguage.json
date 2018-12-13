@@ -7,7 +7,8 @@
 			"allOf": [
 				{
 					"$ref": "#/definitions/grammar"
-				}, {
+				},
+				{
 					"type": "object",
 					"properties": {
 						"name": {
@@ -162,7 +163,8 @@
 				{
 					"type": "string",
 					"pattern": "^[\\w0-9]+(\\.[\\w0-9-]+)*$"
-				}, {
+				},
+				{
 					"type": "string",
 					"enum": [
 						"comment",
