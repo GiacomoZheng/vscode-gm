@@ -2,6 +2,7 @@
 
 Here is my settings,
 ```json
+{
 	"better-comments.highlightPlainText": false,
     "better-comments.multilineComments": true,
     "better-comments.tags": [
@@ -54,6 +55,9 @@ Here is my settings,
             "backgroundColor": "transparent"
         }
     ],
+}
 ```
 
-In fact, for the latest `better-comments` (2.0.2), it doesn't support my `gm` language. The publisher may support it in the later version. But if you want to achieve the same effect now, please adjist the `theme` into the ones start with `"gm - "`.
+In fact, for the latest `better-comments` (2.0.2), it doesn't support my `gm` language.
+
+If you want to achieve the functions of it in `gm`, refer to the [settings](../settings/README) part to add some settings in `settings.json`.

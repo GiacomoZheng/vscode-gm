@@ -24,6 +24,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 		GetKeyState, Caps_state, CapsLock, T
 	Return
 
+; 右ctrl + 
 	>^4::Send,↔
 
 	+>^4::Send,⇔
@@ -703,7 +704,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	; Q and S are the same
 	; A,D,T,U, are useless
 	; H,J,O,V,Z, are undefined
-	; N,Y are just like click them only
+	; N,Y are just like click them only	
 
 ; 中文标点输入&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 	>!`::Send,、
