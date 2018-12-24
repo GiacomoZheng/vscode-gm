@@ -14,8 +14,8 @@
 		{ "open": "[", "close": "]", "notIn": [ "comment", ] },
 		{ "open": "(", "close": ")", "notIn": [ "comment", ] },
 		{ "open": "&", "close": "&", "notIn": [ "comment", "string", ] }, // to unpackage the symbols
-		{ "open": "\"", "close": "\"", "notIn": [ "string", ] },
-		{ "open": "`", "close": "`", "notIn": [ "string", ] }, // another string
+		{ "open": "\"", "close": "\"", "notIn": [ "string", ] }, // pre string
+		{ "open": "`", "close": "`", "notIn": [ "string", ] }, // escape string
 
 		{ "open": "p\"", "close": "\"", "notIn": ["string", "comment"] }, // postulates
 		{ "open": "q\"", "close": "\"", "notIn": ["string", "comment"] }, // statement

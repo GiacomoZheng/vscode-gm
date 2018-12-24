@@ -21,13 +21,13 @@
 					"include": "#brackets"
 				},
 				{
+					"include": "#invalids"
+				},
+				{
 					"include": "#constants"
 				},
 				{
 					"include": "#variables"
-				},
-				{
-					"include": "#invalids"
 				}
 			]
 		},
@@ -116,16 +116,17 @@
 			]
 		},
 		"lock-symbols": {
+			"comment": "I don't know whether I would use it later",
 			"begin": "&",
 			"beginCaptures": {
 				"0": {
-					"name": "punctuation.lock.symbol.begin.gm"
+					"name": "punctuation.lock_symbol.begin.gm"
 				}
 			},
 			"end": "&|((?<!\\\\)\\n)",
 			"endCaptures": {
 				"0": {
-					"name": "punctuation.lock.symbol.end.gm"
+					"name": "punctuation.lock_symbol.end.gm"
 				}
 			},
 			"patterns": [
@@ -159,26 +160,6 @@
 				}
 			]
 		},
-		"variables": {
-			"begin": "([∀∃!])(?![:\\s])",
-			"beginCaptures": {
-				"1": {
-					"name": "keyword.quantifier.gm"
-				}
-			},
-			"end": "(?<!\\s):",
-			"endCaptures": {
-				"0": {
-					"name": "keyword.control.define.gm"
-				}
-			},
-			"contentName": "variable.gm",
-			"patterns": [
-				{
-					"include": "#gmlang"
-				}
-			]
-		},
 		"constants": {
 			"patterns": [
 				{
@@ -196,6 +177,26 @@
 				{
 					"name": "constant.other.color.gm",
 					"match": "#(?:(?:[0-9a-fA-F]{3}){1,2}|(?:[0-9a-fA-F]{4}){1,2})\\b"
+				}
+			]
+		},
+		"variables": {
+			"begin": "([∀∃!])(?![:\\s])",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.quantifier.gm"
+				}
+			},
+			"end": "(?<!\\s):",
+			"endCaptures": {
+				"0": {
+					"name": "keyword.control.define.gm"
+				}
+			},
+			"contentName": "variable.gm",
+			"patterns": [
+				{
+					"include": "#gmlang"
 				}
 			]
 		},
@@ -351,7 +352,7 @@
 				}
 			},
 			"end": "\\n",
-			"name": "comment.line.pure.gm",
+			"name": "comment.line.gm",
 			"patterns": [
 				{
 					"include": "#better-comments"
@@ -361,20 +362,20 @@
 		"better-comments": {
 			"patterns": [
 				{
-					"match": "(?i)(?<=;|^)\\s*(?:\\+|todo).*",
+					"match": "(?i)(?<=;|^)\\s*(?:\\+|todo).*?(?=$|\\s;)",
 					"name": "comment.line.todo.gm"
 				},
 				{
-					"match": "(?i)(?<=;|^)\\s*(?:\\*|note).*",
+					"match": "(?i)(?<=;|^)\\s*(?:\\*|note).*?(?=$|\\s;)",
 					"name": "comment.line.note.gm"
 				},
 				{
-					"match": "(?i)(?<=;|^)\\s*(?:\\?|wait).*",
+					"match": "(?i)(?<=;|^)\\s*(?:\\?|wait).*?(?=$|\\s;)",
 					"name": "comment.line.wait.gm",
-					"comment": "I didn't determined now"
+					"comment": "I do not determined now"
 				},
 				{
-					"match": "(?i)(?<=;|^)\\s*(?:\\!|warn).*",
+					"match": "(?i)(?<=;|^)\\s*(?:\\!|warn).*?(?=$|\\s;)",
 					"name": "comment.line.warn.gm"
 				}
 			]

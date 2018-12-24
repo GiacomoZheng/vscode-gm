@@ -1,6 +1,6 @@
 <!-- path: https://github.com/GiacomoZheng/gm/wiki/ -->
 
-<!-- 编辑于18年12月1日 -->
+<!-- 编辑于18年12月23日 -->
 
 # Introduction 前言
 
@@ -67,23 +67,27 @@ This tutorial is the basic knowledges, for the further learning, click the links
 
 # Content --- 目录
 
-0. [two-parts form and three-part form --- 双段论和三段论](0)<pre>
-	Basic expessions writting
-	基本的表达方式</pre>
+0. [two-parts form and three-part form --- 双段论和三段论](0) <pre>
+	Basic expessions writting --- function of `":"`, `"⇒"`
+	基本的表达方式 --- 冒号，导出号的功能</pre>
 
 1. [class and sample --- 类和例](1) <pre>
+	--- function of `"∈"`, `"⊆"`
+	--- 属于号，含于号的功能</pre>
 	<!-- To write some crterions together
 	Classify the objects around
-	为周围的事物分类 --></pre> 
+	为周围的事物分类 -->
 
-2. [location and pointer --- 位置和指向](2)
+2. [pointer and location --- 指向和位置](2) <pre>
+	--- function of `"="`
+	--- 等号的功能</pre>
 
 3. [constant and temporary --- 常量和时量](3)<pre>
 	</pre>
 
-4. [keyword and symbol --- 关键词和符号](4)<!-- wait -->
+4. [keyword and  --- 关键词和](4)<!-- wait -->
 
-5. [delimiter and separator --- 定界符和分隔符](5)
+5. [delimiter and  --- 定界符和](5)
 
 6. [subscript and comment --- 下标和注释](6)
 

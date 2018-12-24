@@ -3,12 +3,14 @@ All notable changes to the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
-## 1.0.3 ()
+## 1.0.3 (Dec. 24, 2018)
 
 * Delete the `special-name` in syntax.
 * Define the difference between `" "` and `` ` ` ``
 <!-- * Add four more theme support `better-comments` -->
 * Delete all the themes, and use an extra setting to do so.
+* Renew the syntax for the `better-comment`.
+* Detete the `.exe` file for the ahk.
 
 ## 1.0.2 (Oct. 27th, 2018)
 
@@ -17,7 +19,7 @@ All notable changes to the "gm" extension will be documented in this file.
 <!-- * Congratulation, it seems that VS code has fix the bug on `wordPattern`. -->
 * Add `gm - Dark+` theme, for the function of the `better-comments`. I have contacted with Aaron Bond, the author of `better-comments`.
 
-uncompleted:
+uncompleted: *-completed*
 1. The functions of `better-comments` for all theme, I'll try to deal with it.
 
 bug:
@@ -38,9 +40,9 @@ uncompleted:
 Completed:
 1. Syntaxes for gm
 2. Snippets for gm
-3. Syntaxes for pstress
+3. Syntaxes for pstress *-deleted*
 
-Uncompleted:
+Uncompleted: *-deleted*
 1. `gmMain.js`
 2. `plugins/bracketPairColorizer/copy.exe`
 

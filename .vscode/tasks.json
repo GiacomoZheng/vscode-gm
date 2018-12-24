@@ -9,9 +9,9 @@
 			"problemMatcher": []
 		},
 		{
-            "label": "compile and copy",
+            "label": "update ahk",
             "type": "shell",
-            "command": "cd 'C:\\Program Files\\my soft\\AutoHotkey\\Compiler'; .\\Ahk2Exe.exe /in C:\\Users\\admin\\Documents\\GitHub\\vscode-gm\\plugins\\autoHotkey\\gm.ahk; cd C:\\Users\\admin\\Documents\\GitHub\\vscode-gm\\plugins\\autoHotkey\\; Copy-Item -Force .\\gm.exe 'C:\\Users\\admin\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup';",
+            "command": "autohotkey .\\plugins\\AutoHotkey\\gm.ahk;",
             "group": "build",
             "presentation": {
                 // Reveal the output only if unrecognized errors occur.
