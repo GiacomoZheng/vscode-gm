@@ -24,6 +24,7 @@
 					"include": "#invalids"
 				},
 				{
+					"comment": "includes keywords",
 					"include": "#constants"
 				},
 				{
@@ -46,7 +47,8 @@
 					"include": "#lock-symbols"
 				},
 				{
-					"include": "#writing-at"
+					"comment": "the name is undetermined now",
+					"include": "#locator"
 				}
 			]
 		},
@@ -71,9 +73,9 @@
 			]
 		},
 		"square-brackets": {
-			"begin": "(?<!^|\\s|,)\\[",
+			"begin": "(?<!^|,)\\s*(\\[)",
 			"beginCaptures": {
-				"0": {
+				"1": {
 					"name": "punctuation.define.subscript.begin.gm"
 				}
 			},
@@ -123,7 +125,7 @@
 					"name": "punctuation.lock_symbol.begin.gm"
 				}
 			},
-			"end": "&|((?<!\\\\)\\n)",
+			"end": "&|(?:(?<!\\\\)\n)",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.lock_symbol.end.gm"
@@ -135,7 +137,7 @@
 				}
 			]
 		},
-		"writing-at": {
+		"locator": {
 			"begin": "(@)\\b([^\\s,;:]+(?:\\.[^\\s,;:]+)*)(,)",
 			"beginCaptures": {
 				"1": {
@@ -175,13 +177,28 @@
 					"include": "#strings"
 				},
 				{
+					"comment": "undetermined",
+					"match": "([^\\s,:;(){}\\[\\]&.|∀∃!]+)\\s*(\\.)\\s*([^\\s,:;(){}\\[\\]&.|]+)",
+					"captures": {
+						"1": {
+							"name": "constant.other.loaction.gm"
+						},
+						"2": {
+							"name": "punctuation.package.gm"
+						},
+						"3": {
+							"name": "constant.other.loaction.gm"
+						}
+					}
+				},
+				{
 					"name": "constant.other.color.gm",
 					"match": "#(?:(?:[0-9a-fA-F]{3}){1,2}|(?:[0-9a-fA-F]{4}){1,2})\\b"
 				}
 			]
 		},
 		"variables": {
-			"begin": "([∀∃!])(?![:\\s])",
+			"begin": "([∀∃!])(?![:\\s.])",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.quantifier.gm"
@@ -193,7 +210,7 @@
 					"name": "keyword.control.define.gm"
 				}
 			},
-			"contentName": "variable.gm",
+			"contentName": "variable.define.gm",
 			"patterns": [
 				{
 					"include": "#gmlang"
@@ -205,23 +222,23 @@
 			"patterns": [
 				{
 					"name": "constant.numeric.gm",
-					"match": "\\b(?!\\.)(?:0|π)\\b(?!:)"
+					"match": "\\b(?!\\.)[0-9π]\\b(?!:)"
 				},
 				{
 					"name": "constant.numeric.dec.gm",
-					"match": "\\b[\\-\\+]?(?:[Dd][Ee][Cc]\\.)?[1-9][0-9]*(?:\\.(?:e|[0-9]+))?\\b(?!:)"
+					"match": "\\b[-+]?(?:[Dd][Ee][Cc]\\.)?[1-9][0-9]*(?:\\.(?:e|[0-9]+))?\\b(?!:)"
 				},
 				{
 					"name": "constant.numeric.bin.gm",
-					"match": "\\b[\\-\\+]?[Bb][Ii][Nn]\\.1[01]*(?:\\.(?:e|[01]+))?\\b"
+					"match": "\\b[-+]?[Bb][Ii][Nn]\\.1[01]*(?:\\.(?:e|[01]+))?\\b"
 				},
 				{
 					"name": "constant.numeric.oct.gm",
-					"match": "\\b[\\-\\+]?[Oo][Cc][Tt]\\.[1-7][0-7]*(?:\\.(?:e|[0-7]+))?\\b"
+					"match": "\\b[-+]?[Oo][Cc][Tt]\\.[1-7][0-7]*(?:\\.(?:e|[0-7]+))?\\b"
 				},
 				{
 					"name": "constant.numeric.hex.gm",
-					"match": "\\b[\\-\\+]?[Hh][Ee][Xx]\\.[1-9a-fA-F][0-9a-fA-F]*(?:\\.(?:e|[0-9a-fA-F]+))?\\b"
+					"match": "\\b[-+]?[Hh][Ee][Xx]\\.[1-9a-fA-F][0-9a-fA-F]*(?:\\.(?:e|[0-9a-fA-F]+))?\\b"
 				}
 			]
 		},
@@ -237,19 +254,15 @@
 				{
 					"comment": "I cannot find a perfect way to deal with this question up to now",
 					"match": "[∀∃!](?![^:]*:)",
-					"name": "constant.function.logical.gm"
+					"name": "function.logical.gm"
 				}
 			]
 		},
 		"keywords": {
 			"patterns": [
 				{
-					"name": "punctuation.delimiter.gm",
-					"match": " "
-				},
-				{
-					"name": "punctuation.delimiter.gm",
-					"match": "^\t+"
+					"name": "delimiter.gm",
+					"match": " |^\t+"
 				},
 				{
 					"name": "punctuation.separator.gm",
@@ -260,8 +273,8 @@
 					"match": "(?:⇒|⇔|⇐)(?!:)"
 				},
 				{
-					"match": ":",
-					"name": "keyword.control.define.gm"
+					"name": "keyword.control.define.gm",
+					"match": ":"
 				}
 			]
 		},
@@ -278,7 +291,7 @@
 				{
 					"name": "invalid.deprecated.triple.gm",
 					"match": "```",
-					"comment": "it can be only used in the comments. In fact you acn define it."
+					"comment": "it can be only used in the comments. In fact you can define it."
 				},
 				{
 					"name": "invalid.deprecated.tab.gm",
@@ -308,7 +321,7 @@
 			]
 		},
 		"block-comments": {
-			"begin": "(?<=^|[,\\(\\{])\\s*(\\[)",
+			"begin": "(?<=^|[,({])\\s*(\\[)",
 			"beginCaptures": {
 				"1": {
 					"name": "punctuation.comment.block.begin.gm"
@@ -351,7 +364,7 @@
 					"name": "punctuation.comment.line.gm"
 				}
 			},
-			"end": "\\n",
+			"end": "\n",
 			"name": "comment.line.gm",
 			"patterns": [
 				{
@@ -389,7 +402,7 @@
 					"name": "punctuation.string.quoted.line.begin"
 				}
 			},
-			"end": "\"|(?:(?<!\\\\)\\n)",
+			"end": "\"|(?:(?<!\\\\)\n)",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.string.quoted.line.end"

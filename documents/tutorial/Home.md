@@ -34,9 +34,6 @@ This tutorial is the basic knowledges, for the further learning, click the links
 
 # Basic Information 基本信息
 
-* **Everything** is ***immutable***<pre>
-	at least the ones in the my standard part.</pre>
-
 * **Everything** is ***equal*** <!--(not "=")--><pre>
 	meaning we do not distinguish the quantities and value,
 	and you can do any basic actions on everything you want to.</pre>
@@ -45,14 +42,17 @@ This tutorial is the basic knowledges, for the further learning, click the links
 	meaning you can overwrite everything you want to rewrite,
 	which won’t break the codes you wrote before.</pre>
 
+* **Everything** is ***independent***<pre>
+	meaning the new definitions in a file would not inflence others, except the descendants.</pre>
+
+* **Everything** is ***immutable***<pre>
+	at least the ones in the my standard part.</pre>
+
 * Every folder’s name significant and except some special case, the files’ name should be just`".gm"`.
 
 * You can see the "class" , "function" and "pointer" here, but they may have sommething difference comparing with the ones in other languages.
 
 ---
-
-* 一切都是**不变**的<pre>
-	至少在我使用的标准部分中。</pre>
 
 * 一切都是**平等**的<pre>
 	表示我们不区分量和值，
@@ -60,6 +60,12 @@ This tutorial is the basic knowledges, for the further learning, click the links
 
 * 一切都是**自由**的<pre>
 	你可以重写任何你想要修改的事物，而这并不会影响此前的内容。</pre>
+
+* 一切都是**独立**的<pre>
+	一份文件中新添加的定义，不会影响到除了下级（子目录或是侄子目录）之外的任何文件。
+
+* 一切都是**不变**的<pre>
+	至少在我使用的标准部分中。</pre>
 
 * 所有文件夹名都是有意义的，而且如果没有特殊情况，文件名应当为`.gm`。
 
@@ -85,7 +91,7 @@ This tutorial is the basic knowledges, for the further learning, click the links
 3. [constant and temporary --- 常量和时量](3)<pre>
 	</pre>
 
-4. [keyword and  --- 关键词和](4)<!-- wait -->
+4. [keyword and  --- 关键词和](4)
 
 5. [delimiter and  --- 定界符和](5)
 

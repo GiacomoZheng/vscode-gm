@@ -241,26 +241,24 @@
 						"meta.preprocessor.string",
 						"meta.return-type",
 						"meta.selector",
-						"meta.structure.dictionary.key.python",
+						"meta.structure",
 						"meta.tag",
 						"meta.type.annotation",
 						"meta.type.name",
 
 						"storage",
 						"storage.modifier",
-						"storage.type",
 
 						"string",
 						"string.interpolated",
-						"string.jade",
-						"string.other",
 						"string.quoted",
-						"string.quoted.double",
-						"string.quoted.other",
 						"string.quoted.single",
+						"string.quoted.double",
 						"string.quoted.triple",
+						"string.quoted.other",
 						"string.regexp",
 						"string.unquoted",
+						"string.other",
 
 						"strong",
 
@@ -283,9 +281,11 @@
 						"punctuation",
 						"punctuation.define",
 						"punctuation.separator",
-						"punctuation.delimiter",
 						"punctuation.comment",
-						"punctuation.string"
+						"punctuation.string",
+						"punctuation.package",
+
+						"delimiter"
 					]
 				}
 			]
