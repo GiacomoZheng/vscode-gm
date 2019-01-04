@@ -285,7 +285,10 @@
 						"punctuation.string",
 						"punctuation.package",
 
-						"delimiter"
+						"delimiter",
+						"delimiter.quantifier",
+						"delimiter.relator",
+						"delimiter.operator"
 					]
 				}
 			]

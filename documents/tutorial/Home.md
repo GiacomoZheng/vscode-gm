@@ -63,7 +63,7 @@ This tutorial is the basic knowledges, for the further learning, click the links
 
 * 一切都是**独立**的<pre>
 	一份文件中新添加的定义，不会影响到除了下级（子目录或是侄子目录）之外的任何文件。
-
+<!-- + undettermined -->
 * 一切都是**不变**的<pre>
 	至少在我使用的标准部分中。</pre>
 

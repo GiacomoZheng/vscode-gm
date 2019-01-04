@@ -14,7 +14,6 @@
 		"gmlang": {
 			"patterns": [
 				{
-					"comment": "first priority",
 					"include": "#comments"
 				},
 				{
@@ -28,7 +27,7 @@
 					"include": "#constants"
 				},
 				{
-					"include": "#variables"
+					"include": "#temporaries"
 				}
 			]
 		},
@@ -138,13 +137,13 @@
 			]
 		},
 		"locator": {
-			"begin": "(@)\\b([^\\s,;:]+(?:\\.[^\\s,;:]+)*)(,)",
+			"begin": "(@)\\b([^\\s,;:]+)(?:\\.[^\\s,;:]+)*(,)",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.control.locator.gm"
 				},
 				"2": {
-					"name": "markup.underline.link.gm"
+					"name": "constant.other.location.gm"
 				},
 				"3": {
 					"name": "punctuation.separator.gm"
@@ -177,19 +176,7 @@
 					"include": "#strings"
 				},
 				{
-					"comment": "undetermined",
-					"match": "([^\\s,:;(){}\\[\\]&.|∀∃!]+)\\s*(\\.)\\s*([^\\s,:;(){}\\[\\]&.|]+)",
-					"captures": {
-						"1": {
-							"name": "constant.other.loaction.gm"
-						},
-						"2": {
-							"name": "punctuation.package.gm"
-						},
-						"3": {
-							"name": "constant.other.loaction.gm"
-						}
-					}
+					"include": "#attributions"
 				},
 				{
 					"name": "constant.other.color.gm",
@@ -197,10 +184,12 @@
 				}
 			]
 		},
-		"variables": {
-			"begin": "([∀∃!])(?![:\\s.])",
+		"temporaries": {
+			"comment-begin": "undetermined whether the \\s should be forbidden after ∀∃!",
+			"begin": "([∀∃!])(?![:.])",
 			"beginCaptures": {
 				"1": {
+					"comment": "not a keyword",
 					"name": "keyword.quantifier.gm"
 				}
 			},
@@ -210,7 +199,8 @@
 					"name": "keyword.control.define.gm"
 				}
 			},
-			"contentName": "variable.define.gm",
+			"comment-contentName": "not a varibale",
+			"contentName": "variable.temporary.define.gm",
 			"patterns": [
 				{
 					"include": "#gmlang"
@@ -218,13 +208,6 @@
 			]
 		},
 		"functions": {
-			"patterns": [
-				{
-					"include": "#logical-functions"
-				}
-			]
-		},
-		"logical-functions": {
 			"patterns": [
 				{
 					"comment": "I cannot find a perfect way to deal with this question up to now",
@@ -250,28 +233,6 @@
 				{
 					"name": "keyword.control.define.gm",
 					"match": ":"
-				}
-			]
-		},
-		"invalids": {
-			"patterns": [
-				{
-					"name": "invalid.illegal.define.gm",
-					"match": "(?<=^|\\s|:):"
-				},
-				{
-					"name": "invalid.illegal.quantifier.gm",
-					"match": "\\w+[∀∃!]"
-				},
-				{
-					"name": "invalid.deprecated.triple.gm",
-					"match": "```",
-					"comment": "it can be only used in the comments. In fact you can define it."
-				},
-				{
-					"name": "invalid.deprecated.tab.gm",
-					"match": "[^\t\n]\t+",
-					"comment": "Tab should always at the start of new lines"
 				}
 			]
 		},
@@ -347,24 +308,112 @@
 				}
 			]
 		},
+		"doc-comments": {
+			"comment": "be directly adapted from java",
+			"begin": "^\\s*(/\\*\\*)(?!/)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.comment.java"
+				}
+			},
+			"end": "\\*/",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.definition.comment.java"
+				}
+			},
+			"name": "comment.block.documentation.java",
+			"patterns": [
+				{
+					"include": "#better-comments"
+				},
+				{
+					"match": "@(author|deprecated|return|see|serial|since|version)\\b",
+					"name": "keyword.other.documentation.doc.java"
+				},
+				{
+					"match": "(@param)\\s+(\\S+)",
+					"captures": {
+						"1": {
+							"name": "keyword.other.documentation.doc.java"
+						},
+						"2": {
+							"name": "variable.parameter.java"
+						}
+					}
+				},
+				{
+					"match": "(@(?:exception|throws))\\s+(\\S+)",
+					"captures": {
+						"1": {
+							"name": "keyword.other.documentation.doc.java"
+						},
+						"2": {
+							"name": "entity.name.type.class.java"
+						}
+					}
+				},
+				{
+					"match": "{(@link)\\s+(\\S+)?#([\\w$]+\\s*\\([^\\(\\)]*\\)).*}",
+					"captures": {
+						"1": {
+							"name": "keyword.other.documentation.doc.java"
+						},
+						"2": {
+							"name": "entity.name.type.class.java"
+						},
+						"3": {
+							"name": "variable.parameter.java"
+						}
+					}
+				}
+			]
+		},
 		"better-comments": {
 			"patterns": [
 				{
-					"match": "(?i)(?<=;|^)\\s*(?:\\+|todo).*?(?=$|\\s;)",
-					"name": "comment.line.todo.gm"
+					"match": "(?i)(?<=;|^)(\\s*(?:\\+|todo).*?)($|(?<=\\s);)",
+					"captures": {
+						"1": {
+							"name": "comment.todo.gm"
+						},
+						"2": {
+							"name": "punctuation.comment.gm"
+						}
+					}
 				},
 				{
-					"match": "(?i)(?<=;|^)\\s*(?:\\*|note).*?(?=$|\\s;)",
-					"name": "comment.line.note.gm"
+					"match": "(?i)(?<=;|^)(\\s*(?:\\*|note).*?)($|(?<=\\s);)",
+					"captures": {
+						"1": {
+							"name": "comment.note.gm"
+						},
+						"2": {
+							"name": "punctuation.comment.gm"
+						}
+					}
 				},
 				{
-					"match": "(?i)(?<=;|^)\\s*(?:\\?|wait).*?(?=$|\\s;)",
-					"name": "comment.line.wait.gm",
-					"comment": "I do not determined now"
+					"match": "(?i)(?<=;|^)(\\s*(?:\\?|wait).*?)($|(?<=\\s);)",
+					"captures": {
+						"1": {
+							"name": "comment.wait.gm"
+						},
+						"2": {
+							"name": "punctuation.comment.gm"
+						}
+					}
 				},
 				{
-					"match": "(?i)(?<=;|^)\\s*(?:\\!|warn).*?(?=$|\\s;)",
-					"name": "comment.line.warn.gm"
+					"match": "(?i)(?<=;|^)(\\s*(?:\\!|warn).*?)($|(?<=\\s);)",
+					"captures": {
+						"1": {
+							"name": "comment.warn.gm"
+						},
+						"2": {
+							"name": "punctuation.comment.gm"
+						}
+					}
 				}
 			]
 		},
@@ -406,6 +455,57 @@
 				}
 			},
 			"patterns": []
+		},
+		"attributions": {
+			"comment": "be directly adapted from java",
+			"patterns": [
+				{
+					"match": "\\b[^\\s,:;(){}\\[\\]&.|]+(?=\\s*\\.\\s*[^\\s,:;(){}\\[\\]&.|]+)",
+					"name": "constant.other.location.gm"
+				},
+				{
+					"comment": "add an invalid situation",
+					"match": "(\\.)\\s*([^\\s,:;(){}\\[\\]&.|]+)",
+					"captures": {
+						"1": {
+							"name": "punctuation.package.gm"
+						},
+						"2": {
+							"name": "constant.other.location.gm"
+						}
+					}
+				}
+			]
+		},
+		"invalids": {
+			"patterns": [
+				{
+					"name": "invalid.illegal.define.gm",
+					"match": "(?<=^|\\s|:):"
+				},
+				{
+					"name": "invalid.illegal.quantifier.gm",
+					"match": "\\w+[∀∃!]"
+				},
+				{
+					"match": "(?<=^|,|\\.)\\s*(\\.)",
+					"captures": {
+						"1": {
+							"name": "invalid.illegal.package.gm"
+						}
+					}
+				},
+				{
+					"name": "invalid.deprecated.triple.gm",
+					"match": "```",
+					"comment": "it can be only used in the comments. In fact you can define it."
+				},
+				{
+					"name": "invalid.deprecated.tab.gm",
+					"match": "[^\t\n]\t+",
+					"comment": "Tabs should be always at the beginning of new lines"
+				}
+			]
 		}
 	}
 }

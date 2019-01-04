@@ -23,8 +23,8 @@ In the following tutorial, I’m going to use some concepts in other programming
 
 # REMARK --- 注意
 
-* [contant pointer and macro definition in `C`]()
 * [location and namespace in `C++` and package in `Java`]()
-* []()
+* [value and quantity in other languages]()
+* [contant pointer and macro definition in `C`]()
 
 [Return --- 返回](Home)
