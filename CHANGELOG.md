@@ -3,13 +3,17 @@ All notable changes to the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
+## 1.0.4 ()
+
+* Optimized the `better-comments`. 
+
 ## 1.0.3 (Dec. 24, 2018)
 
 * Delete the `special-name` in syntax.
 * Define the difference between `" "` and `` ` ` ``
 <!-- * Add four more theme support `better-comments` -->
 * Delete all the themes, and use an extra setting to do so.
-* Renew the syntax for the `better-comment`.
+* Renew the syntax for the `better-comments`.
 * Detete the `.exe` file for the ahk.
 
 ## 1.0.2 (Oct. 27th, 2018)

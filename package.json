@@ -2,7 +2,7 @@
     "name": "gm",
     "displayName": "GM",
     "description": "GM support for Visual Studio Code",
-    "version": "1.0.3",
+    "version": "1.0.4",
     
 	"icon": "images/icon.png",
     "engines": {

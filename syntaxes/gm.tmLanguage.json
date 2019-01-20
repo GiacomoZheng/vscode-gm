@@ -43,7 +43,7 @@
 					"include": "#curly-brackets"
 				},
 				{
-					"include": "#lock-symbols"
+					"include": "#lock-keywords"
 				},
 				{
 					"comment": "the name is undetermined now",
@@ -116,15 +116,15 @@
 				}
 			]
 		},
-		"lock-symbols": {
-			"comment": "I don't know whether I would use it later",
+		"lock-keywords": {
+			"comment": "make the keyword 'locked', do not return directly",
 			"begin": "&",
 			"beginCaptures": {
 				"0": {
 					"name": "punctuation.lock_symbol.begin.gm"
 				}
 			},
-			"end": "&|(?:(?<!\\\\)\n)",
+			"end": "&|(?:(?<!\\\\)$)",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.lock_symbol.end.gm"
@@ -137,7 +137,7 @@
 			]
 		},
 		"locator": {
-			"begin": "(@)\\b([^\\s,;:]+)(?:\\.[^\\s,;:]+)*(,)",
+			"begin": "(@)([^\\s,;:@]+)(?:\\.[^\\s,;:@]+)*(,)",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.control.locator.gm"
@@ -212,7 +212,7 @@
 				{
 					"comment": "I cannot find a perfect way to deal with this question up to now",
 					"match": "[∀∃!](?![^:]*:)",
-					"name": "function.logical.gm"
+					"name": "entity.name.function.logical.gm"
 				}
 			]
 		},
@@ -300,7 +300,12 @@
 					"name": "punctuation.comment.line.gm"
 				}
 			},
-			"end": "\n",
+			"end": "(?=$|(?<=\\s);)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.comment.line.gm"
+				}
+			},
 			"name": "comment.line.gm",
 			"patterns": [
 				{
@@ -426,7 +431,7 @@
 					"name": "punctuation.string.quoted.line.begin"
 				}
 			},
-			"end": "\"|(?:(?<!\\\\)\n)",
+			"end": "\"|(?:(?<!\\\\)$)",
 			"endCaptures": {
 				"0": {
 					"name": "punctuation.string.quoted.line.end"
@@ -502,7 +507,7 @@
 				},
 				{
 					"name": "invalid.deprecated.tab.gm",
-					"match": "[^\t\n]\t+",
+					"match": "[^\t$]\t+",
 					"comment": "Tabs should be always at the beginning of new lines"
 				}
 			]

@@ -17,9 +17,9 @@ In the following tutorial, I’m going to use some concepts in other programming
 # Content --- 目录
 
 0. [Packaging definition --- 打包定义](p0) <!--  -->
-1. [use of name --- 名字的使用](p1) <!--  -->
-2. 
-3. [compile]()
+1. [inner definition --- 内部（临时）定义](p1)
+2. [use of name --- 名字的使用](p2) <!--  -->
+. [compile]()
 
 # REMARK --- 注意
 
