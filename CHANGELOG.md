@@ -1,11 +1,16 @@
 # Change Log
-All notable changes to the "gm" extension will be documented in this file.
+All notable changes about the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
-## 1.0.4 ()
+## 1.0.4 (Feb. 8, 2019)
+<!-- I'm Italy now -->
 
-* Optimized the `better-comments`. 
+* Optimized the `better-comments`.
+* Optimized the structure of the syntax file.
+* Add the `doc-comments` in syntax.
+* Fix the bug about the `:` in the first line.
+* Start the `gmMain.js` file, completed the indentation part.
 
 ## 1.0.3 (Dec. 24, 2018)
 

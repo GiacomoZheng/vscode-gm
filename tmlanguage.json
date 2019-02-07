@@ -90,7 +90,12 @@
 		"pattern": {
 			"type": "object",
 			"properties": {
-				"comment": {
+				"description": {
+					"description": "the description of the items",
+					"type": "string"
+				},
+				"Comment": {
+					"description": "I change it from 'comment' --- by giacomo",
 					"type": "string"
 				},
 				"disabled": {
@@ -232,7 +237,7 @@
 						"markup.raw",
 						"markup.underline",
 						"markup.underline.link",
-						
+
 						"meta",
 						"meta.cast",
 						"meta.parameter.type.variable",

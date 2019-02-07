@@ -1,10 +1,15 @@
 {
 	"$schema": "../tmlanguage.json",
-	
+
 	"name": "GM",
 
 	"scopeName": "source.gm",
 	"patterns": [
+		{
+			"description": "the ':' at the first line of the file is legal",
+			"match": "\\A:",
+			"name": "keyword.control.define.file.gm"
+		},
 		{
 			"include": "#gmlang"
 		}
@@ -23,13 +28,251 @@
 					"include": "#invalids"
 				},
 				{
-					"comment": "includes keywords",
 					"include": "#constants"
 				},
 				{
 					"include": "#temporaries"
+				},
+				{
+					"include": "#strings"
 				}
 			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"include": "#block-comments"
+				},
+				{
+					"include": "#line-comments"
+				},
+				{
+					"include": "#doc-comments"
+				}
+			],
+			"repository": {
+				"block-comments": {
+					"begin": "(?<=^|[,({])\\s*(\\[)(?!\\*\\*(?!\\]))",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.define.comment.block.begin.gm"
+						}
+					},
+					"end": "(\\])",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.define.comment.block.end.gm"
+						}
+					},
+					"name": "comment.block.gm",
+					"patterns": [
+						{
+							"include": "#strings"
+						},
+						{
+							"include": "#fenced_code_block_gm"
+						},
+						{
+							"include": "#fenced_code_block_unknow"
+						},
+						{
+							"include": "#better-comments"
+						},
+						{
+							"include": "#nested"
+						}
+					],
+					"repository": {
+						"nested": {
+							"begin": "\\[",
+							"end": "\\]",
+							"patterns": [
+								{
+									"include": "#nested"
+								}
+							]
+						}
+					}
+				},
+				"line-comments": {
+					"begin": "(;)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.define.comment.line.gm"
+						}
+					},
+					"end": "(?=$|(?<=\\s);)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.define.comment.line.gm"
+						}
+					},
+					"name": "comment.line.gm",
+					"patterns": [
+						{
+							"include": "#better-comments"
+						}
+					]
+				},
+				"doc-comments": {
+					"Comment": "be directly adapted from java",
+					"_!!!!": "something wrong here",
+					"begin": "^\\s*(\\[\\*\\*)(?!\\])",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.define.comment.doc.begin.gm"
+						}
+					},
+					"end": "(?:\\*[^\\]]*)?(\\*\\])",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.define.comment.doc.end.gm"
+						}
+					},
+					"name": "comment.doc.gm",
+					"patterns": [
+						{
+							"_wait": "text.html.markdown"
+						},
+						{
+							"begin": "^\\s*\\*(?!\\])",
+							"end": "$",
+							"patterns": [
+								{
+									"include": "#better-comments"
+								}
+							]
+						},
+						{
+							"include": "#strings"
+						},
+						{
+							"match": "@(?:author|deprecated|return|see|serial|since|version)\\b",
+							"name": "keyword.comment.doc.gm"
+						},
+						{
+							"match": "(@param)\\s+(\\S+)",
+							"captures": {
+								"1": {
+									"name": "keyword.comment.doc.gm"
+								},
+								"2": {
+									"name": "variable.parameter.java"
+								}
+							}
+						},
+						{
+							"match": "(?i)(@(?:exception|throws|error))\\s+(\\S+)",
+							"captures": {
+								"1": {
+									"name": "keyword.comment.doc.gm"
+								},
+								"2": {
+									"name": "entity.name.type.class.java"
+								}
+							}
+						},
+						{
+							"match": "{(@link)\\s+(\\S+)?#([\\w$]+\\s*\\([^\\(\\)]*\\)).*}",
+							"captures": {
+								"1": {
+									"name": "keyword.comment.doc.gm"
+								},
+								"2": {
+									"name": "entity.name.type.class.java"
+								},
+								"3": {
+									"name": "variable.parameter.java"
+								}
+							}
+						}
+					]
+				},
+				"better-comments": {
+					"patterns": [
+						{
+							"match": "(?<=^|\\G)(\\s*(?i:\\+|todo).*?)($|(?<=\\s);)",
+							"captures": {
+								"1": {
+									"name": "comment.todo.gm"
+								},
+								"2": {
+									"name": "punctuation.define.comment.gm"
+								}
+							}
+						},
+						{
+							"match": "(?<=^|\\G)(\\s*(?i:\\*|note).*?)($|(?<=\\s);)",
+							"captures": {
+								"1": {
+									"name": "comment.note.gm"
+								},
+								"2": {
+									"name": "punctuation.define.comment.gm"
+								}
+							}
+						},
+						{
+							"match": "(?<=^|\\G)(\\s*(?i:\\?|wait).*?)($|(?<=\\s);)",
+							"captures": {
+								"1": {
+									"name": "comment.wait.gm"
+								},
+								"2": {
+									"name": "punctuation.define.comment.gm"
+								}
+							}
+						},
+						{
+							"match": "(?<=^|\\G)(\\s*(?i:\\!|warn).*?)($|(?<=\\s);)",
+							"captures": {
+								"1": {
+									"name": "comment.warn.gm"
+								},
+								"2": {
+									"name": "punctuation.define.comment.gm"
+								}
+							}
+						}
+					]
+				},
+				"fenced_code_block_gm": {
+					"begin": "(```)(?i:gm)?\\s+",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.define.embeded.begin.gm"
+						}
+					},
+					"end": "(```)",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.define.embeded.end.gm"
+						}
+					},
+					"contentName": "meta.embedded.block.gm",
+					"patterns": [
+						{
+							"include": "#gmlang"
+						}
+					]
+				},
+				"fenced_code_block_unknow": {
+					"begin": "(```)[^\\s]+",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.define.embeded.begin.gm"
+						}
+					},
+					"end": "(```)",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.define.embeded.end.gm"
+						}
+					},
+					"contentName": "meta.embedded.block.language",
+					"patterns": []
+				}
+			}
 		},
 		"brackets": {
 			"patterns": [
@@ -46,118 +289,147 @@
 					"include": "#lock-keywords"
 				},
 				{
-					"comment": "the name is undetermined now",
+					"Comment": "the name is undetermined now",
 					"include": "#locator"
 				}
-			]
+			],
+			"repository": {
+				"round-brackets": {
+					"begin": "\\(",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.define.sequence.begin.gm"
+						}
+					},
+					"end": "\\)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.define.sequence.end.gm"
+						}
+					},
+					"name": "meta.structure.sequence.gm",
+					"patterns": [
+						{
+							"include": "#gmlang"
+						}
+					]
+				},
+				"square-brackets": {
+					"begin": "(?<!^|,)\\s*(\\[)(?!\\*\\*)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.define.subscript.begin.gm"
+						}
+					},
+					"end": "\\]",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.define.subscript.end.gm"
+						}
+					},
+					"name": "meta.structure.subscript.gm",
+					"patterns": [
+						{
+							"include": "#gmlang"
+						}
+					]
+				},
+				"curly-brackets": {
+					"begin": "\\{",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.define.set.begin.gm"
+						}
+					},
+					"end": "\\}",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.define.set.end.gm"
+						}
+					},
+					"name": "meta.structure.set.gm",
+					"patterns": [
+						{
+							"include": "#gmlang"
+						},
+						{
+							"Comment": "I don't know whether I will use this symbol later",
+							"match": "\\|",
+							"name": "punctuation.separator.gm"
+						}
+					]
+				},
+				"lock-keywords": {
+					"Comment": "make the keyword 'locked', do not return directly",
+					"begin": "&",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.lock_symbol.begin.gm"
+						}
+					},
+					"end": "&|(?:(?<!\\\\)$)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.lock_symbol.end.gm"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#gmlang"
+						}
+					]
+				},
+				"locator": {
+					"begin": "(@)([^\\s,;:@]+)(?:\\.[^\\s,;:@]+)*(,)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.locator.gm"
+						},
+						"2": {
+							"name": "constant.other.location.gm"
+						},
+						"3": {
+							"name": "punctuation.separator.gm"
+						}
+					},
+					"end": "■",
+					"endCaptures": {
+						"0": {
+							"name": "keyword.control.terminator.gm"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#gmlang"
+						}
+					]
+				}
+			}
 		},
-		"round-brackets": {
-			"begin": "\\(",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.define.sequence.begin.gm"
-				}
-			},
-			"end": "\\)",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.define.sequence.end.gm"
-				}
-			},
-			"name": "meta.structure.sequence.gm",
+		"invalids": {
 			"patterns": [
 				{
-					"include": "#gmlang"
-				}
-			]
-		},
-		"square-brackets": {
-			"begin": "(?<!^|,)\\s*(\\[)",
-			"beginCaptures": {
-				"1": {
-					"name": "punctuation.define.subscript.begin.gm"
-				}
-			},
-			"end": "\\]",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.define.subscript.end.gm"
-				}
-			},
-			"name": "meta.structure.subscript.gm",
-			"patterns": [
-				{
-					"include": "#gmlang"
-				}
-			]
-		},
-		"curly-brackets": {
-			"begin": "\\{",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.define.set.begin.gm"
-				}
-			},
-			"end": "\\}",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.define.set.end.gm"
-				}
-			},
-			"name": "meta.structure.set.gm",
-			"patterns": [
-				{
-					"include": "#gmlang"
+					"name": "invalid.illegal.define.gm",
+					"match": "(?<=^|\\s|:):",
+					"Comment": "except the : at the beginning of the file"
 				},
 				{
-					"comment": "I don't know whether I will use this symbol later",
-					"match": "\\|",
-					"name": "punctuation.separator.gm"
-				}
-			]
-		},
-		"lock-keywords": {
-			"comment": "make the keyword 'locked', do not return directly",
-			"begin": "&",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.lock_symbol.begin.gm"
-				}
-			},
-			"end": "&|(?:(?<!\\\\)$)",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.lock_symbol.end.gm"
-				}
-			},
-			"patterns": [
-				{
-					"include": "#gmlang"
-				}
-			]
-		},
-		"locator": {
-			"begin": "(@)([^\\s,;:@]+)(?:\\.[^\\s,;:@]+)*(,)",
-			"beginCaptures": {
-				"1": {
-					"name": "keyword.control.locator.gm"
+					"name": "invalid.illegal.quantifier.gm",
+					"match": "\\w+[∀∃!]"
 				},
-				"2": {
-					"name": "constant.other.location.gm"
-				},
-				"3": {
-					"name": "punctuation.separator.gm"
-				}
-			},
-			"end": "■",
-			"endCaptures": {
-				"0": {
-					"name": "keyword.control.terminator.gm"
-				}
-			},
-			"patterns": [
 				{
-					"include": "#gmlang"
+					"name": "invalid.illegal.package.gm",
+					"match": "(?<=^|,|\\.)\\s*\\."
+				},
+				{
+					"name": "invalid.deprecated.triple.gm",
+					"match": "```",
+					"Comment": "it can be only used in the comments. In fact you can define it."
+				},
+				{
+					"name": "invalid.deprecated.tab.gm",
+					"match": "[^\t$]\t+",
+					"Comment": "Tabs should be always at the beginning of new lines"
 				}
 			]
 		},
@@ -167,13 +439,7 @@
 					"include": "#keywords"
 				},
 				{
-					"include": "#numeric"
-				},
-				{
 					"include": "#functions"
-				},
-				{
-					"include": "#strings"
 				},
 				{
 					"include": "#attributions"
@@ -182,14 +448,66 @@
 					"name": "constant.other.color.gm",
 					"match": "#(?:(?:[0-9a-fA-F]{3}){1,2}|(?:[0-9a-fA-F]{4}){1,2})\\b"
 				}
-			]
+			],
+			"repository": {
+				"keywords": {
+					"patterns": [
+						{
+							"name": "delimiter.gm",
+							"match": " |^\t+"
+						},
+						{
+							"name": "punctuation.separator.gm",
+							"match": ","
+						},
+						{
+							"name": "keyword.control.flow.gm",
+							"match": "(?:⇒|⇔|⇐)(?!:)"
+						},
+						{
+							"name": "keyword.control.define.gm",
+							"match": ":"
+						}
+					]
+				},
+				"functions": {
+					"patterns": [
+						{
+							"Comment": "I cannot find a perfect way to deal with this question up to now",
+							"match": "[∀∃!](?![^:]*:)",
+							"name": "entity.name.function.logical.gm"
+						}
+					]
+				},
+				"attributions": {
+					"Comment": "be directly adapted from java",
+					"patterns": [
+						{
+							"match": "\\b[^\\s,:;(){}\\[\\]&.|]+(?=\\s*\\.\\s*[^\\s,:;(){}\\[\\]&.|]+)",
+							"name": "constant.other.location.gm"
+						},
+						{
+							"Comment": "add an invalid situation",
+							"match": "(\\.)\\s*([^\\s,:;(){}\\[\\]&.|]+)",
+							"captures": {
+								"1": {
+									"name": "punctuation.package.gm"
+								},
+								"2": {
+									"name": "constant.other.location.gm"
+								}
+							}
+						}
+					]
+				}
+			}
 		},
 		"temporaries": {
-			"comment-begin": "undetermined whether the \\s should be forbidden after ∀∃!",
+			"Comment-begin": "undetermined whether the \\s should be forbidden after ∀∃!",
 			"begin": "([∀∃!])(?![:.])",
 			"beginCaptures": {
 				"1": {
-					"comment": "not a keyword",
+					"Comment": "not a keyword",
 					"name": "keyword.quantifier.gm"
 				}
 			},
@@ -199,40 +517,11 @@
 					"name": "keyword.control.define.gm"
 				}
 			},
-			"comment-contentName": "not a varibale",
+			"Comment-contentName": "not a variable",
 			"contentName": "variable.temporary.define.gm",
 			"patterns": [
 				{
 					"include": "#gmlang"
-				}
-			]
-		},
-		"functions": {
-			"patterns": [
-				{
-					"comment": "I cannot find a perfect way to deal with this question up to now",
-					"match": "[∀∃!](?![^:]*:)",
-					"name": "entity.name.function.logical.gm"
-				}
-			]
-		},
-		"keywords": {
-			"patterns": [
-				{
-					"name": "delimiter.gm",
-					"match": " |^\t+"
-				},
-				{
-					"name": "punctuation.separator.gm",
-					"match": ","
-				},
-				{
-					"name": "keyword.control.flow.gm",
-					"match": "(?:⇒|⇔|⇐)(?!:)"
-				},
-				{
-					"name": "keyword.control.define.gm",
-					"match": ":"
 				}
 			]
 		},
@@ -244,273 +533,48 @@
 				{
 					"include": "#pre-strings"
 				}
-			]
-		},
-		"comments": {
-			"patterns": [
-				{
-					"include": "#block-comments"
-				},
-				{
-					"include": "#line-comments"
-				}
-			]
-		},
-		"block-comments": {
-			"begin": "(?<=^|[,({])\\s*(\\[)",
-			"beginCaptures": {
-				"1": {
-					"name": "punctuation.comment.block.begin.gm"
-				}
-			},
-			"end": "(\\])",
-			"endCaptures": {
-				"1": {
-					"name": "punctuation.comment.block.end.gm"
-				}
-			},
-			"name": "comment.block.gm",
-			"patterns": [
-				{
-					"include": "#strings"
-				},
-				{
-					"include": "#better-comments"
-				},
-				{
-					"begin": "(?<!`)```(?!`)",
-					"end": "(?<!`)```(?!`)",
-					"name": "string.quoted.triple.gm",
+			],
+			"repository": {
+				"line-strings": {
+					"Comment": "copy from the python source file",
+					"name": "string.quoted.line.gm",
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.define.string.line.begin.gm"
+						}
+					},
+					"end": "\"|(?:(?<!\\\\)$)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.define.string.line.end.gm"
+						}
+					},
 					"patterns": [
 						{
-							"include": "#gmlang"
-						},
-						{
-							"match": "````",
-							"name": "invalid.illegal.gm"
+							"name": "constant.character.escape.gm",
+							"match": "\\\\."
 						}
 					]
-				}
-			]
-		},
-		"line-comments": {
-			"begin": "(;)",
-			"beginCaptures": {
-				"1": {
-					"name": "punctuation.comment.line.gm"
-				}
-			},
-			"end": "(?=$|(?<=\\s);)",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.comment.line.gm"
-				}
-			},
-			"name": "comment.line.gm",
-			"patterns": [
-				{
-					"include": "#better-comments"
-				}
-			]
-		},
-		"doc-comments": {
-			"comment": "be directly adapted from java",
-			"begin": "^\\s*(/\\*\\*)(?!/)",
-			"beginCaptures": {
-				"1": {
-					"name": "punctuation.definition.comment.java"
-				}
-			},
-			"end": "\\*/",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.definition.comment.java"
-				}
-			},
-			"name": "comment.block.documentation.java",
-			"patterns": [
-				{
-					"include": "#better-comments"
 				},
-				{
-					"match": "@(author|deprecated|return|see|serial|since|version)\\b",
-					"name": "keyword.other.documentation.doc.java"
-				},
-				{
-					"match": "(@param)\\s+(\\S+)",
-					"captures": {
-						"1": {
-							"name": "keyword.other.documentation.doc.java"
-						},
-						"2": {
-							"name": "variable.parameter.java"
+				"pre-strings": {
+					"Comment": "no escape_character in it, which means it cannot includes '`'",
+					"name": "string.quoted.pre.gm",
+					"begin": "(?<!`)`(?!`)",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.define.string.pre.begin.gm"
 						}
-					}
-				},
-				{
-					"match": "(@(?:exception|throws))\\s+(\\S+)",
-					"captures": {
-						"1": {
-							"name": "keyword.other.documentation.doc.java"
-						},
-						"2": {
-							"name": "entity.name.type.class.java"
+					},
+					"end": "(?<!`)`(?!`)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.define.string.pre.end.gm"
 						}
-					}
-				},
-				{
-					"match": "{(@link)\\s+(\\S+)?#([\\w$]+\\s*\\([^\\(\\)]*\\)).*}",
-					"captures": {
-						"1": {
-							"name": "keyword.other.documentation.doc.java"
-						},
-						"2": {
-							"name": "entity.name.type.class.java"
-						},
-						"3": {
-							"name": "variable.parameter.java"
-						}
-					}
+					},
+					"patterns": []
 				}
-			]
-		},
-		"better-comments": {
-			"patterns": [
-				{
-					"match": "(?i)(?<=;|^)(\\s*(?:\\+|todo).*?)($|(?<=\\s);)",
-					"captures": {
-						"1": {
-							"name": "comment.todo.gm"
-						},
-						"2": {
-							"name": "punctuation.comment.gm"
-						}
-					}
-				},
-				{
-					"match": "(?i)(?<=;|^)(\\s*(?:\\*|note).*?)($|(?<=\\s);)",
-					"captures": {
-						"1": {
-							"name": "comment.note.gm"
-						},
-						"2": {
-							"name": "punctuation.comment.gm"
-						}
-					}
-				},
-				{
-					"match": "(?i)(?<=;|^)(\\s*(?:\\?|wait).*?)($|(?<=\\s);)",
-					"captures": {
-						"1": {
-							"name": "comment.wait.gm"
-						},
-						"2": {
-							"name": "punctuation.comment.gm"
-						}
-					}
-				},
-				{
-					"match": "(?i)(?<=;|^)(\\s*(?:\\!|warn).*?)($|(?<=\\s);)",
-					"captures": {
-						"1": {
-							"name": "comment.warn.gm"
-						},
-						"2": {
-							"name": "punctuation.comment.gm"
-						}
-					}
-				}
-			]
-		},
-		"line-strings": {
-			"comment": "copy from the python source file",
-			"name": "string.quoted.line.gm",
-			"begin": "\"",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.string.quoted.line.begin"
-				}
-			},
-			"end": "\"|(?:(?<!\\\\)$)",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.string.quoted.line.end"
-				}
-			},
-			"patterns": [
-				{
-					"name": "constant.character.escape.gm",
-					"match": "\\\\."
-				}
-			]
-		},
-		"pre-strings": {
-			"comment": "no escape_character in it, which means it cannot includes '`'",
-			"name": "string.quoted.pre.gm",
-			"begin": "`(?!``)",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.string.quoted.pre.begin"
-				}
-			},
-			"end": "`(?!``)",
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.string.quoted.pre.end"
-				}
-			},
-			"patterns": []
-		},
-		"attributions": {
-			"comment": "be directly adapted from java",
-			"patterns": [
-				{
-					"match": "\\b[^\\s,:;(){}\\[\\]&.|]+(?=\\s*\\.\\s*[^\\s,:;(){}\\[\\]&.|]+)",
-					"name": "constant.other.location.gm"
-				},
-				{
-					"comment": "add an invalid situation",
-					"match": "(\\.)\\s*([^\\s,:;(){}\\[\\]&.|]+)",
-					"captures": {
-						"1": {
-							"name": "punctuation.package.gm"
-						},
-						"2": {
-							"name": "constant.other.location.gm"
-						}
-					}
-				}
-			]
-		},
-		"invalids": {
-			"patterns": [
-				{
-					"name": "invalid.illegal.define.gm",
-					"match": "(?<=^|\\s|:):"
-				},
-				{
-					"name": "invalid.illegal.quantifier.gm",
-					"match": "\\w+[∀∃!]"
-				},
-				{
-					"match": "(?<=^|,|\\.)\\s*(\\.)",
-					"captures": {
-						"1": {
-							"name": "invalid.illegal.package.gm"
-						}
-					}
-				},
-				{
-					"name": "invalid.deprecated.triple.gm",
-					"match": "```",
-					"comment": "it can be only used in the comments. In fact you can define it."
-				},
-				{
-					"name": "invalid.deprecated.tab.gm",
-					"match": "[^\t$]\t+",
-					"comment": "Tabs should be always at the beginning of new lines"
-				}
-			]
+			}
 		}
 	}
 }

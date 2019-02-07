@@ -5,7 +5,7 @@
 			"[ quick start```",
 			"\t",
 			"\t```",
-			"\tweb of the online tutorial at https://github.com/GiacomoZheng/gm/wiki.",
+			"\tweb of the online tutorial at https://github.com/GiacomoZheng/gm/wiki",
 			" ]"
 		]
 	},
@@ -35,13 +35,7 @@
 			"!${1:variable_name}:$0"
 		]
 	},
-	"absolute value": {
-		"prefix": "|",
-		"body": [
-			"|$1|$0"
-		]
-	},
-	
+
 	"∈": {
 		"prefix": "belong",
 		"body": "∈"
@@ -115,7 +109,7 @@
 		"prefix": "properly_included",
 		"body":"⊂"
 	},
-	
+
 	"α":{
 		"prefix": "alpha",
 		"body": "α"

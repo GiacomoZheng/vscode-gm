@@ -3,7 +3,7 @@
     "displayName": "GM",
     "description": "GM support for Visual Studio Code",
     "version": "1.0.4",
-    
+
 	"icon": "images/icon.png",
     "engines": {
         "vscode": "^1.24.0"
@@ -12,13 +12,11 @@
         "Programming Languages",
         "Snippets"
     ],
-    
-    "_uncompleted": {
-        "main": "./out/gmMain",
-        "activationEvents": [
-            "*"
-        ]
-    },
+
+    "main": "./out/gmMain",
+    "activationEvents": [
+        "onLanguage:gm"
+    ],
 
     "publisher": "giacomozheng",
     "repository": {
@@ -48,11 +46,19 @@
 				"path": "./snippets/gm.json"
 			}
         ],
-        "commands": [],
+        "commands": [
+            {
+                "command": "extension.sayHello",
+                "title": "Hello World"
+            }
+        ],
 
 		"configurationDefaults": {
 			"[gm]": {
-                "editor.insertSpaces": false
+                "files.autoGuessEncoding": false,
+                "files.encoding": "utf8",
+                "editor.insertSpaces": false,
+                "editor.autoIndent": true
             }
 		}
     }

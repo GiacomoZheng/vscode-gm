@@ -1,5 +1,4 @@
 node_modules
 *.vsix
-.vscode/*
 tmlanguage.json
-plugins/.vim
+.vscode
