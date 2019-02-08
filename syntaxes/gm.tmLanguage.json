@@ -116,7 +116,6 @@
 				},
 				"doc-comments": {
 					"Comment": "be directly adapted from java",
-					"_!!!!": "something wrong here",
 					"begin": "^\\s*(\\[\\*\\*)(?!\\])",
 					"beginCaptures": {
 						"1": {
@@ -135,56 +134,20 @@
 							"_wait": "text.html.markdown"
 						},
 						{
-							"begin": "^\\s*\\*(?!\\])",
-							"end": "$",
-							"patterns": [
-								{
-									"include": "#better-comments"
-								}
-							]
-						},
-						{
 							"include": "#strings"
 						},
 						{
-							"match": "@(?:author|deprecated|return|see|serial|since|version)\\b",
-							"name": "keyword.comment.doc.gm"
-						},
-						{
-							"match": "(@param)\\s+(\\S+)",
-							"captures": {
-								"1": {
-									"name": "keyword.comment.doc.gm"
+							"begin": "^\\s*\\*(?![^\\]]*\\*?\\])",
+							"end": "(?<!\\\\)$",
+							"patterns": [
+								{
+									"include": "#better-comments"
 								},
-								"2": {
-									"name": "variable.parameter.java"
+								{
+									"Comment": "author|deprecated|return|since|version |see|serial",
+									"include": "#informations"
 								}
-							}
-						},
-						{
-							"match": "(?i)(@(?:exception|throws|error))\\s+(\\S+)",
-							"captures": {
-								"1": {
-									"name": "keyword.comment.doc.gm"
-								},
-								"2": {
-									"name": "entity.name.type.class.java"
-								}
-							}
-						},
-						{
-							"match": "{(@link)\\s+(\\S+)?#([\\w$]+\\s*\\([^\\(\\)]*\\)).*}",
-							"captures": {
-								"1": {
-									"name": "keyword.comment.doc.gm"
-								},
-								"2": {
-									"name": "entity.name.type.class.java"
-								},
-								"3": {
-									"name": "variable.parameter.java"
-								}
-							}
+							]
 						}
 					]
 				},
@@ -240,13 +203,13 @@
 					"begin": "(```)(?i:gm)?\\s+",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.define.embeded.begin.gm"
+							"name": "punctuation.define.embedded.begin.gm"
 						}
 					},
 					"end": "(```)",
 					"endCaptures": {
 						"1": {
-							"name": "punctuation.define.embeded.end.gm"
+							"name": "punctuation.define.embedded.end.gm"
 						}
 					},
 					"contentName": "meta.embedded.block.gm",
@@ -260,17 +223,90 @@
 					"begin": "(```)[^\\s]+",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.define.embeded.begin.gm"
+							"name": "punctuation.define.embedded.begin.gm"
 						}
 					},
 					"end": "(```)",
 					"endCaptures": {
 						"1": {
-							"name": "punctuation.define.embeded.end.gm"
+							"name": "punctuation.define.embedded.end.gm"
 						}
 					},
 					"contentName": "meta.embedded.block.language",
 					"patterns": []
+				},
+				"informations": {
+					"patterns": [
+						{
+							"match": "\\G\\s*(@(?:version|since))\\s+([0-9][1-9]*(?:\\.[0-9][1-9]*)*)?.*$",
+							"captures": {
+								"1": {
+									"name": "keyword.other.comment.doc.gm"
+								},
+								"2": {
+									"name": "constant.numeric.generate.gm"
+								}
+							}
+						},
+						{
+							"match": "\\G\\s*(@author)\\s+@?(\\w*).*$",
+							"captures": {
+								"1": {
+									"name": "keyword.other.comment.doc.gm"
+								},
+								"2": {
+									"name": "string.other.name.gm"
+								}
+							}
+						},
+						{
+							"match": "\\G\\s*(@(?:return|[eE]xception|[tT]hrows|[eE]rror))\\s+(.*)$",
+							"captures": {
+								"1": {
+									"name": "keyword.other.comment.doc.gm"
+								},
+								"2": {
+									"name": "meta.embedded.line.language"
+								}
+							}
+						},
+						{
+							"match": "\\G\\s*(@(deprecated))\\s+",
+							"captures": {
+								"1": {
+									"name": "keyword.other.comment.doc.gm"
+								},
+								"2": {
+									"name": "invalid.deprecated.gm"
+								}
+							}
+						},
+						{
+							"match": "\\G\\s*(@param(?:eter)?)\\s+(\\S+)",
+							"captures": {
+								"1": {
+									"name": "keyword.other.comment.doc.gm"
+								},
+								"2": {
+									"name": "variable.parameter.gm"
+								}
+							}
+						},
+						{
+							"Comment": "{(@link)\\s+(\\S+)?#([\\w$]+\\s*\\([^(\\)]*\\)).*}",
+							"_wait": {
+								"1": {
+									"name": "keyword.other.comment.doc.gm"
+								},
+								"2": {
+									"name": "entity.name.type.class.java"
+								},
+								"3": {
+									"name": "variable.parameter.java"
+								}
+							}
+						}
+					]
 				}
 			}
 		},
@@ -415,7 +451,7 @@
 				},
 				{
 					"name": "invalid.illegal.quantifier.gm",
-					"match": "\\w+[∀∃!]"
+					"match": "(?<=\\s)[^\\s\\[({]+[∀∃!]"
 				},
 				{
 					"name": "invalid.illegal.package.gm",
@@ -445,7 +481,7 @@
 					"include": "#attributions"
 				},
 				{
-					"name": "constant.other.color.gm",
+					"name": "constant.rgb-value.gm",
 					"match": "#(?:(?:[0-9a-fA-F]{3}){1,2}|(?:[0-9a-fA-F]{4}){1,2})\\b"
 				}
 			],
@@ -532,19 +568,22 @@
 				},
 				{
 					"include": "#pre-strings"
+				},
+				{
+					"include": "#regexp-strings"
 				}
 			],
 			"repository": {
 				"line-strings": {
 					"Comment": "copy from the python source file",
-					"name": "string.quoted.line.gm",
+					"name": "string.line.gm",
 					"begin": "\"",
 					"beginCaptures": {
 						"0": {
 							"name": "punctuation.define.string.line.begin.gm"
 						}
 					},
-					"end": "\"|(?:(?<!\\\\)$)",
+					"end": "\"|(?<!\\\\)$",
 					"endCaptures": {
 						"0": {
 							"name": "punctuation.define.string.line.end.gm"
@@ -559,7 +598,6 @@
 				},
 				"pre-strings": {
 					"Comment": "no escape_character in it, which means it cannot includes '`'",
-					"name": "string.quoted.pre.gm",
 					"begin": "(?<!`)`(?!`)",
 					"beginCaptures": {
 						"0": {
@@ -572,6 +610,24 @@
 							"name": "punctuation.define.string.pre.end.gm"
 						}
 					},
+					"name": "string.pre.gm",
+					"patterns": []
+				},
+				"regexp-strings": {
+					"Comment": "undetermined",
+					"begin": "[rR]\"",
+					"beginCapture": {
+						"1": {
+							"name": "punctuation.define.string.regexp.begin.gm"
+						}
+					},
+					"end": "\"[gG]|(?<!\\\\)$",
+					"endCapture": {
+						"1": {
+							"name": "punctuation.define.string.regexp.end.gm"
+						}
+					},
+					"name": "string.regexp.gm",
 					"patterns": []
 				}
 			}

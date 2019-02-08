@@ -46,12 +46,7 @@
 				"path": "./snippets/gm.json"
 			}
         ],
-        "commands": [
-            {
-                "command": "extension.sayHello",
-                "title": "Hello World"
-            }
-        ],
+        "commands": [],
 
 		"configurationDefaults": {
 			"[gm]": {

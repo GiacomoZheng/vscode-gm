@@ -19,21 +19,15 @@
 	},
 	"variable with ∀": {
 		"prefix": "∀",
-		"body": [
-			"∀${1:variable_name}:$0"
-		]
+		"body": "∀${1:variable_name}:$0"
 	},
 	"variable with ∃": {
 		"prefix": "∃",
-		"body": [
-			"∃${1:variable_name}:$0"
-		]
+		"body": "∃${1:variable_name}:$0"
 	},
 	"variable with !": {
 		"prefix": "!",
-		"body": [
-			"!${1:variable_name}:$0"
-		]
+		"body": "!${1:variable_name}:$0"
 	},
 
 	"∈": {

@@ -173,23 +173,21 @@
 					"type": "string",
 					"enum": [
 						"comment",
+						"comment.doc",
 						"comment.block",
-						"comment.block.documentation",
 						"comment.line",
-
-						"comment.line.todo",
-						"comment.line.wait",
-						"comment.line.note",
-						"comment.line.warn",
+						"comment.todo",
+						"comment.wait",
+						"comment.note",
+						"comment.warn",
 
 						"constant",
 						"constant.character",
 						"constant.character.escape",
 						"constant.language",
 						"constant.numeric",
-						"constant.other",
-						"constant.regexp",
 						"constant.rgb-value",
+						"constant.other",
 
 						"emphasis",
 
@@ -240,7 +238,7 @@
 
 						"meta",
 						"meta.cast",
-						"meta.parameter.type.variable",
+						"meta.embedded",
 						"meta.preprocessor",
 						"meta.preprocessor.numeric",
 						"meta.preprocessor.string",
@@ -261,8 +259,10 @@
 						"string.quoted.double",
 						"string.quoted.triple",
 						"string.quoted.other",
-						"string.regexp",
 						"string.unquoted",
+						"string.line",
+						"string.pre",
+						"string.regexp",
 						"string.other",
 
 						"strong",

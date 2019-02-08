@@ -11,7 +11,7 @@ function activate(context) {
 		// 	decreaseIndentPattern: /^(.*\*\/)?\s*\}.*$/,
 		// 	increaseIndentPattern: /^.*\{[^}"']*$/
 		// },
-		// wordPattern: /(-?\d*\.\d\w*)|([^\`\~\!\@\#\%\^\&\*\(\)\-\=\+\[\{\]\}\\\|\;\:\'\"\,\.\<\>\/\?\s]+)/g,
+		wordPattern: /[@∀∃!|]|[∅$¯~#_'%?a-zA-Z0-9α-ωΑ-Ω𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵]+/,
 		onEnterRules: [
 			{
 				beforeText: /^\s*\[\*\*(?!\])([^\*]|\*(?!\]))*$/,
@@ -55,14 +55,14 @@ function activate(context) {
 	// 定义在 package.json 中的命令在这里定义
 	// 提供 registerCommand 来注册实现代码
 	// commandId 参数必须与 package.json 匹配
-	let disposable = vscode.commands.registerCommand('extension.sayHello', function () {
-	// 这里的代码每次执行 这个命令 的时候都会被执行
+	// let disposable = vscode.commands.registerCommand('extension.sayHello', function () {
+	// // 这里的代码每次执行 这个命令 的时候都会被执行
 
-	// 显示信息框
-		vscode.window.showInformationMessage('Hello World!');
-	});
+	// // 显示信息框
+	// 	vscode.window.showInformationMessage('Hello World!');
+	// });
 
-	context.subscriptions.push(disposable);
+	// context.subscriptions.push(disposable);
 }
 exports.activate = activate;
 
