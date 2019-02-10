@@ -1,0 +1,14 @@
+{
+	"brackets": [
+    	["\\{", "\\}"],
+		["\\[", "\\]"],
+		["\\(", "\\)"]
+	],
+	"autoClosingPairs": [
+		// I prepare this configuration for the future update of the vscode
+		["\\{", "\\}"],
+		["\\[", "\\]"],
+		["\\(", "\\)"],
+	],
+	"wordPattern": "(?:[^\\\\\\s]|\\\\(?!\\s|$)|(?<!\\\\)\\s)+"
+}

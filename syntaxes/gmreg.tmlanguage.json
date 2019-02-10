@@ -1,0 +1,171 @@
+{
+	"$schema": "../tmlanguage.json",
+
+	"name": "GM-regexp",
+
+	"scopeName": "source.regexp.gm",
+	"patterns": [
+		{
+			"include": "#grlang"
+		}
+	],
+
+	"repository": {
+		"grlang": {
+			"patterns": [
+				{
+					"include": "#brackets"
+				},
+				{
+					"include": "#meta-characters"
+				},
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#customizes"
+				},
+				{
+					"Comment": "otherwise",
+					"name": "invalid.illegal.escape.regexp.gm",
+					"match": "\\\\."
+				}
+			]
+		},
+		"brackets": {
+			"patterns": [
+				{
+					"include": "#round-brackets"
+				},
+				{
+					"include": "#square-brackets"
+				},
+				{
+					"include": "#curly-brackets"
+				}
+			],
+			"repository": {
+				"round-brackets": {
+					"begin": "\\\\\\(",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.group.regexp.gm"
+						}
+					},
+					"end": "\\\\\\)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.group.regexp.gm"
+						}
+					},
+					"name": "meta.structure.group.regexp.gm",
+					"patterns": [
+						{
+							"include": "#grlang"
+						}
+					]
+				},
+				"square-brackets": {
+					"begin": "\\\\\\[",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.character-class.regexp.gm"
+						}
+					},
+					"end": "\\\\\\]",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.character-class.regexp.gm"
+						}
+					},
+							"name": "meta.structure.character-class.regexp.gm",
+					"patterns": [
+						{
+							"include": "#grlang"
+						}
+					]
+				},
+				"curly-brackets": {
+					"Comment": "uncompleted",
+					"begin": "\\\\\\{",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.set.begin.regexp.gm"
+						}
+					},
+					"end": "\\\\\\}",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.set.end.regexp.gm"
+						}
+					},
+					"name": "meta.structure.set.regexp.gm",
+					"patterns": [
+						{
+							"include": "#grlang"
+						}
+					]
+				}
+			}
+		},
+		"meta-characters": {
+			"Comment": "all of them start with backslash",
+			"patterns": [
+				{
+					"Comment": "the capital has the inverse meaning",
+					"name": "constant.character.escape.regexp.gm",
+					"match": "(?i)\\\\[wrtsdfvbn]"
+				},
+				{
+					"name": "constant.character.escape.delimiter.regexp.gm",
+					"match": "\\\\\\s"
+				},
+				{
+					"name": "constant.character.escape.backslash.regexp.gm",
+					"match": "\\\\[\\\\]"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.other.flag.regexp.gm",
+					"match": "(?i)\\\\[xi]"
+				},
+				{
+					"name": "keyword.other.suffix.regexp.gm",
+					"match": "\\\\[*/+-]"
+				},
+				{
+					"name": "keyword.other.reference.regexp.gm",
+					"match": "(?i)\\\\[1-9]"
+				}
+			]
+		},
+		"customizes": {
+			"patterns": [
+				{
+					"begin": "\\\\\\$",
+					"beginCaptures": {
+						"0": {
+							"name":"variable.other.pattern.regexp.gm"
+						}
+					},
+					"end": "\\\\\\s|(\\\\:)",
+					"endCaptures": {
+						"1": {
+							"name": "keyword.control.definition.regexp.gm"
+						}
+					},
+					"contentName": "variable.other.pattern.regexp.gm",
+					"patterns": [
+						{
+							"name": "invalid.illegal.definition.gm",
+							"match": "\\\\\\S"
+						}
+					]
+				}
+			]
+		}
+	}
+}

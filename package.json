@@ -4,7 +4,7 @@
     "description": "GM support for Visual Studio Code",
     "version": "1.0.4",
 
-	"icon": "images/icon.png",
+    "icon": "images/icon.png",
     "engines": {
         "vscode": "^1.24.0"
     },
@@ -20,8 +20,8 @@
 
     "publisher": "giacomozheng",
     "repository": {
-		"type": "git",
-		"url": "https://github.com/GiacomoZheng/vscode-gm.git"
+        "type": "git",
+        "url": "https://github.com/GiacomoZheng/vscode-gm.git"
     },
 
     "contributes": {
@@ -30,31 +30,49 @@
                 "id": "gm",
                 "aliases": ["GM", "gm"],
                 "extensions": [".gm"],
-                "configuration": "./language-configuration.json"
+                "configuration": "./language-configuration/gm.language-configuration.json"
+            },
+            {
+                "id": "gmreg",
+                "aliases": ["GM-regexp"],
+                "extensions": [".gmreg"],
+                "configuration": "./language-configuration/gmreg.language-configuration.json"
             }
         ],
         "grammars": [
             {
                 "language": "gm",
                 "scopeName": "source.gm",
-                "path": "./syntaxes/gm.tmLanguage.json"
+                "path": "./syntaxes/gm.tmLanguage.json",
+                "embeddedLanguages": {
+                    "string.regexp.gm": "gmreg",
+                    "string.pre.gm": "plaintext",
+
+                    "meta.embedded.block.gm": "gm",
+                    "meta.embedded.block.language": "plaintext"
+                }
+            },
+            {
+                "language": "gmreg",
+                "scopeName": "source.regexp.gm",
+                "path": "./syntaxes/gmreg.tmLanguage.json"
             }
         ],
-		"snippets": [
-			{
-				"language": "gm",
-				"path": "./snippets/gm.json"
-			}
+        "snippets": [
+            {
+                "language": "gm",
+                "path": "./snippets/gm.json"
+            }
         ],
         "commands": [],
 
-		"configurationDefaults": {
-			"[gm]": {
+        "configurationDefaults": {
+            "[gm]": {
                 "files.autoGuessEncoding": false,
                 "files.encoding": "utf8",
                 "editor.insertSpaces": false,
                 "editor.autoIndent": true
             }
-		}
+        }
     }
 }

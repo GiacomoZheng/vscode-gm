@@ -8,7 +8,7 @@
 		{
 			"description": "the ':' at the first line of the file is legal",
 			"match": "\\A:",
-			"name": "keyword.control.define.file.gm"
+			"name": "keyword.control.definition.file.gm"
 		},
 		{
 			"include": "#gmlang"
@@ -55,13 +55,13 @@
 					"begin": "(?<=^|[,({])\\s*(\\[)(?!\\*\\*(?!\\]))",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.define.comment.block.begin.gm"
+							"name": "punctuation.definition.comment.block.begin.gm"
 						}
 					},
 					"end": "(\\])",
 					"endCaptures": {
 						"1": {
-							"name": "punctuation.define.comment.block.end.gm"
+							"name": "punctuation.definition.comment.block.end.gm"
 						}
 					},
 					"name": "comment.block.gm",
@@ -98,13 +98,13 @@
 					"begin": "(;)",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.define.comment.line.gm"
+							"name": "punctuation.definition.comment.line.gm"
 						}
 					},
 					"end": "(?=$|(?<=\\s);)",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.define.comment.line.gm"
+							"name": "punctuation.definition.comment.line.gm"
 						}
 					},
 					"name": "comment.line.gm",
@@ -119,13 +119,13 @@
 					"begin": "^\\s*(\\[\\*\\*)(?!\\])",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.define.comment.doc.begin.gm"
+							"name": "punctuation.definition.comment.doc.begin.gm"
 						}
 					},
 					"end": "(?:\\*[^\\]]*)?(\\*\\])",
 					"endCaptures": {
 						"1": {
-							"name": "punctuation.define.comment.doc.end.gm"
+							"name": "punctuation.definition.comment.doc.end.gm"
 						}
 					},
 					"name": "comment.doc.gm",
@@ -160,7 +160,7 @@
 									"name": "comment.todo.gm"
 								},
 								"2": {
-									"name": "punctuation.define.comment.gm"
+									"name": "punctuation.definition.comment.gm"
 								}
 							}
 						},
@@ -171,7 +171,7 @@
 									"name": "comment.note.gm"
 								},
 								"2": {
-									"name": "punctuation.define.comment.gm"
+									"name": "punctuation.definition.comment.gm"
 								}
 							}
 						},
@@ -182,7 +182,7 @@
 									"name": "comment.wait.gm"
 								},
 								"2": {
-									"name": "punctuation.define.comment.gm"
+									"name": "punctuation.definition.comment.gm"
 								}
 							}
 						},
@@ -193,7 +193,7 @@
 									"name": "comment.warn.gm"
 								},
 								"2": {
-									"name": "punctuation.define.comment.gm"
+									"name": "punctuation.definition.comment.gm"
 								}
 							}
 						}
@@ -203,13 +203,13 @@
 					"begin": "(```)(?i:gm)?\\s+",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.define.embedded.begin.gm"
+							"name": "punctuation.definition.embedded.begin.gm"
 						}
 					},
 					"end": "(```)",
 					"endCaptures": {
 						"1": {
-							"name": "punctuation.define.embedded.end.gm"
+							"name": "punctuation.definition.embedded.end.gm"
 						}
 					},
 					"contentName": "meta.embedded.block.gm",
@@ -223,13 +223,13 @@
 					"begin": "(```)[^\\s]+",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.define.embedded.begin.gm"
+							"name": "punctuation.definition.embedded.begin.gm"
 						}
 					},
 					"end": "(```)",
 					"endCaptures": {
 						"1": {
-							"name": "punctuation.define.embedded.end.gm"
+							"name": "punctuation.definition.embedded.end.gm"
 						}
 					},
 					"contentName": "meta.embedded.block.language",
@@ -334,13 +334,13 @@
 					"begin": "\\(",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.define.sequence.begin.gm"
+							"name": "punctuation.definition.sequence.begin.gm"
 						}
 					},
 					"end": "\\)",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.define.sequence.end.gm"
+							"name": "punctuation.definition.sequence.end.gm"
 						}
 					},
 					"name": "meta.structure.sequence.gm",
@@ -354,13 +354,13 @@
 					"begin": "(?<!^|,)\\s*(\\[)(?!\\*\\*)",
 					"beginCaptures": {
 						"1": {
-							"name": "punctuation.define.subscript.begin.gm"
+							"name": "punctuation.definition.subscript.begin.gm"
 						}
 					},
 					"end": "\\]",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.define.subscript.end.gm"
+							"name": "punctuation.definition.subscript.end.gm"
 						}
 					},
 					"name": "meta.structure.subscript.gm",
@@ -374,13 +374,13 @@
 					"begin": "\\{",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.define.set.begin.gm"
+							"name": "punctuation.definition.set.begin.gm"
 						}
 					},
 					"end": "\\}",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.define.set.end.gm"
+							"name": "punctuation.definition.set.end.gm"
 						}
 					},
 					"name": "meta.structure.set.gm",
@@ -445,7 +445,7 @@
 		"invalids": {
 			"patterns": [
 				{
-					"name": "invalid.illegal.define.gm",
+					"name": "invalid.illegal.definition.gm",
 					"match": "(?<=^|\\s|:):",
 					"Comment": "except the : at the beginning of the file"
 				},
@@ -460,7 +460,7 @@
 				{
 					"name": "invalid.deprecated.triple.gm",
 					"match": "```",
-					"Comment": "it can be only used in the comments. In fact you can define it."
+					"Comment": "it can be only used in the comments. In fact you can definition it."
 				},
 				{
 					"name": "invalid.deprecated.tab.gm",
@@ -501,7 +501,7 @@
 							"match": "(?:⇒|⇔|⇐)(?!:)"
 						},
 						{
-							"name": "keyword.control.define.gm",
+							"name": "keyword.control.definition.gm",
 							"match": ":"
 						}
 					]
@@ -550,11 +550,11 @@
 			"end": "(?<!\\s):",
 			"endCaptures": {
 				"0": {
-					"name": "keyword.control.define.gm"
+					"name": "keyword.control.definition.gm"
 				}
 			},
 			"Comment-contentName": "not a variable",
-			"contentName": "variable.temporary.define.gm",
+			"contentName": "variable.temporary.definition.gm",
 			"patterns": [
 				{
 					"include": "#gmlang"
@@ -580,19 +580,19 @@
 					"begin": "\"",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.define.string.line.begin.gm"
+							"name": "punctuation.definition.string.line.begin.gm"
 						}
 					},
-					"end": "\"|(?<!\\\\)$",
+					"end": "\"|(?<!\\\\)\n",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.define.string.line.end.gm"
+							"name": "punctuation.definition.string.line.end.gm"
 						}
 					},
 					"patterns": [
 						{
 							"name": "constant.character.escape.gm",
-							"match": "\\\\."
+							"match": "\\\\[\\w\"]"
 						}
 					]
 				},
@@ -601,13 +601,13 @@
 					"begin": "(?<!`)`(?!`)",
 					"beginCaptures": {
 						"0": {
-							"name": "punctuation.define.string.pre.begin.gm"
+							"name": "punctuation.definition.string.pre.begin.gm"
 						}
 					},
 					"end": "(?<!`)`(?!`)",
 					"endCaptures": {
 						"0": {
-							"name": "punctuation.define.string.pre.end.gm"
+							"name": "punctuation.definition.string.pre.end.gm"
 						}
 					},
 					"name": "string.pre.gm",
@@ -615,20 +615,28 @@
 				},
 				"regexp-strings": {
 					"Comment": "undetermined",
-					"begin": "[rR]\"",
+					"begin": "[rR](\")",
 					"beginCapture": {
+						"0": {
+							"name": "keyword.other.regexp.gm"
+						},
 						"1": {
-							"name": "punctuation.define.string.regexp.begin.gm"
+							"name": "punctuation.definition.string.regexp.begin.gm"
 						}
 					},
-					"end": "\"[gG]|(?<!\\\\)$",
+					"Comment-end": "I promise the xX but I don't recommend it",
+					"end": "(\")[pPxX]|(?<!\\\\)\n",
 					"endCapture": {
 						"1": {
-							"name": "punctuation.define.string.regexp.end.gm"
+							"name": "punctuation.definition.string.regexp.end.gm"
 						}
 					},
-					"name": "string.regexp.gm",
-					"patterns": []
+					"contentName": "string.regexp.gm",
+					"patterns": [
+						{
+							"include": "source.regexp.gm"
+						}
+					]
 				}
 			}
 		}

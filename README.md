@@ -43,16 +43,14 @@ For the Mac's and Linus' users, I'm sorry but you can try other hotkey apps.
 
 Calling out known issues can help limit users opening duplicate issues against your extension. -->
 
-## Recommendation 
+## Recommendation
 
 [bracket-pair-colorizer-2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2) is a beautiful and powerful extension and it support all languages. You can directly use it after intalling.
 
-[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) is a useful extension, but it (2.0.2) doesn't support gm directly. In the latest version of `gm` (`1.0.3`), I build in the function of the `better comments` into the sytnax, with the help of some other configurations.
+[Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments) is a useful extension, but it (2.0.2) doesn't support gm directly. In the latest version of `gm` (`1.0.5`), I build in the function of the `better comments` into the sytnax, with the help of some other configurations.
 
 ## Release Notes
 
 Go to [Changelog](CHANGELOG) for details.
 
 -----------------------------------------------------------------------------------------------------------
-
-

@@ -3,6 +3,11 @@ All notable changes about the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
+## 1.0.5 ()
+
+* Start `regexp` as an embedded language.
+* I used the `wordPattern` in `gmMain.js` to replace the one in `language-configuration`, and it seems can fix the bug.
+
 ## 1.0.4 (Feb. 8, 2019)
 <!-- I'm Italy now -->
 
@@ -28,7 +33,7 @@ All notable changes about the "gm" extension will be documented in this file.
 <!-- * Congratulation, it seems that VS code has fix the bug on `wordPattern`. -->
 * Add `gm - Dark+` theme, for the function of the `better-comments`. I have contacted with Aaron Bond, the author of `better-comments`.
 
-uncompleted: *-completed*
+uncompleted:
 1. The functions of `better-comments` for all theme, I'll try to deal with it.
 
 bug:
@@ -51,7 +56,7 @@ Completed:
 2. Snippets for gm
 3. Syntaxes for pstress *-deleted*
 
-Uncompleted: *-deleted*
+Uncompleted:
 1. `gmMain.js`
 2. `plugins/bracketPairColorizer/copy.exe`
 
