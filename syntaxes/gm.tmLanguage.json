@@ -47,6 +47,7 @@
 					"include": "#line-comments"
 				},
 				{
+					"Comment": "I may change it later",
 					"include": "#doc-comments"
 				}
 			],
@@ -77,22 +78,8 @@
 						},
 						{
 							"include": "#better-comments"
-						},
-						{
-							"include": "#nested"
 						}
-					],
-					"repository": {
-						"nested": {
-							"begin": "\\[",
-							"end": "\\]",
-							"patterns": [
-								{
-									"include": "#nested"
-								}
-							]
-						}
-					}
+					]
 				},
 				"line-comments": {
 					"begin": "(;)",
@@ -102,11 +89,6 @@
 						}
 					},
 					"end": "(?=$|(?<=\\s);)",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.comment.line.gm"
-						}
-					},
 					"name": "comment.line.gm",
 					"patterns": [
 						{
@@ -115,7 +97,8 @@
 					]
 				},
 				"doc-comments": {
-					"Comment": "be directly adapted from java",
+					"Comment": "undetermined",
+					"Source": "java",
 					"begin": "^\\s*(\\[\\*\\*)(?!\\])",
 					"beginCaptures": {
 						"1": {
@@ -154,48 +137,20 @@
 				"better-comments": {
 					"patterns": [
 						{
-							"match": "(?<=^|\\G)(\\s*(?i:\\+|todo).*?)($|(?<=\\s);)",
-							"captures": {
-								"1": {
-									"name": "comment.todo.gm"
-								},
-								"2": {
-									"name": "punctuation.definition.comment.gm"
-								}
-							}
+							"match": "(?<=^|\\G)\\s*(?i:\\+|todo).*?(?=$|(?<=\\s);)",
+							"name": "comment.todo.gm"
 						},
 						{
-							"match": "(?<=^|\\G)(\\s*(?i:\\*|note).*?)($|(?<=\\s);)",
-							"captures": {
-								"1": {
-									"name": "comment.note.gm"
-								},
-								"2": {
-									"name": "punctuation.definition.comment.gm"
-								}
-							}
+							"match": "(?<=^|\\G)\\s*(?i:\\*|note).*?(?=$|(?<=\\s);)",
+							"name": "comment.note.gm"
 						},
 						{
-							"match": "(?<=^|\\G)(\\s*(?i:\\?|wait).*?)($|(?<=\\s);)",
-							"captures": {
-								"1": {
-									"name": "comment.wait.gm"
-								},
-								"2": {
-									"name": "punctuation.definition.comment.gm"
-								}
-							}
+							"match": "(?<=^|\\G)\\s*(?i:\\?|wait).*?(?=$|(?<=\\s);)",
+							"name": "comment.wait.gm"
 						},
 						{
-							"match": "(?<=^|\\G)(\\s*(?i:\\!|warn).*?)($|(?<=\\s);)",
-							"captures": {
-								"1": {
-									"name": "comment.warn.gm"
-								},
-								"2": {
-									"name": "punctuation.definition.comment.gm"
-								}
-							}
+							"match": "(?<=^|\\G)\\s*(?i:\\!|warn).*?(?=$|(?<=\\s);)",
+							"name": "comment.warn.gm"
 						}
 					]
 				},
@@ -236,6 +191,7 @@
 					"patterns": []
 				},
 				"informations": {
+					"Comment": "undetermined, I may move this part into a new language",
 					"patterns": [
 						{
 							"match": "\\G\\s*(@(?:version|since))\\s+([0-9][1-9]*(?:\\.[0-9][1-9]*)*)?.*$",
@@ -289,20 +245,6 @@
 								},
 								"2": {
 									"name": "variable.parameter.gm"
-								}
-							}
-						},
-						{
-							"Comment": "{(@link)\\s+(\\S+)?#([\\w$]+\\s*\\([^(\\)]*\\)).*}",
-							"_wait": {
-								"1": {
-									"name": "keyword.other.comment.doc.gm"
-								},
-								"2": {
-									"name": "entity.name.type.class.java"
-								},
-								"3": {
-									"name": "variable.parameter.java"
 								}
 							}
 						}
@@ -451,7 +393,7 @@
 				},
 				{
 					"name": "invalid.illegal.quantifier.gm",
-					"match": "(?<=\\s)[^\\s\\[({]+[∀∃!]"
+					"match": "\\w[∀∃!]"
 				},
 				{
 					"name": "invalid.illegal.package.gm",
@@ -478,7 +420,7 @@
 					"include": "#functions"
 				},
 				{
-					"include": "#attributions"
+					"include": "#attributes"
 				},
 				{
 					"name": "constant.rgb-value.gm",
@@ -490,11 +432,11 @@
 					"patterns": [
 						{
 							"name": "delimiter.gm",
-							"match": " |^\t+"
+							"match": " |^\t+(?!:)"
 						},
 						{
 							"name": "punctuation.separator.gm",
-							"match": ","
+							"match": ",(?!:)"
 						},
 						{
 							"name": "keyword.control.flow.gm",
@@ -510,20 +452,21 @@
 					"patterns": [
 						{
 							"Comment": "I cannot find a perfect way to deal with this question up to now",
-							"match": "[∀∃!](?![^:]*:)",
+							"match": "[∀∃!](?![^:]*:|\\.)",
 							"name": "entity.name.function.logical.gm"
 						}
 					]
 				},
-				"attributions": {
-					"Comment": "be directly adapted from java",
+				"attributes": {
+					"Comment": "add one more invalid situation",
+					"Source": "java",
 					"patterns": [
 						{
-							"match": "\\b[^\\s,:;(){}\\[\\]&.|]+(?=\\s*\\.\\s*[^\\s,:;(){}\\[\\]&.|]+)",
+							"match": "[^\\s,:;(){}\\[\\]&.|]+(?=\\s*\\.\\s*[^\\s,:;(){}\\[\\]&.|]+)",
 							"name": "constant.other.location.gm"
 						},
 						{
-							"Comment": "add an invalid situation",
+							"Comment": "",
 							"match": "(\\.)\\s*([^\\s,:;(){}\\[\\]&.|]+)",
 							"captures": {
 								"1": {
@@ -539,7 +482,6 @@
 			}
 		},
 		"temporaries": {
-			"Comment-begin": "undetermined whether the \\s should be forbidden after ∀∃!",
 			"begin": "([∀∃!])(?![:.])",
 			"beginCaptures": {
 				"1": {
@@ -547,7 +489,7 @@
 					"name": "keyword.quantifier.gm"
 				}
 			},
-			"end": "(?<!\\s):",
+			"end": "(?<!\\s):|\n",
 			"endCaptures": {
 				"0": {
 					"name": "keyword.control.definition.gm"

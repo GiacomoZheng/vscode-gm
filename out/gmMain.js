@@ -4,53 +4,48 @@ function activate(context) {
 	// 这里的代码将只会在插件激活时执行一次
 	console.log('Congratulations, extension "gm" is now active!');
 
-	vscode.languages.setLanguageConfiguration('gm', {
-		// * be adapted from java - redhat
-
-		// indentationRules: {
-		// 	decreaseIndentPattern: /^(.*\*\/)?\s*\}.*$/,
-		// 	increaseIndentPattern: /^.*\{[^}"']*$/
-		// },
-		wordPattern: /[@∀∃!|]|[∅$¯~#_'%?a-zA-Z0-9α-ωΑ-Ω𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵]+/,
-		onEnterRules: [
-			{
-				beforeText: /^\s*\[\*\*(?!\])([^\*]|\*(?!\]))*$/,
-				afterText: /^\s*\*\]$/,
-				action: {
-					indentAction: vscode.IndentAction.IndentOutdent,
-					appendText: " * "
-				}
-			},
-			{
-				beforeText: /^\s*\[\*\*(?!\])([^\*]|\*(?!\]))*$/,
-				action: {
-					indentAction: vscode.IndentAction.None,
-					appendText: " * "
-				}
-			},
-			{
-				beforeText: /^(\t|(\ \ ))*\ \*(\ ([^\*]|\*(?!\]))*)?$/,
-				action: {
-					indentAction: vscode.IndentAction.None,
-					appendText: "* "
-				}
-			},
-			{
-				beforeText: /^(\t|(\ \ ))*\ \*?\]\s*$/,
-				action: {
-					indentAction: vscode.IndentAction.None,
-					removeText: 1
-				}
-			},
-			{
-				beforeText: /^(\t|(\ \ ))*\ \*[^\]]*\*\]\s*$/,
-				action: {
-					indentAction: vscode.IndentAction.None,
-					removeText: 1
-				}
-			}
-		]
-	})
+	const rule = {
+		// onEnterRules: [
+		// 	// * be adapted from java - redhat
+		// 	{
+		// 		beforeText: /^\s*\[\*\*(?!\])([^\*]|\*(?!\]))*$/,
+		// 		afterText: /^\s*\*\]$/, // !
+		// 		action: {
+		// 			indentAction: vscode.IndentAction.IndentOutdent,
+		// 			appendText: " * "
+		// 		}
+		// 	},
+		// 	{
+		// 		beforeText: /^\s*\[\*\*(?!\])([^\*]|\*(?!\]))*$/,
+		// 		action: {
+		// 			indentAction: vscode.IndentAction.None,
+		// 			appendText: " * "
+		// 		}
+		// 	},
+		// 	{
+		// 		beforeText: /^(\t|(\ \ ))*\ \*(\ ([^\*]|\*(?!\]))*)?$/,
+		// 		action: {
+		// 			indentAction: vscode.IndentAction.None,
+		// 			appendText: "* "
+		// 		}
+		// 	},
+		// 	{
+		// 		beforeText: /^(\t|(\ \ ))*\ \*?\]\s*$/,
+		// 		action: {
+		// 			indentAction: vscode.IndentAction.None,
+		// 			removeText: 1
+		// 		}
+		// 	},
+		// 	{
+		// 		beforeText: /^(\t|(\ \ ))*\ \*[^\]]*\*\]\s*$/,
+		// 		action: {
+		// 			indentAction: vscode.IndentAction.None,
+		// 			removeText: 1
+		// 		}
+		// 	}
+		// ]
+	}
+	vscode.languages.setLanguageConfiguration('gm', rule);
 
 	// 定义在 package.json 中的命令在这里定义
 	// 提供 registerCommand 来注册实现代码

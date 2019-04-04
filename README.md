@@ -29,7 +29,8 @@ It is much more like mathemtics than a programming lauguage indeed.
 
 ## Extension Settings
 
-It is better to add some settings (in [settings](plugins\settings\README)) into `settings.json`, which build in the function of `better-comments` of `aaron-bond`. I have got the permission from him.
+It is better to add some settings (in [settings](plugins/settings/README)) into `settings.json`, which build in the function of `better-comments` of `aaron-bond`. I have got the permission from him.
+<!-- the path of settings may be wrong -->
 
 ## Requirements
 

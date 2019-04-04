@@ -2,6 +2,7 @@ This extension can be used directly on gm.
 
 Here is my settings,
 ```json
+{
     "bracket-pair-colorizer-2.colorMode": "Independent",
     "bracket-pair-colorizer-2.colors": [
         "#ff8080",
@@ -18,4 +19,5 @@ Here is my settings,
     "bracket-pair-colorizer-2.showBracketsInRuler": true,
     "bracket-pair-colorizer-2.scopeLineRelativePosition": true,
     "bracket-pair-colorizer-2.highlightActiveScope": true,
+}
 ```

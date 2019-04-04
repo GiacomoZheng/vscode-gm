@@ -6,11 +6,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance force
 
 ; 常量 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-/* 
-"abcdefghijklmnopqrstuvwxyz"
- * ! "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	"𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷" ; 花体（小）
-	"𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ" ; 花体（大）
+/*
+ * "abcdefghijklmnopqrstuvwxyz"
+ * "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+ * "𝔞𝔟𝔠𝔡𝔢𝔣𝔤𝔥𝔦𝔧𝔨𝔩𝔪𝔫𝔬𝔭𝔮𝔯𝔰𝔱𝔲𝔳𝔴𝔵𝔶𝔷" ; 花体（小）
+ * "𝔄𝔅ℭ𝔇𝔈𝔉𝔊ℌℑ𝔍𝔎𝔏𝔐𝔑𝔒𝔓𝔔ℜ𝔖𝔗𝔘𝔙𝔚𝔛𝔜ℨ" ; 花体（大）
  */
 ; 全局变量 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 	; CapsLock as Caps_state
@@ -24,54 +24,55 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 		GetKeyState, Caps_state, CapsLock, T
 	Return
 
-; 右ctrl + 
-	>^4::Send,↔
 
+; 特殊字符
+	:*?:female	::♀
+	; the female must be in front of male
+	:*?:male	::♂
+
+; 右ctrl +
+	>^4::Send,↔
 	+>^4::Send,⇔
 
 	>^5::Send,∈
-
-	>^+5::Send,∋
-
+	+>^5::Send,∋
 	>^6::Send,⊆
-
 	+>^6::Send,⊂
-
 	>^7::Send,⊇
-
 	+>^7::Send,⊃
 
 	>^8::Send,∞
+	; ? I may delete it
 
 	+>^8::Send,•
 
 	>^0::Send,∅
 
-	>^+,::Send,≤
-
 	>^-::Send,¯
 
 	>^.::Send,…
 
+	+>^,::Send,≤
 	+>^.::Send,≥
 
 	;
-	:*:!=	::≠
+	:*?:!=	::≠
 
-	:*:~=	::≌
+	:*?:~=	::≌
 
 	;
 	>^a::Send,∀
-
 	>^e::Send,∃
 
 	+>^a::Send,∧  ; wedge
 
 	>^u::Send,∪
-
 	>^n::Send,∩
+	+>^u::Send,⋃
+	+>^n::Send,⋂
 
 	>^m::Send,■
+	; +>^m::Send,□
 
 	>^s::Send,∫
 
@@ -83,72 +84,103 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 	; ↢↣
 	>^!right::Send,↦
-
 	>^!left::Send,↤
 
 	>^right::Send,→
-
 	>^left::Send,←
+	; :*?:←→	::↔
 
 	+>^left::Send,⇐
-
 	+>^right::Send,⇒
+	; :*?:⇐⇒	::⇔
 
 ; changing some letter to be capital will change the output to be capital
-	:*:alpha	::α
+	:*?:alpha	::α
+	:*?:beta	::β
+	:*?:gamma	::γ
+	:*?:delta	::δ
+	:*?:epsilon	::ε
 
-	:*:beta	::β
+	; theta and zeta need to be above the eta
+	:*?:zeta	::ζ
+	:*?:theta	::θ
+	:*?:eta	::η
 
-	:*:gamma	::γ
-
-	:*:delta	::δ
-
-	:*:epsilon	::ε
-
-	:*:zeta	::ζ
-
-	:*:eta	::η
-
-	:*:theta	::θ
-
-	:*:iota	::ι
-
-	:*:kappa	::κ
-
-	:*:lambda	::λ
-
-	:*:mu	::μ
-
-	:*:nu	::ν
-
-	:*:xi	::ξ
-
-	:*:omicron	::ο
-
-	:*:pi	::π
-
-	:*:rho	::ρ
-
-	:*:sigma	::σ
-
-	:*:tau	::τ
-
-	:*:upsilon	::υ
-
-	:*:phi	::φ
-
-	:*:chi	::χ
-
-	:*:psi	::ψ
-
-	:*:omega	::ω
-
+	:*?:iota	::ι
+	:*?:kappa	::κ
+	:*?:lambda	::λ
+	:*?:mu	::μ
+	:*?:nu	::ν
+	:*?:xi	::ξ
+	:*?:omicron	::ο
+	:*?:pi	::π
+	:*?:rho	::ρ
+	:*?:sigma	::σ
+	:*?:tau	::τ
+	:*?:upsilon	::υ
+	:*?:phi	::φ
+	:*?:chi	::χ
+	:*?:psi	::ψ
+	:*?:omega	::ω
 ; 希伯来文 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
-:*:aleph	::א ; 亦写作
-:*:alef	::א
+	:*?:aleph	::א ; 亦写作
+	:*?:alef	::א
 
+; 双线字体
+	:*?c:\a	::𝕒
+	:*?c:\b	::𝕓
+	:*?c:\c	::𝕔
+	:*?c:\d	::𝕕
+	:*?c:\e	::𝕖
+	:*?c:\f	::𝕗
+	:*?c:\g	::𝕘
+	:*?c:\h	::𝕙
+	:*?c:\i	::𝕚
+	:*?c:\j	::𝕛
+	:*?c:\k	::𝕜
+	:*?c:\l	::𝕝
+	:*?c:\m	::𝕞
+	:*?c:\n	::𝕟
+	:*?c:\o	::𝕠
+	:*?c:\p	::𝕡
+	:*?c:\q	::𝕢
+	:*?c:\r	::𝕣
+	:*?c:\s	::𝕤
+	:*?c:\t	::𝕥
+	:*?c:\u	::𝕦
+	:*?c:\v	::𝕧
+	:*?c:\w	::𝕨
+	:*?c:\x	::𝕩
+	:*?c:\y	::𝕪
+	:*?c:\z	::𝕫
 
+	:*?c:\A	::𝔸
+	:*?c:\B	::𝔹
+	:*?c:\C	::ℂ
+	:*?c:\D	::𝔻
+	:*?c:\E	::𝔼
+	:*?c:\F	::𝔽
+	:*?c:\G	::𝔾
+	:*?c:\H	::ℍ
+	:*?c:\I	::𝕀
+	:*?c:\J	::𝕁
+	:*?c:\K	::𝕂
+	:*?c:\L	::𝕃
+	:*?c:\M	::𝕄
+	:*?c:\N	::ℕ
+	:*?c:\O	::𝕆
+	:*?c:\P	::ℙ
+	:*?c:\Q	::ℚ
+	:*?c:\R	::ℝ
+	:*?c:\S	::𝕊
+	:*?c:\T	::𝕋
+	:*?c:\U	::𝕌
+	:*?c:\V	::𝕍
+	:*?c:\W	::𝕎
+	:*?c:\X	::𝕏
+	:*?c:\Y	::𝕐
+	:*?c:\Z	::ℤ
 ; 手写体 &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 	CapsLock & a::
 	If Caps_state = D
@@ -704,33 +736,21 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	; Q and S are the same
 	; A,D,T,U, are useless
 	; H,J,O,V,Z, are undefined
-	; N,Y are just like click them only	
+	; N,Y are just like click them only
 
 ; 中文标点输入&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 	>!`::Send,、
-
 	>!.::Send,。
-
 	>!,::Send,，
-
 	>!;::Send,；
-
 	>!+;::Send,：
-
 	>!'::Send,‘’{left}
-
 	>!"::Send,“”{left}
-
 	>!?::Send,？
-
 	>!!::Send,！
-
 	>!(::Send,（）{left}
-
 	>!)::Send,）
-
 	>!+,::Send,《》{left}
-
 	>!+.::Send,》
 
 ; for numberpad

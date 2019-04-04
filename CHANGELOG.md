@@ -5,14 +5,15 @@ All notable changes about the "gm" extension will be documented in this file.
 
 ## 1.0.5 ()
 
-* Start `regexp` as an embedded language.
-* I used the `wordPattern` in `gmMain.js` to replace the one in `language-configuration`, and it seems can fix the bug.
+* Start `regexp` as an embedded language. I may embedded a `gmdoc` language later.
+* Rewrite the `wordPattern` in `language-configuration`, and it seems can fix the bug.
+* Use the `indentationRules` in `language-configuration` to replace the `js` one. I have disabled the `gmMain.js`, and I may delete it later.
 
 ## 1.0.4 (Feb. 8, 2019)
-<!-- I'm Italy now -->
+<!-- I'm in Italy now -->
 
-* Optimized the `better-comments`.
-* Optimized the structure of the syntax file.
+* Optimize the `better-comments`.
+* Optimize the structure of the syntax file.
 * Add the `doc-comments` in syntax.
 * Fix the bug about the `:` in the first line.
 * Start the `gmMain.js` file, completed the indentation part.

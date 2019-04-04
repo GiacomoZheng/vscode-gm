@@ -8,7 +8,7 @@ For the functions of `better-comment`, add the following settings into your `set
             {
                 "name": "Comment - todo",
                 "scope": [
-                    "comment.line.todo.gm"
+                    "comment.todo.gm"
                 ],
                 "settings": {
                     "foreground": "#FF8C00"
@@ -17,7 +17,7 @@ For the functions of `better-comment`, add the following settings into your `set
             {
                 "name": "Comment - note",
                 "scope": [
-                    "comment.line.note.gm"
+                    "comment.note.gm"
                 ],
                 "settings": {
                     "foreground": "#98C379"
@@ -26,7 +26,7 @@ For the functions of `better-comment`, add the following settings into your `set
             {
                 "name": "Comment - wait",
                 "scope": [
-                    "comment.line.wait.gm"
+                    "comment.wait.gm"
                 ],
                 "settings": {
                     "foreground": "#3498DB"
@@ -35,10 +35,33 @@ For the functions of `better-comment`, add the following settings into your `set
             {
                 "name": "Comment - warn",
                 "scope": [
-                    "comment.line.warn.gm"
+                    "comment.warn.gm"
                 ],
                 "settings": {
                     "foreground": "#FF2D00"
+                }
+            },
+
+            {
+                "scope": [
+                    "comment",
+                    "string",
+                    "constant",
+                    "variable"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": [
+                    "punctuation",
+                    "string.regexp",
+                    "entity.name.function",
+                    "meta.embedded.block"
+                ],
+                "settings": {
+                    "fontStyle": ""
                 }
             }
         ]
