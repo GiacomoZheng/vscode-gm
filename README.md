@@ -29,14 +29,14 @@ It is much more like mathemtics than a programming lauguage indeed.
 
 ## Extension Settings
 
-It is better to add some settings (in [settings](plugins/settings/README)) into `settings.json`, which build in the function of `better-comments` of `aaron-bond`. I have got the permission from him.
+It is better to add some settings (in [settings](plugins/settings/README.md)) into `settings.json`, which build in the function of `better-comments` of `aaron-bond`. I have got the permission from him.
 <!-- the path of settings may be wrong -->
 
 ## Requirements
 
 None
 
-If it is possible, the Windows' users can try to learn something about [AutoHotKey](https://autohotkey.com/), which helps a lot. [Here](plugins/AutoHotKey/) is my source file.
+If it is possible, the Windows' users can try to learn something about [AutoHotKey](https://autohotkey.com/), which helps a lot. [Here](plugins/autohotkey/) is my source file.
 
 For the Mac's and Linus' users, I'm sorry but you can try other hotkey apps.
 
@@ -52,6 +52,6 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## Release Notes
 
-Go to [Changelog](CHANGELOG) for details.
+Go to [Changelog](CHANGELOG.md) for details.
 
 -----------------------------------------------------------------------------------------------------------

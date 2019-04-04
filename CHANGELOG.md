@@ -3,7 +3,7 @@ All notable changes about the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
-## 1.0.5 ()
+## 1.0.5 (Apr. 4, 2019)
 
 * Start `regexp` as an embedded language. I may embedded a `gmdoc` language later.
 * Rewrite the `wordPattern` in `language-configuration`, and it seems can fix the bug.
