@@ -12,13 +12,15 @@ In the following tutorial, I’m going to use some concepts in other programming
 
 在开始阅读之后的内容之前，您需要了解基础部分中的所有概念。
 
-在接下来的教程中，我将使用一些其他编程语言的知识进行类比来继续教学`gm`，主要是`Java`，`Python`和`C/C++`.
+在接下来的教程中，我将使用一些其他编程语言的知识进行类比来继续教学`gm`，主要是`Java`，`Python`，`Erlang` 和`C/C++`.
 
 # Content --- 目录
 
-0. [Packaging definition --- 打包定义](p0) <!--  -->
+0. [Packaging definition --- 打包定义](p0) <!-- it is simialr to the Match operator in erlang: http://erlang.org/doc/getting_started/seq_prog.html#matching,-guards,-and-scope-of-variables, the tuple in Python can also do the similar thing -->
 1. [inner definition --- 内部（临时）定义](p1)
-2. [use of name --- 名字的使用](p2) <!--  -->
+2. [use of name --- 名字的使用](p2) <!--  --> <pre>
+    `_` --- anonymous variable --- `_`
+    `'` --- common abbreviation character </pre>
 . [compile]()
 
 # REMARK --- 注意

@@ -22,6 +22,7 @@
 
 		{ "open": "s\"", "close": "\"", "notIn": ["string", "comment"] } // proposition
 	],
+	"autoCloseBefore": ";:.,=}])> \n\t", // ? undetermined
 	"surroundingPairs": [
 		["{", "}"],
 		["[", "]"],
@@ -35,8 +36,7 @@
 		"increaseIndentPattern": "(?:^|,|■)\\s*@[^\\s,;:@]+(?:\\.[^\\s,;:@]+)*,[^■]*$",
 		"decreaseIndentPattern": "^(.*\\])?\\s*[})■].*$"
 	},
-	"wordPattern": "[@∀∃!|&]|[^@∀∃!|&∈⊆\\s,;:\"()\\[\\]{}.×/-]+",
-	// ? I don't know where is would be better to put it
+	"wordPattern": "[@∀∃!|&]|[^@∀∃!|&∈⊆\\s,;:\"`()\\[\\]{}.×/-]+",
 	"folding": {
 		"offSide": true,
 		"markers": {

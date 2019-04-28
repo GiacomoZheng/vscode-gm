@@ -2,7 +2,7 @@
     "name": "gm",
     "displayName": "GM",
     "description": "GM support for Visual Studio Code",
-    "version": "1.0.5",
+    "version": "1.0.6",
 
     "icon": "images/icon.png",
     "engines": {
@@ -35,15 +35,21 @@
         "languages": [
             {
                 "id": "gm",
-                "aliases": ["GM", "gm"],
+                "aliases": ["GM"],
                 "extensions": [".gm"],
                 "configuration": "./language-configuration/gm.language-configuration.json"
             },
             {
                 "id": "gmreg",
-                "aliases": ["GM-regexp"],
+                "aliases": ["GM-Regexp"],
                 "extensions": [".gmreg"],
                 "configuration": "./language-configuration/gmreg.language-configuration.json"
+            },
+            {
+                "id": "gmsh",
+                "aliases": ["GM-Shell"],
+                "extensions": [".gmsh"],
+                "configuration": "./language-configuration/gm.language-configuration.json"
             }
         ],
         "grammars": [
@@ -69,6 +75,10 @@
             {
                 "language": "gm",
                 "path": "./snippets/gm.json"
+            },
+            {
+                "language": "gmsh",
+                "path": "./snippets/gm.json"
             }
         ],
         "commands": [],
@@ -77,8 +87,7 @@
             "[gm]": {
                 "files.autoGuessEncoding": false,
                 "files.encoding": "utf8",
-                "editor.insertSpaces": false,
-                "editor.autoIndent": true
+                "editor.insertSpaces": false
             }
         }
     }

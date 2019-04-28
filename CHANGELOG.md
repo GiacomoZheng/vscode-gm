@@ -3,9 +3,13 @@ All notable changes about the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
+## 1.0.6
+
+* Start `GM-Shell` as an indepedent language. I may change the order of the syntax definition.
+
 ## 1.0.5 (Apr. 4, 2019)
 
-* Start `regexp` as an embedded language. I may embedded a `gmdoc` language later.
+* Start `GM-Regexp` as an embedded language. I may embedded a `GM-Doc` language later.
 * Rewrite the `wordPattern` in `language-configuration`, and it seems can fix the bug.
 * Use the `indentationRules` in `language-configuration` to replace the `js` one. I have disabled the `gmMain.js`, and I may delete it later.
 
