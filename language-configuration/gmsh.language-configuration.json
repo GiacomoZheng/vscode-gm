@@ -1,0 +1,26 @@
+{
+	"comments": {
+		"lineComment": ";"
+	},
+
+	"autoClosingPairs": [
+		{ "open": "{", "close": "}", "notIn": [ "comment", ] },
+		{ "open": "[", "close": "]", "notIn": [ "comment", ] },
+		{ "open": "(", "close": ")", "notIn": [ "comment", ] },
+		{ "open": "&", "close": "&", "notIn": [ "comment", "string", ] }, // to unpackage the symbols
+
+		{ "open": "\"", "close": "\"", "notIn": [ "string", ] }, // pre string
+		{ "open": "`", "close": "`", "notIn": [ "string", "comment" ] }, // escape string
+	],
+	// "autoCloseBefore": ";:.,=}])> \n\t", // ? undetermined
+	"surroundingPairs": [
+		["{", "}"],
+		["[", "]"],
+		["(", ")"],
+		["&", "&"],
+		["|", "|"],
+		["\"", "\""]
+	],
+	"wordPattern": "[@∀∃!|&]|[^@∀∃!|&\\s,;:\"`()\\[\\]{}.∈⊆=]+",
+
+}

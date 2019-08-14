@@ -49,7 +49,7 @@
                 "id": "gmsh",
                 "aliases": ["GM-Shell"],
                 "extensions": [".gmsh"],
-                "configuration": "./language-configuration/gm.language-configuration.json"
+                "configuration": "./language-configuration/gmsh.language-configuration.json"
             }
         ],
         "grammars": [
@@ -69,7 +69,14 @@
                 "language": "gmreg",
                 "scopeName": "source.regexp.gm",
                 "path": "./syntaxes/gmreg.tmLanguage.json"
-            }
+            },
+			{
+				"scopeName": "text.html.markdown.gm",
+				"path": "./syntaxes/gm.markdown.tmLanguage.json",
+				"injectTo": [
+					"text.html.markdown"
+				]
+			}
         ],
         "snippets": [
             {

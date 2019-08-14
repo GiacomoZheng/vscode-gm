@@ -31,6 +31,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	:*?:male	::♂
 
 ; 右ctrl +
+	; >^1::Send,¬
 	>^4::Send,↔
 	+>^4::Send,⇔
 
@@ -52,10 +53,19 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 	>^.::Send,…
 
-	+>^,::Send,≤
-	+>^.::Send,≥
+	:*?:<=	::≤
+	:*?:>=	::≥
+	:*?:~<	::≺
+	:*?:~>	::≻
+	:*?:~<=	::≼
+	:*?:~>=	::≽
+		+>^,::Send,≤
+		+>^.::Send,≥
+		; >^>!,::Send,≺
+		; >^>!.::Send,≻
+		; +>^>!,::Send,≼
+		; +>^>!.::Send,≽
 
-	;
 	:*?:!=	::≠
 
 	:*?:~=	::≌
@@ -63,8 +73,10 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	;
 	>^a::Send,∀
 	>^e::Send,∃
+	>^1::Send,¬
 
-	+>^a::Send,∧  ; wedge
+	+>^a::Send,∧  ; wedge product / smash product
+	+>^v::Send,∨  ; wedge sum
 
 	>^u::Send,∪
 	>^n::Send,∩
@@ -75,6 +87,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	; +>^m::Send,□
 
 	>^s::Send,∫
+	>^d::Send,∂
 
 	>^o::Send,∘
 
@@ -96,12 +109,13 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ; changing some letter to be capital will change the output to be capital
 	:*?:alpha	::α
-	:*?:beta	::β
+
 	:*?:gamma	::γ
 	:*?:delta	::δ
 	:*?:epsilon	::ε
 
-	; theta and zeta need to be above the eta
+	; beta, theta and zeta need to be above the eta
+	:*?:beta	::β
 	:*?:zeta	::ζ
 	:*?:theta	::θ
 	:*?:eta	::η

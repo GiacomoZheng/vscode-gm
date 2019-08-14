@@ -14,7 +14,6 @@
 		{ "open": "[", "close": "]", "notIn": [ "comment", ] },
 		{ "open": "(", "close": ")", "notIn": [ "comment", ] },
 		{ "open": "&", "close": "&", "notIn": [ "comment", "string", ] }, // to unpackage the symbols
-		// { "open": "[**", "close": " *]", "notIn": [ "string", ]},
 
 		{ "open": "\"", "close": "\"", "notIn": [ "string", ] }, // pre string
 		{ "open": "`", "close": "`", "notIn": [ "string", "comment" ] }, // escape string
@@ -22,26 +21,26 @@
 
 		{ "open": "s\"", "close": "\"", "notIn": ["string", "comment"] } // proposition
 	],
-	"autoCloseBefore": ";:.,=}])> \n\t", // ? undetermined
+	// "autoCloseBefore": ";:.,=}])> \n\t", // ? undetermined
 	"surroundingPairs": [
 		["{", "}"],
 		["[", "]"],
 		["(", ")"],
 		["&", "&"],
-		["|", "|"],
+		["|", "|"], // I may delete it
 		["\"", "\""]
 	],
 	"indentationRules": {
-		// it seems that it doesn't works
 		"increaseIndentPattern": "(?:^|,|■)\\s*@[^\\s,;:@]+(?:\\.[^\\s,;:@]+)*,[^■]*$",
-		"decreaseIndentPattern": "^(.*\\])?\\s*[})■].*$"
+		// "decreaseIndentPattern": "",
+		"decreaseIndentPattern": "^\\s* $" // ?
 	},
-	"wordPattern": "[@∀∃!|&]|[^@∀∃!|&∈⊆\\s,;:\"`()\\[\\]{}.×/-]+",
+	"wordPattern": "[@∀∃!|&]|[^@∀∃!|&∈⊆\\s,;:\"`()\\[\\]{}.]+",
 	"folding": {
 		"offSide": true,
 		"markers": {
-			"start": "^\\s*;\\s*[!?*+]?\\s*(?:about|via|on)",
-			"end": "^\\s*;\\s*end"
+			"start": "^\\s*;\\s*[!?*+]?\\s*(?:about|claim|via|on)\\b.*$",
+			"end": "^\\s*;\\s*end\\b.*$"
 		}
 	}
 }

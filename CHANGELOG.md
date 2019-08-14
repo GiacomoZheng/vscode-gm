@@ -5,7 +5,9 @@ All notable changes about the "gm" extension will be documented in this file.
 
 ## 1.0.6
 
-* Start `GM-Shell` as an indepedent language. I may change the order of the syntax definition.
+* `GM-Regexp` will be used to define `keyword` and `delimiter` in `GM`.
+* Add the "seprator", "operator" and "relator" into `keyword`, with white `foreground`.
+* Start `GM-Shell` as an indepedent language, whose idea is from the `erlang`. I may change the order of the syntax definition.
 
 ## 1.0.5 (Apr. 4, 2019)
 
