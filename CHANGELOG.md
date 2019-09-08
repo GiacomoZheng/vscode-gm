@@ -3,11 +3,13 @@ All notable changes about the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
-## 1.0.6
+## 1.0.6 (Sept. 9 2019)
 
 * `GM-Regexp` will be used to define `keyword` and `delimiter` in `GM`.
 * Add the "seprator", "operator" and "relator" into `keyword`, with white `foreground`.
 * Start `GM-Shell` as an indepedent language, whose idea is from the `erlang`. I may change the order of the syntax definition.
+* inject the `gm` language into `markdown` syntax. You can use "\`\`\`gm" in `markdown` now.
+
 
 ## 1.0.5 (Apr. 4, 2019)
 

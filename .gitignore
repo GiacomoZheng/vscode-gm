@@ -3,3 +3,4 @@ node_modules
 tmlanguage.json
 .vscode
 .vscodeignore
+*.log

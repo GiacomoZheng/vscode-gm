@@ -27,7 +27,7 @@
     },
     "qna": "https://github.com/GiacomoZheng/vscode-gm/issues",
 
-    "extensionPack": [
+    "__extensionPack": [
         "coenraads.bracket-pair-colorizer-2"
     ],
 
@@ -78,14 +78,10 @@
 				]
 			}
         ],
-        "snippets": [
+        "configuration":[
             {
-                "language": "gm",
-                "path": "./snippets/gm.json"
-            },
-            {
-                "language": "gmsh",
-                "path": "./snippets/gm.json"
+                "title": "",
+                "properties": {}
             }
         ],
         "commands": [],

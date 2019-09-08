@@ -390,7 +390,7 @@
 			"patterns": [
 				{
 					"name": "invalid.illegal.define.gm",
-					"match": "(?<=^|\\s|:):",
+					"match": "(?<=^|\\s|:|[@■]|,|[\\(\\[]):",
 					"Comment": "except the : at the beginning of the file"
 				},
 				{

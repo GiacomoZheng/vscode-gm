@@ -29,9 +29,20 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	:*?:female	::♀
 	; the female must be in front of male
 	:*?:male	::♂
+	
+	:*?:Sun	::☉
+	:*?:Mercury	::☿
+	:*?:Venus	::♀
+	:*?:Earth	::♁
+		:*?:Moon	::☾
+	:*?:Mars	::♂
+	:*?:Jupiter	::♃
+	:*?:Saturn	::♄
+	:*?:Uranus	::⛢
+	:*?:Neptune	::♆
 
 ; 右ctrl +
-	; >^1::Send,¬
+	; >^1::Send,¬ ; define it together with ∀∃
 	>^4::Send,↔
 	+>^4::Send,⇔
 
@@ -51,14 +62,15 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 	>^-::Send,¯
 
-	>^.::Send,…
+	>^.::Send,̇
+	:*?:...	::…
 
-	:*?:<=	::≤
-	:*?:>=	::≥
 	:*?:~<	::≺
 	:*?:~>	::≻
 	:*?:~<=	::≼
 	:*?:~>=	::≽
+	:*?:<=	::≤
+	:*?:>=	::≥
 		+>^,::Send,≤
 		+>^.::Send,≥
 		; >^>!,::Send,≺
@@ -69,7 +81,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	:*?:!=	::≠
 
 	:*?:~=	::≌
-
+	
 	;
 	>^a::Send,∀
 	>^e::Send,∃
@@ -84,7 +96,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	+>^n::Send,⋂
 
 	>^m::Send,■
-	; +>^m::Send,□
+	+>^m::Send,□
 
 	>^s::Send,∫
 	>^d::Send,∂

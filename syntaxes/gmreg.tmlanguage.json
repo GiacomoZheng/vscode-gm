@@ -14,6 +14,10 @@
 		"grlang": {
 			"patterns": [
 				{
+					"match": "\\\\/",
+					"name": "keyword.control.replace.regex.gm"
+				},
+				{
 					"include": "#brackets"
 				},
 				{
@@ -130,11 +134,12 @@
 			"patterns": [
 				{
 					"name": "keyword.other.flag.regexp.gm",
-					"match": "(?i)\\\\[xi]"
+					"match": "(?i)\\\\[gxic]",
+					"Comment": "c for vim, i for json"
 				},
 				{
 					"name": "keyword.other.suffix.regexp.gm",
-					"match": "\\\\[*/+-]"
+					"match": "\\\\[*+?]"
 				},
 				{
 					"name": "keyword.other.reference.regexp.gm",
@@ -148,12 +153,12 @@
 					"begin": "\\\\\\$",
 					"beginCaptures": {
 						"0": {
-							"name":"variable.other.pattern.regexp.gm"
+							"name": "keyword.control.define.regexp.gm"
 						}
 					},
-					"end": "\\\\\\s|(\\\\:)",
+					"end": "\\\\\\s|\\\\:|\\\\=",
 					"endCaptures": {
-						"1": {
+						"0": {
 							"name": "keyword.control.define.regexp.gm"
 						}
 					},
