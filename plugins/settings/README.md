@@ -4,6 +4,7 @@ For the functions of `better-comment`, add the following settings into your `set
 // For a better visual effect, I used whitespaces here
 {
     // editor
+    "editor.fontFamily": "Consolas, 'Cambria Math', 'Courier New', monospace",
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {

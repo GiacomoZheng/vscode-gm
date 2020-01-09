@@ -32,8 +32,7 @@
 	],
 	"indentationRules": {
 		"increaseIndentPattern": "(?:^|,|■)\\s*@[^\\s,;:@]+(?:\\.[^\\s,;:@]+)*,[^■]*$",
-		// "decreaseIndentPattern": "",
-		"decreaseIndentPattern": "^\\s* $" // ?
+		"decreaseIndentPattern": "^\\s*$" // ?
 	},
 	"wordPattern": "[@∀∃!|&]|[^@∀∃!|&∈⊆\\s,;:\"`()\\[\\]{}.]+",
 	"folding": {

@@ -2,7 +2,7 @@
     "name": "gm",
     "displayName": "GM",
     "description": "GM support for Visual Studio Code",
-    "version": "1.0.6",
+    "version": "1.0.7",
 
     "icon": "images/icon.png",
     "engines": {
@@ -13,23 +13,12 @@
         "Snippets"
     ],
 
-    "__": {
-        "main": "./out/gmMain",
-        "activationEvents": [
-            "onLanguage:gm"
-        ]
-    },
-
     "publisher": "giacomozheng",
     "repository": {
         "type": "git",
         "url": "https://github.com/GiacomoZheng/vscode-gm.git"
     },
     "qna": "https://github.com/GiacomoZheng/vscode-gm/issues",
-
-    "__extensionPack": [
-        "coenraads.bracket-pair-colorizer-2"
-    ],
 
     "contributes": {
         "languages": [

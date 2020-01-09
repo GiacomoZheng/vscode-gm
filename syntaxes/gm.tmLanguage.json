@@ -19,13 +19,16 @@
 		"gmlang": {
 			"patterns": [
 				{
+					"include": "#strings"
+				},
+				{
 					"include": "#comments"
 				},
 				{
-					"include": "#brackets"
+					"include": "#invalids"
 				},
 				{
-					"include": "#invalids"
+					"include": "#brackets"
 				},
 				{
 					"include": "#constants"
@@ -34,9 +37,90 @@
 					"include": "#temporaries"
 				},
 				{
-					"include": "#strings"
+					"name": "markup.italic.gm",
+					"match": "(?x)[Α α  Β β  Γ γ  Δ δ  Ε ε  Ζ ζ  Η η  Θ θ  Ι ι  Κ κ  Λ λ  Μ μ  Ν ν  Ξ ξ  Ο ο  Π π  Ρ ρ  Σ σ ς  Τ τ  Υ υ  Φ φ  Χ χ  Ψ ψ  Ω ω 𝔮𝔴𝔢𝔯𝔱𝔶𝔲𝔦𝔬𝔭𝔞𝔰𝔡𝔣𝔤𝔥𝔧𝔨𝔩𝔷𝔵𝔠𝔳𝔟𝔫𝔪 𝔔𝔚𝔈ℜ𝔗𝔜𝔘ℑ𝔒𝔓𝔄𝔖𝔇𝔉𝔊ℌ𝔍𝔎𝔏ℨ𝔛ℭ𝔙𝔅𝔑𝔐]",
+					"Comment": "for better fonts"
 				}
 			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"include": "#line-strings"
+				},
+				{
+					"include": "#pre-strings"
+				},
+				{
+					"include": "#regexp-strings"
+				}
+			],
+			"repository": {
+				"line-strings": {
+					"Comment": "copy from the python source file",
+					"name": "string.line.gm",
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.define.string.line.begin.gm"
+						}
+					},
+					"end": "\"|(?<!\\\\)\n",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.define.string.line.end.gm"
+						}
+					},
+					"patterns": [
+						{
+							"name": "constant.character.escape.gm",
+							"match": "\\\\[\\w\"]"
+						}
+					]
+				},
+				"pre-strings": {
+					"Comment": "no escape_character in it, which means it cannot includes '`'",
+					"begin": "(?<!`)`(?!`)",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.define.string.pre.begin.gm"
+						}
+					},
+					"end": "(?<!`)`(?!`)",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.define.string.pre.end.gm"
+						}
+					},
+					"name": "string.pre.gm",
+					"patterns": []
+				},
+				"regexp-strings": {
+					"Comment": "undetermined",
+					"begin": "[rR](\")",
+					"beginCapture": {
+						"0": {
+							"name": "keyword.other.regexp.gm"
+						},
+						"1": {
+							"name": "punctuation.define.string.regexp.begin.gm"
+						}
+					},
+					"Comment-end": "I promise the xX but I don't recommend it",
+					"end": "(\")[pPxX]|(?<!\\\\)\n",
+					"endCapture": {
+						"1": {
+							"name": "punctuation.define.string.regexp.end.gm"
+						}
+					},
+					"contentName": "string.regexp.gm",
+					"patterns": [
+						{
+							"include": "source.regexp.gm"
+						}
+					]
+				}
+			}
 		},
 		"comments": {
 			"patterns": [
@@ -254,6 +338,37 @@
 				}
 			}
 		},
+		"invalids": {
+			"patterns": [
+				{
+					"name": "invalid.illegal.define.gm",
+					"match": "(?<=^|\\s|:|[@■]|,|[\\(\\[]):",
+					"Comment": "except the : at the beginning of the file"
+				},
+				{
+					"name": "invalid.illegal.quantifier.gm",
+					"match": "\\w[∀∃!¬]"
+				},
+				{
+					"name": "invalid.illegal.package.gm",
+					"match": "(?<=^|,|\\.)\\s*\\."
+				},
+				{
+					"name": "invalid.illegal.comment.gm",
+					"match": "(?<=\\))\\s*\\["
+				},
+				{
+					"name": "invalid.deprecated.triple.gm",
+					"match": "```",
+					"Comment": "it can be only used in the comments. In fact you can define it."
+				},
+				{
+					"name": "invalid.deprecated.tab.gm",
+					"match": "[^\t$]\t+",
+					"Comment": "Tabs should be always at the beginning of new lines"
+				}
+			]
+		},
 		"brackets": {
 			"patterns": [
 				{
@@ -386,33 +501,6 @@
 				}
 			}
 		},
-		"invalids": {
-			"patterns": [
-				{
-					"name": "invalid.illegal.define.gm",
-					"match": "(?<=^|\\s|:|[@■]|,|[\\(\\[]):",
-					"Comment": "except the : at the beginning of the file"
-				},
-				{
-					"name": "invalid.illegal.quantifier.gm",
-					"match": "\\w[∀∃!¬]"
-				},
-				{
-					"name": "invalid.illegal.package.gm",
-					"match": "(?<=^|,|\\.)\\s*\\."
-				},
-				{
-					"name": "invalid.deprecated.triple.gm",
-					"match": "```",
-					"Comment": "it can be only used in the comments. In fact you can define it."
-				},
-				{
-					"name": "invalid.deprecated.tab.gm",
-					"match": "[^\t$]\t+",
-					"Comment": "Tabs should be always at the beginning of new lines"
-				}
-			]
-		},
 		"constants": {
 			"patterns": [
 				{
@@ -517,85 +605,6 @@
 					"include": "#gmlang"
 				}
 			]
-		},
-		"strings": {
-			"patterns": [
-				{
-					"include": "#line-strings"
-				},
-				{
-					"include": "#pre-strings"
-				},
-				{
-					"include": "#regexp-strings"
-				}
-			],
-			"repository": {
-				"line-strings": {
-					"Comment": "copy from the python source file",
-					"name": "string.line.gm",
-					"begin": "\"",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.define.string.line.begin.gm"
-						}
-					},
-					"end": "\"|(?<!\\\\)\n",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.define.string.line.end.gm"
-						}
-					},
-					"patterns": [
-						{
-							"name": "constant.character.escape.gm",
-							"match": "\\\\[\\w\"]"
-						}
-					]
-				},
-				"pre-strings": {
-					"Comment": "no escape_character in it, which means it cannot includes '`'",
-					"begin": "(?<!`)`(?!`)",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.define.string.pre.begin.gm"
-						}
-					},
-					"end": "(?<!`)`(?!`)",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.define.string.pre.end.gm"
-						}
-					},
-					"name": "string.pre.gm",
-					"patterns": []
-				},
-				"regexp-strings": {
-					"Comment": "undetermined",
-					"begin": "[rR](\")",
-					"beginCapture": {
-						"0": {
-							"name": "keyword.other.regexp.gm"
-						},
-						"1": {
-							"name": "punctuation.define.string.regexp.begin.gm"
-						}
-					},
-					"Comment-end": "I promise the xX but I don't recommend it",
-					"end": "(\")[pPxX]|(?<!\\\\)\n",
-					"endCapture": {
-						"1": {
-							"name": "punctuation.define.string.regexp.end.gm"
-						}
-					},
-					"contentName": "string.regexp.gm",
-					"patterns": [
-						{
-							"include": "source.regexp.gm"
-						}
-					]
-				}
-			}
 		}
 	}
 }
