@@ -67,14 +67,6 @@
 				]
 			}
         ],
-        "configuration":[
-            {
-                "title": "",
-                "properties": {}
-            }
-        ],
-        "commands": [],
-
         "configurationDefaults": {
             "[gm]": {
                 "files.autoGuessEncoding": false,

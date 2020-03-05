@@ -1,11 +1,12 @@
-<!-- 更新于2018年12月23日 -->
 # gm
 
 [单击此处前往中文版须知](documents/中文说明/README)
 
-This is the gm exttension written for VS code.
+This is the gm extension written for VS code.
 
 Click [here](https://github.com/GiacomoZheng/gm/wiki) to the wiki of tutorials.
+
+## **Warning**: I'll rewrite the tutorial later, which will be totally different from now.
 
 ---
 

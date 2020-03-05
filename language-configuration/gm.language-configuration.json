@@ -34,7 +34,7 @@
 		"increaseIndentPattern": "(?:^|,|■)\\s*@[^\\s,;:@]+(?:\\.[^\\s,;:@]+)*,[^■]*$",
 		"decreaseIndentPattern": "^\\s*$" // ?
 	},
-	"wordPattern": "[@∀∃!|&]|[^@∀∃!|&∈⊆\\s,;:\"`()\\[\\]{}.]+",
+	"wordPattern": "(?x)[@∀∃!|& ∈⊆]|[^@∀∃!|& ∈⊆ \\s,;:\"`()\\[\\]{}.]+",
 	"folding": {
 		"offSide": true,
 		"markers": {
