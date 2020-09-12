@@ -3,6 +3,10 @@ All notable changes about the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
+## 1.0.7 ()
+
+* Adjust the `GM-Regexp`.
+
 ## 1.0.6 (Sept. 9 2019)
 
 * `GM-Regexp` will be used to define `keyword` and `delimiter` in `GM`.

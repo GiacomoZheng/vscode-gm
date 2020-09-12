@@ -138,12 +138,16 @@
 					"Comment": "c for vim, i for json"
 				},
 				{
-					"name": "keyword.other.suffix.regexp.gm",
+					"name": "keyword.other.back-reference.regexp.gm",
+					"match": "(?i)\\\\[1-9]"
+				},
+				{
+					"name": "keyword.operator.quantifier.regexp.gm",
 					"match": "\\\\[*+?]"
 				},
 				{
-					"name": "keyword.other.reference.regexp.gm",
-					"match": "(?i)\\\\[1-9]"
+					"name": "keyword.operator.disjunction.regexp.gm",
+					"match": "\\|"
 				}
 			]
 		},

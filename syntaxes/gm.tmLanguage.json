@@ -100,7 +100,7 @@
 					"begin": "[rR](\")",
 					"beginCapture": {
 						"0": {
-							"name": "keyword.other.regexp.gm"
+							"name": "string.regexp.gm"
 						},
 						"1": {
 							"name": "punctuation.define.string.regexp.begin.gm"
@@ -109,11 +109,15 @@
 					"Comment-end": "I promise the xX but I don't recommend it",
 					"end": "(\")[pPxX]|(?<!\\\\)\n",
 					"endCapture": {
+						"0": {
+							"name": "string.regexp.gm"
+						},
 						"1": {
 							"name": "punctuation.define.string.regexp.end.gm"
 						}
 					},
-					"contentName": "string.regexp.gm",
+					"Commnet-contentName": "string.regexp.gm",
+					"contentName": "meta.embedded.block.regexp.gm",
 					"patterns": [
 						{
 							"include": "source.regexp.gm"
@@ -137,7 +141,7 @@
 			],
 			"repository": {
 				"block-comments": {
-					"begin": "(?<=^|\\A|[,■({])\\s*(\\[)",
+					"begin": "(?<=^|\\A|[,■({):])\\s*(\\[)",
 					"Comment": "I want to delete ^ to get an single version",
 					"beginCaptures": {
 						"1": {
@@ -153,7 +157,11 @@
 					"name": "comment.block.gm",
 					"patterns": [
 						{
+							"Comment": "+ remove",
 							"include": "#strings"
+						},
+						{
+							"non-include": "#strings.pre-strings"
 						},
 						{
 							"include": "#fenced_code_block_gm"
