@@ -86,7 +86,7 @@
 							"name": "punctuation.define.string.pre.begin.gm"
 						}
 					},
-					"end": "(?<!`)`(?!`)",
+					"end": "`",
 					"endCaptures": {
 						"0": {
 							"name": "punctuation.define.string.pre.end.gm"
@@ -362,10 +362,6 @@
 					"match": "(?<=^|,|\\.)\\s*\\."
 				},
 				{
-					"name": "invalid.illegal.comment.gm",
-					"match": "(?<=\\))\\s*\\["
-				},
-				{
 					"name": "invalid.deprecated.triple.gm",
 					"match": "```",
 					"Comment": "it can be only used in the comments. In fact you can define it."
@@ -600,7 +596,7 @@
 					"name": "keyword.quantifier.gm"
 				}
 			},
-			"end": "(?<!\\s):|\n",
+			"end": "(?<!\\s):",
 			"endCaptures": {
 				"0": {
 					"name": "keyword.control.define.gm"

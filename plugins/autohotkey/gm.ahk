@@ -79,6 +79,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 		; +>^>!.::Send,≽
 
 	:*?:!=	::≠
+	; ∉
 
 	:*?:~=	::≌
 	
@@ -86,6 +87,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 	>^a::Send,∀
 	>^e::Send,∃
 	>^1::Send,¬
+		:*?:not	::¬ ; ? I'm not sure
 
 	+>^a::Send,∧  ; wedge product / smash product
 	+>^v::Send,∨  ; wedge sum
@@ -105,19 +107,27 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 	+>^o::Send,◉
 
+	+>^+::Send,⊕
+
 	>^x::Send,×
+	+>^x::Send,⊗
 
 	; ↢↣
 	>^!right::Send,↦
 	>^!left::Send,↤
 
 	>^right::Send,→
+		:*?:->	::→
 	>^left::Send,←
-	; :*?:←→	::↔
+		:*?:<-	::←
+	:*?:<->	::↔
 
 	+>^left::Send,⇐
 	+>^right::Send,⇒
-	; :*?:⇐⇒	::⇔
+	:*?:<=>	::⇔
+
+	; brackets
+	:*?:||	::‖
 
 ; changing some letter to be capital will change the output to be capital
 	:*?:alpha	::α

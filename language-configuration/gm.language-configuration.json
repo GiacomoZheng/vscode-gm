@@ -27,7 +27,7 @@
 		["[", "]"],
 		["(", ")"],
 		["&", "&"],
-		["|", "|"], // I may delete it
+		// ["|", "|"], // I may delete it
 		["\"", "\""]
 	],
 	"indentationRules": {
@@ -38,8 +38,8 @@
 	"folding": {
 		"offSide": true,
 		"markers": {
-			"start": "^\\s*;\\s*[!?*+]?\\s*(?:about|claim|via|on)\\b.*$",
-			"end": "^\\s*;\\s*end\\b.*$"
+			"start": "^(\\s*);\\s*[!?*+]?\\s*(?:about|claim|via|on)\\b.*$",
+			"end": "^\\1;\\s*end\\b.*$"
 		}
 	}
 }

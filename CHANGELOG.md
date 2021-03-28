@@ -3,9 +3,11 @@ All notable changes about the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
-## 1.0.7 ()
+## 1.0.7 (29 March 2021)
 
-* Adjust the `GM-Regexp`.
+* I'll remake the body of `GM-Regexp`.
+* Adjust some config of `GM`.
+* Move tutorial to `gm` repository.
 
 ## 1.0.6 (Sept. 9 2019)
 
