@@ -37,13 +37,12 @@ It is better to add some settings (in [settings](plugins/settings/README.md)) in
 
 None
 
-If it is possible, the Windows' users can try to learn something about [AutoHotKey](https://autohotkey.com/), which helps a lot. [Here](plugins/autohotkey/) is my source file.
+For the Windows users, you can try to learn something about [AutoHotKey](https://autohotkey.com/), which helps a lot. Go to [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/autohotkey) to get my source file.
 
-For the Mac's and Linus' users, I'm sorry but you can try other hotkey apps.
+For the Mac users, I'm writting script for [Hammerspoon](http://www.hammerspoon.org). Go to [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/Hammerspoon) to get my source file.
 
-<!-- ## Known Issues
+For Linus' users, I'm sorry but you can try other hotkey apps.
 
-Calling out known issues can help limit users opening duplicate issues against your extension. -->
 
 ## Recommendation
 
