@@ -1,12 +1,12 @@
 # gm
 
-[单击此处前往中文版须知](documents/中文说明/README)
+[单击此处前往中文版须知](/README.zh-cn.md)
 
 This is the gm extension written for VS code.
 
-Click [here](https://github.com/GiacomoZheng/gm/wiki) to the wiki of tutorials.
+<!-- Click [here](https://github.com/GiacomoZheng/gm/wiki) to the wiki of tutorials. -->
 
-## **Warning**: I'll rewrite the tutorial later, which will be totally different from now.
+I'll rewrite the tutorial later, which will be totally different from now.
 
 ---
 
@@ -30,19 +30,21 @@ It is much more like mathemtics than a programming lauguage indeed.
 
 ## Extension Settings
 
-It is better to add some settings (in [settings](plugins/settings/README.md)) into `settings.json`, which build in the function of `better-comments` of `aaron-bond`. I have got the permission from him.
+It is better to add some settings (in [settings](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/settings/README.md)) into `settings.json`, which build in the function of `better-comments` of `aaron-bond`. I have got the permission from him.
 <!-- the path of settings may be wrong -->
 
 ## Requirements
 
-None
+### Hotstrings
 
-For the Windows users, you can try to learn something about [AutoHotKey](https://autohotkey.com/), which helps a lot. Go to [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/autohotkey) to get my source file.
+For the Windows users, you can try to learn something about [AutoHotKey](https://autohotkey.com/), which helps a lot. Go to [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/hotstrings/autohotkey) to get my source file.
 
-For the Mac users, I'm writting script for [Hammerspoon](http://www.hammerspoon.org). Go to [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/Hammerspoon) to get my source file.
 
-For Linus' users, I'm sorry but you can try other hotkey apps.
+WARN: Hammerspoon is not suitable for gm lang, I will find a better option soon.
 
+For the Mac users, I'm writting script for [Hammerspoon](http://www.hammerspoon.org). Go to [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/hotstrings/Hammerspoon) to get my source file.
+
+For Linus' users, you can try other hotkey apps, I'll post a `gm.toml` file in [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/hotstrings/gm.toml).
 
 ## Recommendation
 

@@ -1,18 +1,10 @@
+WARNING: 文档太久没更新了，过时了，去看英文版的先吧
+
 # gm
 
 这是 `gm` 语言的 `Vs code` 拓展。
 
 点击[这里](https://github.com/GiacomoZheng/gm/wiki)前往教程的wiki。
-
----
-
-作者：郑仁鹏
-
-联系方式: giacomo821@outlook.com
-
-Github 用户名: [GiacomoZheng](https://github.com/GiacomoZheng/vscode-gm.git)
-
-更新于2018年10月22日
 
 ---
 
