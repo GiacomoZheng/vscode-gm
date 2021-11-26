@@ -3,6 +3,10 @@ All notable changes about the "gm" extension will be documented in this file.
 
 <!-- Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file. -->
 
+## 1.0.8 ()
+
+* Rewrote the `snipplet` for `gm`. Now you can type some mathematicial characters directly.
+
 ## 1.0.7 (29 March 2021)
 
 * I'll remake the body of `GM-Regexp`.

@@ -8,16 +8,6 @@ This is the gm extension written for VS code.
 
 I'll rewrite the tutorial later, which will be totally different from now.
 
----
-
-author: Giacomo Zheng
-
-作者：郑仁鹏
-
-email: giacomo821@outlook.com
-
-Github username: [GiacomoZheng](https://github.com/GiacomoZheng/vscode-gm.git)
-
 ## Features
 
 gm is a language basing on my writing habits of mathematics, with lots of special symbols,
@@ -37,14 +27,16 @@ It is better to add some settings (in [settings](https://github.com/GiacomoZheng
 
 ### Hotstrings
 
-For the Windows users, you can try to learn something about [AutoHotKey](https://autohotkey.com/), which helps a lot. Go to [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/hotstrings/autohotkey) to get my source file.
+[Link](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/hotstrings)
+
+I've implemented the some snipplets in `vscode-gm`. It is not enough up to now, but I'll keep updating it.
+
+For the Windows users, you can use [AutoHotKey](https://autohotkey.com/). Go to [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/hotstrings/autohotkey) to get my source file.
 
 
-WARN: Hammerspoon is not suitable for gm lang, I will find a better option soon.
+For the Mac users, you can try to use the system build-in "text replace", see [here](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/hotstrings/text-macos) for more information.
 
-For the Mac users, I'm writting script for [Hammerspoon](http://www.hammerspoon.org). Go to [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/hotstrings/Hammerspoon) to get my source file.
-
-For Linus' users, you can try other hotkey apps, I'll post a `gm.toml` file in [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/hotstrings/gm.toml).
+For Linus' users, you can try other hotkey apps. I have posted a `gm.toml` file in [plugins](https://github.com/GiacomoZheng/gm-syntax/tree/main/plugins/hotstrings/gm.toml), you can refer it to build up your own hotstrings.
 
 ## Recommendation
 
